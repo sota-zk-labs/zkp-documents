@@ -1,0 +1,29 @@
+name: Auto Create PR Checklist
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  create_checklist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create PR Checklist
+        run: |
+          echo "- [ ] Did you check your grammar / reader proof your document using ChatGPT?" >> $GITHUB_WORKSPACE/$GITHUB_EVENT_NAME.md
+          echo "- [ ] After merging this, please update your task status!" >> $GITHUB_WORKSPACE/$GITHUB_EVENT_NAME.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add $GITHUB_EVENT_NAME.md
+          git commit -m "Add checklist to PR description" -a
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
