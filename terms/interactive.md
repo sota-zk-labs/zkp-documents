@@ -42,4 +42,7 @@
 
 3. **Trust Model:** The trust model of the system, including the assumptions about the involved parties and potential adversaries, can impact the choice of proof type.
 
+### Related contents
+- [zkSNARK.md](zkSNARK.md)
+
 In summary, the decision to use interactive or non-interactive proofs depends on the specific requirements, constraints, and security considerations of the cryptographic protocol or application in question. Each approach has its own set of advantages and limitations, and the choice should be made based on the specific needs of the system.
