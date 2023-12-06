@@ -1,6 +1,6 @@
 # Chapter 2
 
-## Reed-Solomon Fingerprinting
+## Reed-Solomon Fingerprinting `rid-'solomon`
 
 In Reed-Solomon Fingerprinting, Alice optimizes data transfer by sending only hashes to Bob instead of the entire file.
 The integrity check involves comparing the hash values, providing Bob with a high level of confidence in file equality.
@@ -22,7 +22,7 @@ The integrity check involves comparing the hash values, providing Bob with a hig
 | r               | random value in $\mathbb{F}_p$ |                     |
 | v               | $h_r(a)$                       |                     |
 
-## Freivalds' Algorithm
+## Freivalds' Algorithm `f'rei volz`
 
 Freivalds' Algorithm involves verifying the equality of matrices C and D received from the prover.
 
@@ -67,3 +67,12 @@ This approach shortens the comparison time:
    Resulting in:
 
    $C = \begin{bmatrix} 3r^2 + 2r + 1 \\ 6r^2 + 5r + 4 \\ 9r^2 + 8r + 7 \end{bmatrix}$
+
+## An Alternative View of Fingerprinting and Freivalds’ Algorithm
+
+Suppose we want to compare two vectors, \(a\) and \(b\). We first convert them into two polynomials over the field \(\mathbb{F}_p\), where \(p\) is much larger than \(n\). As can be seen from the image below, if we evaluate these two polynomials at any points, the results are likely to differ from each other.
+
+![Alt text](2_polynomials.png)
+
+## Univariate Lagrange Interpolation
+
