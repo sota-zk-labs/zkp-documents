@@ -9,6 +9,8 @@ reviewers:
   - Draply
   - Sotatek-HaiTrieu2
   - sonntuet1997
+  - ktokto313
+  - VanhGer
 
 # A list of keywords to be skipped the process that add reviewers if pull requests include it
 skipKeywords:
