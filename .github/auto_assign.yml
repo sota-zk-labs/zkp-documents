@@ -7,7 +7,7 @@ addAssignees: true
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers:
   - Draply
-  - Sotatek-HaiTrieu2
+  - haipro287
   - sonntuet1997
   - ktokto313
   - VanhGer
