@@ -17,4 +17,6 @@ This repository serves as a comprehensive resource for Zero-Knowledge Proofs (ZK
 
 - **english:** Don't know how to pronounce math formulas? View this folder.
 
+- **presentations:** This directory contains all our presentation slides.
+
 This structured organization aims to facilitate ease of navigation and comprehension for individuals seeking information on Zero-Knowledge Proofs. Regular updates and contributions to expand the repository's content are highly encouraged through the standard Pull Request (PR) process. Thank you for your commitment to building a valuable resource on ZKP.
