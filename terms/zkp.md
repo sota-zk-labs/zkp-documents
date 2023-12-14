@@ -1,5 +1,5 @@
 # Zero knowledge proof (ZKP)
-[seminar-innovative-internet-technologies.pdf](../articles/seminar-innovative-internet-technologies/NET-2022-07-1_08.pdf)
+[seminar-innovative-internet-technologies.pdf](../articles/seminar-innovative-internet-technologies/attachments/NET-2022-07-1_08.pdf)
 
 <!-- TOC -->
 * [Zero knowledge proof (ZKP)](#zero-knowledge-proof--zkp-)

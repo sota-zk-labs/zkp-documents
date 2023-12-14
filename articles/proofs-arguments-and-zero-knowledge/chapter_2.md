@@ -93,7 +93,7 @@ Suppose we want to compare two vectors, $`a`$ and $`b`$.
 We first convert them into two polynomials over the field $`\mathbb{F}_p`$, where $`p`$ is much larger than $`n`$.  
 As can be seen from the image below, if we evaluate these two polynomials at any points, the results are likely to differ from each other.
 
-![Alt text](2_polynomials.png)
+![Alt text](attachments/2_polynomials.png)
 
 ## Univariate Lagrange Interpolation
 There are other ways to interpret $a$ as the description of a univariate polynomial $q_a$ of degree $n−1$.
@@ -109,7 +109,7 @@ Then:
 
 $q_a$ is often called the univariate low-degree extension (LDE) of $a$
 
-![Alt text](LDE.PNG)
+![Alt text](attachments/LDE.png)
 
 ### Runtime:
 O(n) additions, multiplications, and inversions over $F_p$. 
