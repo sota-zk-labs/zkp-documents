@@ -5,11 +5,13 @@
 In Reed-Solomon Fingerprinting, Alice optimizes data transfer by sending only hashes to Bob instead of the entire file.
 The integrity check involves comparing the hash values, providing Bob with a high level of confidence in file equality.
 
-### Notes
+The hash function is:  $p_a(x)= \Sigma^n_{i=1} a_i · x^{i−1}$, which is called the Reed-Solomon encoding.
 
-> For any two distinct (i.e., unequal) polynomials $`p_a`$, $`p_b`$ of degree at most $`n`$ with coefficients in $`\mathbb{F}_p`$,
->
-> $`p_a(x) = p_b(x)`$ for at most $`n`$ values of $`x`$ in $`\mathbb{F}_p`$
+In this protocol, the fact: [Fundamental theorem of Algebra](./facts/fundamental_theorem_of_algebra.md) is used to imply this fact:  
+> For any two distinct (i.e., unequal) polynomials $`p_a`$,  $`p_b`$ of degree at most $`n`$ with coefficients in $`\mathbb{F}_p`$, $`p_a(x) = p_b(x)`$ for at most $`n`$ values of $`x`$ in $`\mathbb{F}_p`$
+
+
+### Notes
 
 > Any input can be represented by a polynomial.
 > We can check whether two inputs are identical by comparing the evaluations of their respective polynomials at a random point.
@@ -55,10 +57,13 @@ Freivalds' Algorithm involves verifying the equality of matrices C and D receive
 2. Calculate z = A.Bx.
 3. Compare y == z?
 
+### Runtime
 This approach shortens the comparison time:
 
 - A.B ($`n^{2.37}`$)
 - Cx ($`n^2`$), A.Bx ($`2n^2`$), y == z ($`2n`$) => Total runtime: $`n^2`$
+
+Reason: Time complexity of multiplication of a (n x n) matrix and a vector of size n is: $O(n^2)$
 
 ## Examples
 
@@ -91,4 +96,23 @@ As can be seen from the image below, if we evaluate these two polynomials at any
 ![Alt text](2_polynomials.png)
 
 ## Univariate Lagrange Interpolation
+There are other ways to interpret $a$ as the description of a univariate polynomial $q_a$ of degree $n−1$.
 
+**Lemma 2.3**: For any vector $a = (a_1,...,a_n)$ ∈ $F_n$, there is a unique univariate polynomial $q_a$ of degree at most $n−1$ such that:
+$q_a(i)  = a_{i + 1}$  for i: 0 -> n - 1
+
+Now, use Lagrange basis polynomials to find $q_a$
+$δ_i(X) = \prod_{k: 0-> n - 1, k != i} (X - k) / (i - k)$
+
+Then:
+   $q_a(X) = \Sigma_{i = 0}^{n - 1} a_{j + 1} * δ_i(X)$
+
+$q_a$ is often called the univariate low-degree extension (LDE) of $a$
+
+![Alt text](LDE.PNG)
+
+### Runtime:
+O(n) additions, multiplications, and inversions over $F_p$. 
+The reason is that $δ_i(r)$ can be compute from $δ_{i - 1}(r)$:
+
+$δi(r) = δ_{i−1}(r)·(r −(i−1))·(r −i)^{-1}·i^{-1}·(−(n−i))$
