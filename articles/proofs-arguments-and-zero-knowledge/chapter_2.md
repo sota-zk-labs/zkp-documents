@@ -7,9 +7,10 @@ The integrity check involves comparing the hash values, providing Bob with a hig
 
 The hash function is:  $p_a(x)= \Sigma^n_{i=1} a_i · x^{i−1}$, which is called the Reed-Solomon encoding.
 
-In this protocol, the fact: [Fundamental theorem of Algebra](./facts/fundamental_theorem_of_algebra.md) is used to imply this fact:  
-> For any two distinct (i.e., unequal) polynomials $`p_a`$,  $`p_b`$ of degree at most $`n`$ with coefficients in $`\mathbb{F}_p`$, $`p_a(x) = p_b(x)`$ for at most $`n`$ values of $`x`$ in $`\mathbb{F}_p`$
-
+In this protocol, the fact: [Fundamental theorem of Algebra](../../terms/fundamental_theorem_of_algebra.md) is used to
+imply this fact:
+> For any two distinct (i.e., unequal) polynomials $p_a$, $p_b$ of degree at most $n$ with coefficients
+> in $\mathbb{F}_p$, $p_a(x) = p_b(x)$ for at most $n$ values of $x$ in $\mathbb{F}_p$
 
 ### Notes
 
