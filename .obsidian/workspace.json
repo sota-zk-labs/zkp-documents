@@ -8,30 +8,41 @@
         "type": "tabs",
         "children": [
           {
-            "id": "57db8738b8fc69ad",
+            "id": "b011539a74cb1468",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf"
+              }
+            }
+          },
+          {
+            "id": "c3bb6ac103450aaa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "terms/zkp.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "9ed2c4d9626df331",
+            "id": "df05769dbbafcdb0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md",
+                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -60,7 +71,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "stacked",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md"
               }
             }
           },
@@ -157,8 +168,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -178,52 +188,53 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "57db8738b8fc69ad",
+  "active": "df05769dbbafcdb0",
   "lastOpenFiles": [
-    "articles/proofs-arguments-and-zero-knowledge/proofs_arguments_and_zero_knowledge.md",
-    "index.md",
-    "README.md",
-    "Untitled.canvas",
-    "2023-12-15.md",
-    "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md",
-    "articles/seminar-innovative-internet-technologies/attachments/NET-2022-07-1_08.pdf",
-    "articles/seminar-innovative-internet-technologies/attachments",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.png",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.PNG",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/2_polynomials.png",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf",
-    "articles/proofs-arguments-and-zero-knowledge/attachments",
-    "terms/zkp.md",
-    "terms/zkSNARK.md",
-    "Screenshot 2023-12-12 at 02.49.01.png.md",
-    "writing_instruction.md",
-    "articles/proofs-arguments-and-zero-knowledge/facts/fundamental_theorem_of_algebra.md",
-    "Screenshot 2023-12-12 at 02.49.01.png",
-    "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
-    "articles/proofs-arguments-and-zero-knowledge/proofs-arguments-and-zero-knowledge.md",
-    "articles/seminar-innovative-internet-technologies/NET-2022-07-1_08.pdf",
-    "terms/zkSTARK.md",
-    "terms/trapdoor_function.md",
+    "terms/quadratic_field.md",
+    "terms/pinocchio.md",
+    "terms/knowledge_of_exponent.md",
+    "terms/fermat_little_theorem.md",
     "terms/elliptic_curve.md",
-    "terms/zkp.png",
-    "terms/non_interactive_zkp.png",
-    "terms/fiat_shamir.md",
-    "Screenshot 2023-12-13 at 22.58.06.png",
-    "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md~",
-    "articles/proofs-arguments-and-zero-knowledge/facts",
-    "articles/proofs-arguments-and-zero-knowledge/LDE.PNG",
-    "terms/polynomial_time_computation.md",
-    "terms/statement.md",
-    "terms/interactive.md",
+    "terms/bilinear_map.md",
+    "terms/attachments/image02.gif",
+    "terms/attachments/elliptic_vertical.png",
+    "terms/attachments/elliptic_curve.png",
+    "terms/attachments/elliptic_addition.png",
+    "terms/attachments",
+    "articles/zk-snarks-under-the-hood/attachments/Pasted image 20231218234644.png",
+    "articles/zk-snarks-under-the-hood/attachments/Pasted image 20231218154719.png",
+    "articles/zk-snarks-under-the-hood/zk_snarks_under_the_hood.md",
+    "articles/zk-snarks-under-the-hood/attachments",
+    "articles/zk-snarks-under-the-hood",
+    "Untitled.md",
+    "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
+    "articles/proofs-arguments-and-zero-knowledge/proofs_arguments_and_zero_knowledge.md",
+    "presentations/~$zkp_overall.pptx",
+    "presentations/part-2/part_2.md",
+    "presentations/~$zkp_overall_2.pptx",
+    "presentations/~$zkp_overall 1.pptx",
+    "presentations/zkp_overall_2.pptx",
+    "presentations/part-2/steps.png",
+    "presentations/part-2/step_4.png",
+    "presentations/part-2/overall.png",
+    "presentations/part-2/attachments",
+    "presentations/~$Presentation1.pptx",
+    "presentations/part-2",
+    "export/part_2/plugin/chalkboard/README.md",
+    "export/part_2/plugin/chalkboard/img/blackboard.png",
+    "export/part_2/plugin/chart/README.md",
+    "export/part_2/plugin/customcontrols/README.md",
+    "export/part_2/plugin/menu/README.md",
+    "export/part_2/plugin/menu/CONTRIBUTING.md",
+    "attachments/Pasted/image/20231220104408.png.md",
+    "terms/zkp.md",
     "terms/trusted_setup.md",
+    "terms/witness.md",
     "terms/succinct.md",
-    "().md",
-    "articles/proofs-arguments-and-zero-knowledge/proofs_args_and_zk.pdf",
-    "articles/proofs-arguments-and-zero-knowledge/2_polynomials.png",
-    "english/pronunciation.md",
-    "docs/plonk.md",
-    "terms/arguments.md",
-    "zkp.pdf",
-    "Recording 20231213212716.webm"
+    "terms/statement.md",
+    "terms/polynomial_time_computation.md",
+    "terms/interactive.md",
+    "terms/fundamental_theorem_of_algebra.md",
+    "Untitled.canvas"
   ]
 }
