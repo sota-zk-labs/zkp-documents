@@ -26,7 +26,7 @@
 A ZKP system consists of the above decision problem and two programs *verifier* and *prover* so that: the *verifier* can
 verify that [argument](arguments.md) without knowing the witness.
 
-![zkp.png](zkp.png)
+![zkp.png](attachments/zkp.png)
 
 ## Applications
 
@@ -66,7 +66,7 @@ Normally converting from
 
 ## Blackbox Workflow of a ZKP
 
-![non_interactive_zkp.png](non_interactive_zkp.png)
+![non_interactive_zkp.png](attachments/non_interactive_zkp.png)
 
 1. The statement over the common input is transformed into the input type usable by the zero knowledge proof.
 2. Some low level representation like boolean or arithmetic circuits.
