@@ -1,5 +1,6 @@
 # Proofs, Arguments, and Zero-Knowledge
 
-[proofs_args_and_zk.pdf](attachments/proofs_args_and_zk.pdf)
+[Proofs Args and Zk](attachments/proofs_args_and_zk.pdf)
 
+## [Chapter 2](chapter_2.md)
 
