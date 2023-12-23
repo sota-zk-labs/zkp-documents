@@ -28,7 +28,7 @@
 
 **Cons:**
 
-1. **Setup Complexity:** Non-interactive proofs often involve more complex cryptographic setups, including the use of additional parameters or trusted setups.
+1. **Setup Complexity:** Non-interactive proofs often involve more complex cryptographic setups, including the use of additional parameters or [trusted setups](trusted_setup.md).
 
 2. **Limited Adaptability:** Once the proof is generated, there is limited adaptability to changes in the verification process. This can be a limitation in scenarios where dynamic interactions are essential.
 
