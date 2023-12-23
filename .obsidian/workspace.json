@@ -1,0 +1,229 @@
+{
+  "main": {
+    "id": "efb7b0280d220dd5",
+    "type": "split",
+    "children": [
+      {
+        "id": "54559b51e34d5ad8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57db8738b8fc69ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9ed2c4d9626df331",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9a3a8573040d8721",
+    "type": "split",
+    "children": [
+      {
+        "id": "07b3fa1a9880d12c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "916e32f1b55afa29",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f72596679bdfb874",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "stacked",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "79af012d25d3f61d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "4ed3685adadbeb35",
+    "type": "split",
+    "children": [
+      {
+        "id": "2af76cffff6a13bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ceaed2844c813305",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cfc326b3c61f4cfe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "357624fb4115d460",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "05c48e175aaa9659",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "index.md"
+              }
+            }
+          },
+          {
+            "id": "47fa8f0af34b72df",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "df8140db7e479179",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "57db8738b8fc69ad",
+  "lastOpenFiles": [
+    "articles/proofs-arguments-and-zero-knowledge/proofs_arguments_and_zero_knowledge.md",
+    "index.md",
+    "README.md",
+    "Untitled.canvas",
+    "2023-12-15.md",
+    "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md",
+    "articles/seminar-innovative-internet-technologies/attachments/NET-2022-07-1_08.pdf",
+    "articles/seminar-innovative-internet-technologies/attachments",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.png",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.PNG",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/2_polynomials.png",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf",
+    "articles/proofs-arguments-and-zero-knowledge/attachments",
+    "terms/zkp.md",
+    "terms/zkSNARK.md",
+    "Screenshot 2023-12-12 at 02.49.01.png.md",
+    "writing_instruction.md",
+    "articles/proofs-arguments-and-zero-knowledge/facts/fundamental_theorem_of_algebra.md",
+    "Screenshot 2023-12-12 at 02.49.01.png",
+    "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
+    "articles/proofs-arguments-and-zero-knowledge/proofs-arguments-and-zero-knowledge.md",
+    "articles/seminar-innovative-internet-technologies/NET-2022-07-1_08.pdf",
+    "terms/zkSTARK.md",
+    "terms/trapdoor_function.md",
+    "terms/elliptic_curve.md",
+    "terms/zkp.png",
+    "terms/non_interactive_zkp.png",
+    "terms/fiat_shamir.md",
+    "Screenshot 2023-12-13 at 22.58.06.png",
+    "articles/seminar-innovative-internet-technologies/seminar_innovative_internet_technologies.md~",
+    "articles/proofs-arguments-and-zero-knowledge/facts",
+    "articles/proofs-arguments-and-zero-knowledge/LDE.PNG",
+    "terms/polynomial_time_computation.md",
+    "terms/statement.md",
+    "terms/interactive.md",
+    "terms/trusted_setup.md",
+    "terms/succinct.md",
+    "().md",
+    "articles/proofs-arguments-and-zero-knowledge/proofs_args_and_zk.pdf",
+    "articles/proofs-arguments-and-zero-knowledge/2_polynomials.png",
+    "english/pronunciation.md",
+    "docs/plonk.md",
+    "terms/arguments.md",
+    "zkp.pdf",
+    "Recording 20231213212716.webm"
+  ]
+}
