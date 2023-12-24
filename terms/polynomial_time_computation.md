@@ -6,12 +6,12 @@ More specifically, a polynomial-time algorithm is one whose running time is poly
 In contrast, exponential time algorithms grow much faster and are generally considered impractical for large inputs.
 
 - **Examples:**
-    - Polynomial-time examples include algorithms like bubble sort (\(O(n^2)\)) or matrix multiplication (\(O(n^3)\)).
-    - Exponential-time examples include algorithms like brute-force search for certain combinatorial problems or many exact algorithms for NP-hard problems  \(O(2^n)\) or \(O(3^n)\).
+    - Polynomial-time examples include algorithms like bubble sort $O(n^2)$ or matrix multiplication $O(n^3)$.
+    - Exponential-time examples include algorithms like brute-force search for certain combinatorial problems or many exact algorithms for NP-hard problems $O(2^n)$ or $O(3^n)$.
 
 ---
 
-In the realm of ZKPs, the concept of polynomial time is crucial because it relates to the efficiency of proving and verifying statements without revealing any additional information. Zero-Knowledge Proofs allow one party (the prover) to convince another party (the verifier) that a certain statement is true without revealing any information beyond the validity of the statement itself. The concept of polynomial time comes into play when evaluating the computational complexity of the algorithms used in the ZKP protocols.
+In the realm of ZKPs, the concept of polynomial time is crucial because it relates to the efficiency of proving and verifying [statements](statement.md) without revealing any additional information. Zero-Knowledge Proofs allow one party (the prover) to convince another party (the verifier) that a certain [statement](statement.md) is true without revealing any information beyond the validity of the statement itself. The concept of polynomial time comes into play when evaluating the computational complexity of the algorithms used in the ZKP protocols.
 
 Here's why polynomial time is important in the context of ZKPs:
 
