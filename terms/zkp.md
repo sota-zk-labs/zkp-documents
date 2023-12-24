@@ -68,7 +68,7 @@ Normally converting from
 
 ![non_interactive_zkp.png](attachments/non_interactive_zkp.png)
 
-1. The statement over the common input is transformed into the input type usable by the zero knowledge proof.
+1. The [statement](statement.md) over the common input is transformed into the input type usable by the zero knowledge proof.
 2. Some low level representation like boolean or arithmetic circuits.
 3. This problem representation is then used by the prover to either do an interactive proof or to generate the
    non-interactive proof over the common input(3) and its private information(4) using the proving key of the setup
