@@ -1,3 +1,8 @@
+---
+Title: Notes
+Status: Done
+Level: 1
+---
 ### The setting 
 | Symbol | Definition              | Note |
 | ------ | ----------------------- | ---- |
