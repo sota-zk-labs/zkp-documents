@@ -19,9 +19,9 @@
 
 ## Definition
 
-- Problem: $x \in L$ ? Given language $L$ and input $x$
-- $x$ and $L$ are public
-- [witness](witness.md) is the secret information
+* Problem: $x \in L$ ? Given language $L$ and input $x$
+* $x$ and $L$ are public
+* [witness](witness.md) is the secret information
 
 A ZKP system consists of the above decision problem and two programs *verifier* and *prover* so that: the *verifier* can
 verify that [argument](arguments.md) without knowing the witness.
@@ -44,8 +44,8 @@ For every $x \notin L$ the *untruthful* prover can convince the verifier with **
 
 ### Zero knowledge
 
-- Perfect zero knowledge: The verifier cannot gain anything.
-- Computational zero knowledge: The verifier cannot gain anything polynomially bounded computation time except with a
+* Perfect zero knowledge: The verifier cannot gain anything.
+* Computational zero knowledge: The verifier cannot gain anything polynomially bounded computation time except with a
   negligible small probability difference.
 
 ## Types
@@ -68,7 +68,8 @@ Normally converting from
 
 ![non_interactive_zkp.png](attachments/non_interactive_zkp.png)
 
-1. The [statement](statement.md) over the common input is transformed into the input type usable by the zero knowledge proof.
+1. The [statement](statement.md) over the common input is transformed into the input type usable by the zero knowledge
+   proof.
 2. Some low level representation like boolean or arithmetic circuits.
 3. This problem representation is then used by the prover to either do an interactive proof or to generate the
    non-interactive proof over the common input(3) and its private information(4) using the proving key of the setup
@@ -78,4 +79,4 @@ Normally converting from
 
 ## Up-to-date technologies
 
-https://l2beat.com/scaling/summary#active
+<https://l2beat.com/scaling/summary#active>

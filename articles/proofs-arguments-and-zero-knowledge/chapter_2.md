@@ -117,7 +117,7 @@ $q_a$ is often called the univariate low-degree extension (LDE) of $a$
 
 ![Alt text](attachments/LDE.png)
 
-### Runtime:
+### Runtime
 
 O(n) additions, multiplications, and inversions over $F_p$.
 The reason is that $δ_i(r)$ can be compute from $δ_{i - 1}(r)$:

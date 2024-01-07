@@ -12,11 +12,14 @@
 
 ## Types
 
-IPs, MIPs, and PCPs/IOPs can all be transformed into succinct interactive arguments by combining them with a cryptographic primitive called a [polynomial commitment scheme](polynomial-commitment/000_polynomial_commitment.md). 
+IPs, MIPs, and PCPs/IOPs can all be transformed into succinct interactive arguments by combining them with a
+cryptographic primitive called a [polynomial commitment scheme](polynomial-commitment/000_polynomial_commitment.md).
 
-Transformations from linear PCPs to arguments are somewhat different, though closely related to certain polynomial commitment schemes.
+Transformations from linear PCPs to arguments are somewhat different, though closely related to certain polynomial
+commitment schemes.
 
-The interactive arguments can then be rendered non-interactive and publicly verifiable by applying a cryptographic technique called the FiatShamir transformation
+The interactive arguments can then be rendered non-interactive and publicly verifiable by applying a cryptographic
+technique called the FiatShamir transformation
 
 ### Interactive proofs (IPs)
 

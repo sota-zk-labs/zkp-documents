@@ -10,11 +10,9 @@ A function $e$ is considered a bilinear function or map if it satisfies the foll
 - Let $\mathbb{G}_1$, $\mathbb{G}_2$, and $\mathbb{G}_T$ be cyclic groups of order $n$. The bilinear pairing is
   represented as $e : \mathbb{G}_1 \times \mathbb{G}_2 \rightarrow \mathbb{G}_T$.
 
-    - **Bilinearity**: $e(aP, bQ) = e(P, Q)^{ab}$.
-
-    - **Non-degeneracy**: $e(P, Q) \neq 1$.
-
-    - **Computability**: $e(P, Q)$ can be computed efficiently.
+  - **Bilinearity**: $e(aP, bQ) = e(P, Q)^{ab}$.
+  - **Non-degeneracy**: $e(P, Q) \neq 1$.
+  - **Computability**: $e(P, Q)$ can be computed efficiently.
 
 ## Properties
 

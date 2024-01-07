@@ -8,7 +8,8 @@ For instance, taking $a = 2$ and $p = 7$, we get $2^7 = 128$, and $128 − 2 = 1
 
 ---
 
-If $a$ is not divisible by $p$ (i.e., if $a$ is [coprime](https://en.wikipedia.org/wiki/Coprime "Coprime") to $p$), then:
+If $a$ is not divisible by $p$ (i.e., if $a$ is [coprime](https://en.wikipedia.org/wiki/Coprime "Coprime") to $p$),
+then:
 
 > $a^{p-1} \equiv 1 \pmod {p}$
 
