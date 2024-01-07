@@ -2,12 +2,15 @@
 
 Explore the fascinating world of Elliptic Curve cryptography through the following resources:
 
-1. [Exploring Elliptic Curve Pairings](https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627) by Vitalik Buterin
-2. [A relatively easy to understand primer on elliptic curve cryptography](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) from Cloudflare's blog
-3. [Cryptography Algorithms](https://www.amazon.com/Next-generation-Cryptography-Algorithms-Explained-implementation/dp/1789617138/ref=sr_1_3?crid=2XXJF5O1P384O&keywords=Cryptography+Algorithms&qid=1702790040&sprefix=cryptography+algorithms%2Caps%2C330&sr=8-3) -
+1. [Exploring Elliptic Curve Pairings](https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627)
+   by Vitalik Buterin
+2. [Cloudflare's blog](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/)
+   An easy to understand primer on elliptic curve cryptography
+3. [Cryptography Algorithms](https://www.amazon.com/Next-generation-Cryptography-Algorithms-Explained-implementation/dp/1789617138)
    A comprehensive book on cryptography algorithms
 
 <!-- TOC -->
+
 * [Elliptic Curve (EC)](#elliptic-curve-ec)
   * [What Is An Elliptic Curve?](#what-is-an-elliptic-curve)
   * [Terminology](#terminology)
@@ -17,6 +20,7 @@ Explore the fascinating world of Elliptic Curve cryptography through the followi
   * [Calculations On An Elliptic Curve](#calculations-on-an-elliptic-curve)
   * [Elliptic Curve Pairings](#elliptic-curve-pairings)
   * [Applications](#applications)
+
 <!-- TOC -->
 
 ## What Is An Elliptic Curve?
@@ -42,7 +46,7 @@ You can imagine the third point as an infinite point lying at the infinite end o
 A curve has an "**order**"; there exists a number $n$ such that $P * n = O$ for any $P$.
 
 > ==$=> P∗(n+1)=P$==
-> 
+>
 > $=> P∗(7∗n+5)=P∗5$
 
 ### Generator Point
@@ -59,11 +63,11 @@ Theoretically, any point on a curve (except $O$) can be $g$; all that matters is
 > Given 2 points $A$ and $B$ on the elliptic curve, there is no simple/quick way to calculate $k$ so that: $A*k =
 > B$ [How much energy needed to break EC](http://eprint.iacr.org/2013/635.pdf)
 
-> $P + Q = R$  
+> $P + Q = R$
 
 ![Elliptic Addition](attachments/elliptic_addition.png)
 
-> $P + Q = O$ if and only if $x_{p} = x_{q}$, and $P + P = O$ if and only if $y_{p} = 0$.  
+> $P + Q = O$ if and only if $x_{p} = x_{q}$, and $P + P = O$ if and only if $y_{p} = 0$.
 
 ![Elliptic Vertical](attachments/elliptic_vertical.png)
 
@@ -73,7 +77,7 @@ Theoretically, any point on a curve (except $O$) can be $g$; all that matters is
 
 ## Applications
 
-- Encryption
-- Signatures
-- Deterministic threshold signatures
-- Quadratic arithmetic programs
+* Encryption
+* Signatures
+* Deterministic threshold signatures
+* Quadratic arithmetic programs

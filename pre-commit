@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Check for markdown files and run markdownlint.
+md_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.md$')
+[ -z "$md_files" ] && exit 0
+
+# Run markdownlint on the modified markdown files.
+markdownlint --fix $md_files
+
+# Exit with the appropriate status.
+exit $?
+

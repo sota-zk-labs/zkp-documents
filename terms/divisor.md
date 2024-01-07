@@ -24,7 +24,8 @@ specific divisor. Knowing the divisor (and thus the zeroes) is sufficient to rec
 
 ## Divisor of Rational Functions
 
-Divisors corresponding to [rational functions](rational_function.md) of curves ==always have a degree of $0$== (a consequence of Bezout's theorem).
+Divisors corresponding to [rational functions](rational_function.md) of curves ==always have a degree of $0$== (a
+consequence of Bezout's theorem).
 
 ## Example
 

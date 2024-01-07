@@ -16,7 +16,7 @@ See [bilinearity property](pairings_or_bilinear_map.md) for more details.
 
 ## Elliptic Curve Pairings
 
-#### Definition
+### Definition
 
 An elliptic curve pairing is a map $\mathbb{G_2} \times \mathbb{G_1} \rightarrow
 \mathbb{G_t}$, where:
@@ -36,7 +36,7 @@ The main property that it must satisfy is [bilinearity property](pairings_or_bil
 means that:
 
 > $e(P, Q + R) = e(P, Q) \cdot e(P, R)$
-> 
+>
 > $e(P + Q, R) = e(P, R) \cdot e(Q, R)$
 
 ### How does it work?
