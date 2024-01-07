@@ -122,7 +122,7 @@ The next step is to make sure that all three linear combinations have the same c
 values to the trusted setup: $$G * (A_i(t) + B_i(t) + C_i(t)) * b$$
 
 > [!NOTE]
-> b is another number that should be considered “toxic waste” and discarded as soon as the trusted setup is completed. 
+> b is another number that should be considered “toxic waste” and discarded as soon as the trusted setup is completed.
 
 We can then have the prover create a linear combination with these values with the same coefficients, and use the
 same [pairing](../../terms/elliptic_curve.md#elliptic-curve-pairings) trick as above to verify that this value matches up with the
@@ -164,6 +164,7 @@ e(\pi_a', G) &= e(\pi_a', G)
 $$
 
 So our equation is correct.
+
 # Generalize
 
 There is one more detail that we need to discuss. Most of the time we don’t just want to prove in the abstract that some solution

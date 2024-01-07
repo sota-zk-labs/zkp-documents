@@ -1,11 +1,12 @@
 # Discrete Logarithm
+
 In real numbers, discrete logarithm $log_ab = k$ such that $a^k = b$
 
 It get more interesting when we consider discrete logarithm in a finite field.
 
 For example:
 
-$a^k \equiv b$ (mod p) 
+$a^k \equiv b$ (mod p)
 
 In this case, we can only apply the equation from $a^k$ side and we can't do $log_ab$.
 
