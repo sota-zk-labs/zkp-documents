@@ -8,8 +8,12 @@ addAssignees: true
 reviewers:
   - Draply
   - haipro287
-  - sonntuet1997
+  - hduoc2003
+  - khoikhtn
   - ktokto313
+  - sonntuet1997
+  - thuan2172001
+  - Tranduy1dol
   - VanhGer
 
 # A list of keywords to be skipped the process that add reviewers if pull requests include it
