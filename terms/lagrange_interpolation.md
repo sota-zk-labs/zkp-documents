@@ -2,10 +2,11 @@
 
 > [!NOTE]
 > We can represent any polynomial through its set of points instead of its formula.
->
 
 > [!NOTE]
 > By avoiding the conversion of points into coefficients, we can potentially reduce time complexity by $O(\log n)$.
+
+This is a method of creating an unique polynomial of the lowest degree (at most $n-1$) that interpolate (go through) $n$ points in a graph.
 
 ## Univariate
 
@@ -29,7 +30,7 @@ where, for any $w = (w1,...w_v)$:
 $χ_w(x_1,...,x_v) := \prod_{i=1}^v (x_iw_i + (1 - x_i)(1-w_i)).$
 The set $\{χ_w: w \in \{0, 1\}^v\}$ is referred to as the set of **multilinear Lagrange basis polynomials**.
 
-### Evaluating the multilinear extension
+### Evaluating the Multilinear Extension
 
 There are two efficient methods for evaluating $\tilde f$ at any point $r \in F^v$.
 
