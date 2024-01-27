@@ -1,7 +1,7 @@
 # Sum-check Protocol
 
-Given a $v$-variate polynomial $g$ defined over a finite field $F$. The purpose of the sum-check protocol is for the prover to provide this
-sum for the verifier: $$H := \sum_{b_{1} \in \{0, 1\}} ... \sum_{b_{v} \in \{0, 1\}} g(b_{1},...,b_v)$$
+Given a $v$-variate polynomial $g$ defined over a finite field $F$. The purpose of the sum-check protocol is for the prover to provide
+this sum for the verifier: $$H := \sum_{b_{1} \in \{0, 1\}} ... \sum_{b_{v} \in \{0, 1\}} g(b_{1},...,b_v)$$
 **What does the verifier gain by using the sum-check protocol ?**
 Instead of compute $H$ via the equation above (runtime $2^v$), $V$ can use sum-check protocol to reduce runtime to:
 $O(v + \text{the cost to evaluate }g \text{ at a single input in }F^v)$. $P$ can compute all of its prescribed messages by evaluating
