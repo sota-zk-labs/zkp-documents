@@ -5,7 +5,7 @@
 The purpose of this post is not to serve as a full introduction to zk-SNARKs but rather to introduce the first half of the zk-SNARKs
 pipeline as follows.
 
-![Pipeline image](./attachments/pipeline.png)
+![Pipeline image](attachments/pipeline.png)
 
 The process unfolds in two phases. Initially, zk-SNARKs cannot directly address computational problems; they require
 conversion into the appropriate "form" known as a "quadratic arithmetic program" (QAP).
