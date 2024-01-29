@@ -10,4 +10,6 @@
 
 ## [Chapter 5](chapter_5.md)
 
+## [Chapter 6](chapter_6.md)
+
 ## [Chapter 19](chapter_19.md)
