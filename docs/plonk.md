@@ -46,6 +46,8 @@ $$Q_L (x)a (x) + Q_R (x)b (x) + Q_O (x)c (x) + Q_M (x)a (x)b (x) + Q_C (x) = 0$$
 
 The n-th roots of unity are employed, where $x^n = 1$.
 
+You can read about two context that used roots of unity it [here](https://hackmd.io/@benjaminion/bls12-381#Roots-of-unity).
+
 ### Copy Constraints
 
 To verify copy constraints, equations such as $a(5) = c(7)$ and $c(10) = c(12)$, PLONK
