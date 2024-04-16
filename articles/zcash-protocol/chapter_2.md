@@ -3,9 +3,11 @@ Title: Notations
 Status: Done
 Level: "1"
 ---
+
 # Chapter 2: Notations
 
 ---
+
 | Denote                                                                                           | Meaning                                                                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | $\mathbb{B}$                                                                                     | The type of bit values.                                                                                                                                                                                            |
@@ -70,6 +72,4 @@ Level: "1"
 | $⋆$                                                                                              | Used for variables that denote bit-sequence representations of group elements.                                                                                                                                     |
 | $\texttt{floor}(x)$                                                                              | The largest integer $\leq x$.                                                                                                                                                                                      |
 | $\texttt{ceiling}(x)$                                                                            | The smallest integer $\ge x$.                                                                                                                                                                                      |
-| $\texttt{bitlength}(x)$, for $x : \mathbb{N}$                                                    | The smallest integer $ℓ$ s.t $2^ℓ > x$.                                                                                                                                                                            | 
-
-
+| $\texttt{bitlength}(x)$, for $x : \mathbb{N}$                                                    | The smallest integer $ℓ$ s.t $2^ℓ > x$.                                                                                                                                                                            |

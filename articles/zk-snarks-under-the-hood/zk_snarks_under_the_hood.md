@@ -17,9 +17,11 @@ the [knowledge of exponent](../../terms/knowledge_of_exponent.md) assumption.
 This give zk-SNARKs somewhat shakier foundation than elliptic curve cryptography more generally — although it’s still sturdy enough
 that most cryptographers are okay with it.
 
-If we hide a secret variable $k$ away from the prover and supply $G * k, G * k * x, G * k * x^2,....$  in [trusted setup](../../terms/trusted_setup.md), 
+If we hide a secret variable $k$ away from the prover and supply $G * k, G * k * x, G * k * x^2,....$
+in [trusted setup](../../terms/trusted_setup.md),
 we can ensure a variable $R$ which $R * k = S$ the prover give us come from a
-linear combination a set of points on elliptic curve that prover calculated from the trusted setup and its polynomials which $Poly_1 * k = G_1$ and so on. 
+linear combination a set of points on elliptic curve that prover calculated from the trusted setup and its polynomials which
+$Poly_1 *k = G_1$ and so on.
 
 # Introduction
 
@@ -199,6 +201,7 @@ The basic reason why creating a proof is so computational expensive was because 
 original function need to be transform using elliptic curve operations if we want to make it zero-knowledge. This fact, together with
 nearly $O(n^2)$ time complexity of [fast Fourier transforms](../../terms/fast_fourier_transforms.md), means that proof creation takes
 about 20-40 seconds for a Zcash transaction.
+
 # Neglect the Need for Trusted Setup
 
 The process of a "trusted setup" can be negligible using a system of key like in Diffie–Hellman algorithm where each user insert their
