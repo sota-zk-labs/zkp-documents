@@ -1,4 +1,7 @@
-# Fermat's Little Theorem
+---
+cards-deck: terms
+---
+# Fermat's Little Theorem []()
 
 If $p$ is a [prime number](https://en.wikipedia.org/wiki/Prime_number "Prime number"), then for any integer $a$:
 
@@ -14,3 +17,5 @@ then:
 > $a^{p-1} \equiv 1 \pmod {p}$
 
 As an example, when $a = 2$ and $p = 7$, we have $2^6 = 64$, and $64 − 1 = 63 = 7 × 9$, which is a multiple of 7.
+
+[](1713280742566)
