@@ -1,6 +1,9 @@
+---
+cards-deck: terms
+---
 # Rational Function
 
-## Definition
+## Definition []()
 
 **A rational function** is a mathematical function expressed as the quotient of two polynomials. It takes the form:
 
@@ -17,3 +20,5 @@ Here are a few examples of rational functions:
 1. $f(x) = \frac{x^2 + 1}{x - 3}$
 2. $g(x) = \frac{2x - 5}{x^2 + x + 1}$
 3. $h(x) = \frac{1}{x}$
+
+[](1713280899610)

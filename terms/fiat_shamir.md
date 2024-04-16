@@ -1,9 +1,14 @@
+---
+cards-deck: terms
+---
 # Fiat Shamir
 
-## Purpose
+## Purpose []()
 
 The purpose of Fiat-Shamir transform is to take any [IP](ip.md) or [argument](arguments.md) $I$ and transform it into a
 non-interactive, publicly verifiable protocol $Q$ in the [ROM](random_oracle_model.md).
+
+[](1713280815388)
 
 ## Description
 
@@ -24,7 +29,9 @@ So, the verifier does not need to send any information to the prover, and the pr
 Fiat-Shamir is often implemented using a technique called: ==hash chaining==. This means that, instead of calculating $r_i$ by hashing
 all the preceding prover messages: $g_1,...g_i$, it chooses $r_i$ to be hash only of $(x, i, r_{i-1}, g_i)$.
 
-## Avoiding a Common Vulnerability
+[](1713280815392)
+
+## Avoiding a Common Vulnerability []()
 
 For the Fiat-Shamir transformation to be secure in settings where an adversary can choose the input $x$ to the [IP](ip.md) or
 [argument](arguments.md), it is essential that $x$ be appended to the list that is hashed in each round.
@@ -37,3 +44,5 @@ convinces the verifier to accept the claim that $C(x) = y$. Yet there is no guar
 satisfying $\tilde x(r) = c$. \
 In contrast, if $x$ is appended to the list that is hashed in each round, the $V$ can use it to check whether $x$ in each round is the
 same. Then, $V$ can believe that $x$ is the real input.
+
+[](1713280815395)
