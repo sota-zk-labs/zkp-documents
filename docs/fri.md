@@ -93,7 +93,7 @@ Verifier picks a random field element $r$, and uses it to "randomly combine" eve
 The prover then commits to the folded vector using a Merkle tree. The random combining
 technique is selected in a way that ensures the resulting folded vector will have half the degree of the original vector.
 
-This folding process is repeated util the degree should falls to 0.
+This folding process is repeated util the degree should fall to 0.
 
 At this point, the length of the folded vector is still $\rho^{-1} \geq 2$. However, since the degree should
 be 0, the prover can specify the folded vector with a single field element.
