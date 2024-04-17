@@ -4,45 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "54559b51e34d5ad8",
+        "id": "8c40735ce62909fb",
         "type": "tabs",
         "children": [
           {
-            "id": "b011539a74cb1468",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf"
-              }
-            }
-          },
-          {
-            "id": "c3bb6ac103450aaa",
+            "id": "a265245c40ded7ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "terms/zkp.md",
+                "file": "docs/plonk_implementation.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
           },
           {
-            "id": "df05769dbbafcdb0",
+            "id": "9989921b74f9a71f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
+                "file": "terms/structured_reference_string.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -66,12 +57,20 @@
             }
           },
           {
+            "id": "79af012d25d3f61d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
             "id": "f72596679bdfb874",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#card",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,20 +78,13 @@
                 "sortOrder": "alphabetical"
               }
             }
-          },
-          {
-            "id": "79af012d25d3f61d",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 387.5
   },
   "right": {
     "id": "4ed3685adadbeb35",
@@ -108,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
+                "file": "docs/plonk_implementation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
+                "file": "docs/plonk_implementation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,16 +140,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/proofs-arguments-and-zero-knowledge/chapter_2.md"
+                "file": "docs/plonk_implementation.md"
               }
-            }
-          },
-          {
-            "id": "47fa8f0af34b72df",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {}
             }
           },
           {
@@ -168,7 +152,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -184,57 +169,58 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "audio-recorder:Start/stop recording": false,
-      "obsidian-spaced-repetition:Review flashcards": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "df05769dbbafcdb0",
+  "active": "a265245c40ded7ab",
   "lastOpenFiles": [
-    "terms/quadratic_field.md",
-    "terms/pinocchio.md",
-    "terms/knowledge_of_exponent.md",
-    "terms/fermat_little_theorem.md",
-    "terms/elliptic_curve.md",
-    "terms/bilinear_map.md",
-    "terms/attachments/image02.gif",
-    "terms/attachments/elliptic_vertical.png",
-    "terms/attachments/elliptic_curve.png",
-    "terms/attachments/elliptic_addition.png",
-    "terms/attachments",
-    "articles/zk-snarks-under-the-hood/attachments/Pasted image 20231218234644.png",
-    "articles/zk-snarks-under-the-hood/attachments/Pasted image 20231218154719.png",
-    "articles/zk-snarks-under-the-hood/zk_snarks_under_the_hood.md",
-    "articles/zk-snarks-under-the-hood/attachments",
-    "articles/zk-snarks-under-the-hood",
-    "Untitled.md",
-    "articles/proofs-arguments-and-zero-knowledge/chapter_2.md",
-    "articles/proofs-arguments-and-zero-knowledge/proofs_arguments_and_zero_knowledge.md",
-    "presentations/~$zkp_overall.pptx",
-    "presentations/part-2/part_2.md",
-    "presentations/~$zkp_overall_2.pptx",
-    "presentations/~$zkp_overall 1.pptx",
-    "presentations/zkp_overall_2.pptx",
-    "presentations/part-2/steps.png",
-    "presentations/part-2/step_4.png",
-    "presentations/part-2/overall.png",
-    "presentations/part-2/attachments",
-    "presentations/~$Presentation1.pptx",
-    "presentations/part-2",
-    "export/part_2/plugin/chalkboard/README.md",
-    "export/part_2/plugin/chalkboard/img/blackboard.png",
-    "export/part_2/plugin/chart/README.md",
-    "export/part_2/plugin/customcontrols/README.md",
-    "export/part_2/plugin/menu/README.md",
-    "export/part_2/plugin/menu/CONTRIBUTING.md",
-    "attachments/Pasted/image/20231220104408.png.md",
-    "terms/zkp.md",
-    "terms/trusted_setup.md",
-    "terms/witness.md",
+    "docs/zk_porter.md",
+    "docs/attachments/merkle_tree.png",
+    "anki/anki.colpkg",
+    "anki",
+    "terms/zk-friendly-hash.md",
+    "terms/scalar_field.md",
+    "terms/group.md",
+    "terms/elliptic_curve_group.md",
+    "terms/commitment_scheme.md",
+    "terms/base_field.md",
+    "terms/attachments/inverse_dft.png",
+    "terms/attachments/fourier_transforms.png",
+    "terms/attachments/dft_matrix.png",
+    "terms/abelian.md",
+    "articles/proofs-arguments-and-zero-knowledge/chapter_12.md",
+    "docs/zk_comparison.md",
+    "terms/embedding_degree.md",
     "terms/succinct.md",
-    "terms/statement.md",
-    "terms/polynomial_time_computation.md",
-    "terms/interactive.md",
+    "terms/structured_reference_string.md",
+    "terms/rational_function.md",
+    "terms/np.md",
+    "terms/ip.md",
     "terms/fundamental_theorem_of_algebra.md",
-    "Untitled.canvas"
+    "terms/fiat_shamir.md",
+    "terms/fermat_little_theorem.md",
+    "docs/plonk.md",
+    "terms/divisor.md",
+    "terms/homogeneous_polynomial_or_projective_model.md",
+    "terms/arguments.md",
+    "docs/plonk_implementation.md",
+    "terms/holography.md",
+    "terms/bls12-381.md",
+    "attachments/Screenshot 2024-03-10 at 20.06.40.png",
+    "flashcards",
+    "presentations/~$~$plonk_implementation.pptx",
+    "Untitled 1.canvas",
+    "presentations/~$zk_machine_learning.pptx",
+    "presentations/~$zkp_gaming.pptx",
+    "presentations/~$zk_tech_overview.pptx",
+    "Untitled.canvas",
+    "presentations/~$zk_overall_meetup.pptx",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf",
+    "presentations/~$zkp_overall.pptx",
+    "presentations/gkr_protocol_depiction.png",
+    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.png",
+    "terms/attachments/fiat_shamir_depiction.png",
+    "articles/zk-snarks-under-the-hood/attachments/verification_steps.png",
+    "articles/quadratic-arithmetic-programs-from-zero-to-hero/attachments/pipeline.png"
   ]
 }
