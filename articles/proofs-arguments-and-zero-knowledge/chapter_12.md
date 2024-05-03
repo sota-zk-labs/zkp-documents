@@ -33,7 +33,8 @@ $\Sigma$-Protocol is a simple proof system that solves some specific problems:
 
 ### 12.2.1 $\Sigma$-Protocols
 
-A relation $R$ specifies a collection of “valid” instance-witness pairs $(h,w)$. For example, $h=g^w$ for discrete logarithm relation.\
+Read the definition of relation [here](../../terms/relation.md).
+
 A $\Sigma$-protocol is a 3-message public coin protocol in which both verifier and prover know a public input $h$, and prover knows a
 witness $w$ such that $(h,w)\in R$. Let denote the three messages by $(a, e, z)$, with the prover first sending $a$, the verifier
 responding with a challenge $e$ , and the prover replying with $z$. A $\Sigma$-protocol is required to satisfy perfect completeness,
@@ -50,7 +51,7 @@ additional properties:
   honest prover.
 
 **Remark 12.1.** Special soundness implies that, the honest-verifier zero-knowledge property of $\Sigma$-protocols only holds if the verifier is never allowed to run the prover more than once with the same first prover message $a$.
-### 12.2.2 Schnorr’s $\Sigma$-Protocol For the Discrete Logarithm Relation 
+### 12.2.2 Schnorr’s $\Sigma$-Protocol For the Discrete Logarithm Relation
 <a id="12.2.2"></a>
 
 The algorithm can be presented as follows:  
@@ -106,7 +107,7 @@ obtain a perfectly hiding, computationally binding commitment scheme. To ensure 
 simulator used to establish HVZK must be able to take as input not only the public input $h$, but also a challenge $e^{ * }$ , and
 output a transcript $(a, e^ * ,z)$.
 
-### Damgård’s commitment scheme
+### Damgård’s Commitment Scheme
 
 Let denote $(h,w)  \leftarrow{} Gen$, and declares $h$ to be both the committing key
 $ck$ and the verification key $vk$ (the "toxic waste" witness $w$ must be discarded because anyone who knows $w$ may be able to break
@@ -118,7 +119,7 @@ committer sends the opening information $e = m$ and $z$ to the verifier, who use
 to
 confirm that $(a, e,z)$ is an accepting transcript for public input $h$.
 
-### Pedersen commitment scheme
+### Pedersen Commitment Scheme
 
 By instantiating Damgård’s construction with Schnorr’s $\Sigma$-protocol for the discrete logarithm relation, one recovers a well-known
 commitment scheme due to Pedersen. In the traditional presentation, to commit to a message $m$, the committer picks a random exponent
