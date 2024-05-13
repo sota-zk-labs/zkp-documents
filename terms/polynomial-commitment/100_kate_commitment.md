@@ -3,7 +3,7 @@
 In response to the challenges posed in the [polynomial commitment](000_polynomial_commitment.md) context, the Kate
 Commitment (KZG) scheme is introduced.
 
-To prove that $P(z) = a$, the approach involves proving that $\frac{P(x) - a}{x - z}$ is a polynomial.
+To prove that $P(z) = a$, the approach involves proving that $Q = \frac{P(x) - a}{x - z}$ is a polynomial.
 
 The trusted-setup procedure generates a set of [elliptic curve](../elliptic_curve.md) points $G, G \cdot s, G \cdot s^2,
 \ldots, G \cdot s^n$, along with $G_2 \cdot s$, where $G$ and $G_2$ represent the generators of two elliptic curve
