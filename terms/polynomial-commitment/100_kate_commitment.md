@@ -21,6 +21,6 @@ For instance, $x^3 + 2x^2+5$ is represented by $(G \cdot s^3) + 2 \cdot (G \cdot
 This representation provides an "evaluation" of the polynomial at $s$, without revealing $s$.
 
 The notation $[P]$ is used to
-denote $P$ encoded in this manner (i.e., $G \cdot P(s)$). [Elliptic curve pairings](../elliptic_curve_pairings.md) can
+denote $P$ encoded in this manner (i.e., $G \cdot P(s)$ ). [Elliptic curve pairings](../elliptic_curve_pairings.md) can
 be used to check that $e([P] - G \cdot a, G_2) = e([Q], [x] -
 G_2 \cdot z)$ as a means of verifying $P(x) - a = Q(x) \cdot (x - z)$.
