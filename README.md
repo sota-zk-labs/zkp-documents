@@ -40,6 +40,14 @@ means hardest to read.
 
 - **presentations:** This directory contains all our presentation slides.
 
+- **anki:** This directory contains flashcards used to memorize ZKP-related contents.
+
+### How to create/sync Flashcards with Anki
+
+1. Follow the instruction written in [here](https://github.com/reuseman/flashcards-obsidian) to connect with Anki.
+2. Mark a header as flashcard by adding a hidden link `[]()` at the end of the header.
+3. Run `Flashcard: Generate for the current file`.
+
 ### Markdown Linter
 
 We use [markdownlint](https://github.com/DavidAnson/markdownlint/tree/main) to ensure consistency in our markdown files.

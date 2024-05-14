@@ -13,6 +13,21 @@ defined as follows:
 
 In essence, all mathematical operations are performed modulo $p$.
 
+### Multiplicative Group
+
+For an informal explanation, $G$ is a list of powers of some "generator" value.
+
+For example, in the finite field $F_{17}$, if we choose 4 as the generator,
+then $G = \lbrace 1, 4, 16, 13 \rbrace$. The reason is that:
+
+- $4^0 = 1$
+- $4^1 = 4$
+- $4^2=16$
+- $4^3= 64 \equiv 13$ (mod 17)
+
+Multiplicate group is cyclic. Its proof can be found in
+[here](https://math.stanford.edu/~conrad/210BPage/handouts/math210b-finite-mult-groups-cyclic.pdf)
+
 ### Order of The Multiplicative Group
 
 Given a positive integer $n$ and an integer

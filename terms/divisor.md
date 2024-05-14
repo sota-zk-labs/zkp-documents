@@ -1,8 +1,12 @@
+---
+cards-deck: terms
+---
+
 # Divisor
 
 [Link to Source](https://crypto.stackexchange.com/questions/55342/i-cannot-understand-the-concept-of-a-divisor-for-an-elliptic-curve)
 
-## Definition
+## Definition []()
 
 Divisors offer a method to track the locations where a function becomes zero or infinite.
 
@@ -10,6 +14,8 @@ $D = n_1P_1 + n_2P_2 + \ldots + n_kP_k$
 
 Here, $P_i$ represents [projective points](homogeneous_polynomial_or_projective_model.md) on the curve (some $P_i$ might
 be points at infinity), and $n_i$ are integers.
+
+[](1713276686871)
 
 ## How to Understand This?
 
@@ -26,6 +32,8 @@ specific divisor. Knowing the divisor (and thus the zeroes) is sufficient to rec
 
 Divisors corresponding to [rational functions](rational_function.md) of curves ==always have a degree of $0$== (a
 consequence of Bezout's theorem).
+
+[](1713276686875)
 
 ## Example
 

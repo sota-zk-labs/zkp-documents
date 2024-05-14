@@ -11,15 +11,15 @@ Explore the fascinating world of Elliptic Curve cryptography through the followi
 
 <!-- TOC -->
 
-* [Elliptic Curve (EC)](#elliptic-curve-ec)
-  * [What Is An Elliptic Curve?](#what-is-an-elliptic-curve)
-  * [Terminology](#terminology)
-    * [Point of Infinity](#point-of-infinity)
-    * [Order Of A Curve](#order-of-a-curve)
-    * [Generator Point](#generator-point)
-  * [Calculations On An Elliptic Curve](#calculations-on-an-elliptic-curve)
-  * [Elliptic Curve Pairings](#elliptic-curve-pairings)
-  * [Applications](#applications)
+- [Elliptic Curve (EC)](#elliptic-curve-ec)
+  - [What Is An Elliptic Curve?](#what-is-an-elliptic-curve)
+  - [Terminology](#terminology)
+    - [Point of Infinity](#point-of-infinity)
+    - [Order Of A Curve](#order-of-a-curve)
+    - [Generator Point](#generator-point)
+  - [Calculations On An Elliptic Curve](#calculations-on-an-elliptic-curve)
+  - [Elliptic Curve Pairings](#elliptic-curve-pairings)
+  - [Applications](#applications)
 
 <!-- TOC -->
 
@@ -31,6 +31,8 @@ The equation defining an elliptic curve is $y^{2} = x^{3} + ax + b$.
 
 > [!WARNING]  
 > An elliptic curve is not an ellipse.
+
+You should also read about [elliptic curve group](elliptic_curve_group.md).
 
 ## Terminology
 

@@ -1,1 +1,18 @@
-{}
+{
+  "flashcards-obsidian:generate-flashcard-current-file": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "'"
+    }
+  ],
+  "omnisearch:show-modal": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "]"
+    }
+  ]
+}

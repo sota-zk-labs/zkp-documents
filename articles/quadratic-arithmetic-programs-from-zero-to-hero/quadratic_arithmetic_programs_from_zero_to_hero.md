@@ -27,8 +27,8 @@ The flattened result for the given equation:
 
 ## R1CS
 
-Rank-1 Constraint System (R1CS) transforms each flattened equation into a constraint system 
-using the formula: $A . s * B . s - C . s = 0$, where A, B, C are vectors representing variable mappings, 
+Rank-1 Constraint System (R1CS) transforms each flattened equation into a constraint system
+using the formula: $A . s * B . s - C . s = 0$, where A, B, C are vectors representing variable mappings,
 and s is the full variable list.
 
 Transform the equation as follows:
@@ -98,7 +98,7 @@ that equals these values at $x=1, x=2, x=3,$ and $x=4$.
 
 So we have $f_{A1}(x)$ as the function represent the first column of matrix A.
 
-$f_{A2}(x)$ as the function represent the second column of matrix A. 
+$f_{A2}(x)$ as the function represent the second column of matrix A.
 
 And so on...
 
@@ -112,7 +112,8 @@ $h(x)$ as a function.
 
 For a faster check, divide $t(x)$ by a basic polynomial $Z$ = $(x-1)(x-2)(x-3)(x-4)$ to obtain $h(x)$ with no remainder.
 
-The system can be manipulated, for example, by using input values where matrix A equals matrix C, and matrix B has a scalar value (s) equal to 1. This effectively checks whether A multiplied by 1 is equal to C multiplied by 1.
+The system can be manipulated, for example, by using input values where matrix A equals matrix C, and matrix B has a scalar value (s)
+equal to 1. This effectively checks whether A multiplied by 1 is equal to C multiplied by 1.
 
 Thus, the process is not complete yet.
 

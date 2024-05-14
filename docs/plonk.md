@@ -1,3 +1,6 @@
+---
+cards-deck: docs
+---
 # PLONK: Permutations over Lagrange-Bases for Oecumenical Noninteractive Knowledge
 
 **Reference:** [PLONK Blog Post](https://vitalik.eth.limo/general/2019/09/22/plonk.html)
@@ -42,9 +45,13 @@ corresponding polynomials:
 
 $$Q_L (x)a (x) + Q_R (x)b (x) + Q_O (x)c (x) + Q_M (x)a (x)b (x) + Q_C (x) = 0$$
 
-### Roots of Unity
+### Roots of Unity []()
 
 The n-th roots of unity are employed, where $x^n = 1$.
+
+You can read about two context that used roots of unity it [here](https://hackmd.io/@benjaminion/bls12-381#Roots-of-unity).
+
+[](1713267785624)
 
 ### Copy Constraints
 
