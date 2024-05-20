@@ -10,6 +10,7 @@ $(A \cdot Z) \circ (B \cdot Z) = C \cdot Z$ where $Z = (W, x, 1)$.
 For example: 
 
 ![r1cs](attachments/r1cs_example.png)
+
 In this picture, we consider $S$ as our assignment $Z$ above. Here, the public
 input and output is $out$, the witness $W$ is $(sym_1, y, sym_2, x)$ and $one$ 
 is $1$.
