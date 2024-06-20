@@ -22,3 +22,8 @@ MD025:
   # RegExp for matching title in front matter
   front_matter_title: ""
 MD042: false
+MD033:  {
+  "allowed_elements": [
+    "a",
+  ]
+}
