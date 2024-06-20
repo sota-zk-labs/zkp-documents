@@ -58,7 +58,7 @@ Subset $\ohm$ has size $n = \rho^{-1}k$, comprises all $n$-th [roots of unity](.
 
 > [!NOTE]
 > The bigger $\rho^{-1}$ is:
-> 
+>
 > + The slower prover is
 > + The smaller verifier costs will be
 
@@ -113,13 +113,18 @@ Split $q(X)$ into "even and odd" parts in the following sense:
 + The degree of $q_{fold}$ is half the degree of $q$ itself.
 
 > [!NOTE]
-> 
+>
 > The commitment on $q_{fold}$ will not be over $\ohm$ but over $\ohm^2 = {\omega^2: \omega \in \ohm}$.
-> 
+>
 > $\ohm^2$ will also have to satisfy the $\lbrace \omega, -\omega \rbrace$ property, and so on.
 
 Let $x$ and $-x$ be $n$'th roots of unity and $z = x^2$. Then:
-$$q_{fold}(z) = \frac{r + x}{2x}q(x) + \frac{r - x}{-2x}q(-x)$$
+
+$$
+\begin{aligned}
+q_{fold}(z) = \frac{r + x}{2x}q(x) + \frac{r - x}{-2x}q(-x)
+\end{aligned}
+$$
 
 You can read all the mathematical
 transformations of the above equation [here](https://dev.risczero.com/proof-system/stark-by-hand#the-heavy-algebra).
@@ -140,7 +145,13 @@ The query phase consists of one round.
 
 For any degree-$d$ univariate polynomial $q$, the assertion "$q(r) = v$" is equivalent to the
 existence of a polynomial $w$ of degree at most $d$ such that:
-$$q(X) - v = w(X)(X - r)$$
+
+$$
+\begin{aligned}
+q(X) - v = w(X)(X - r)
+\end{aligned}
+$$
+
 So to confirm that $q(r) = v$, the verifier applies FRI's fold and query procedure to the function
 $(q(X) - v)(X - r)^{-1}$ using degree bound $d-1$.
 

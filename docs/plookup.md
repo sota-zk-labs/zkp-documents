@@ -47,7 +47,10 @@ Note that if $f \subset t$, then these ==sets of non-zero differences== are the 
 f_2, ..., f_n\rbrace$ is the set $\lbrace f_2-f_1, f_3-f_2, ..., f_n-f_{n-1}\rbrace$). For example, we have:
 
 $$
-t = \lbrace 1,4,8\rbrace, f=\lbrace 1,1,4,8,8,8\rbrace
+\begin{array}{rcl}
+t & = & \{ 1,4,8 \} \\
+f & = & \{ 1,1,4,8,8,8 \}
+\end{array}
 $$
 
 having the same difference set $\lbrace 3,4\rbrace$. However, the converse is not true (e.g. $f=\lbrace 1,5,5,8,8\rbrace$ with the
@@ -69,10 +72,14 @@ We denote by $s \in F^{ n+d }$ the sorted version of the *concatenation* of $f$ 
 Now, given $t \in \mathbb{F}^d , f \in \mathbb{F}^n , s \in \mathbb{F}^{n+d}$ , define bi-variate polynomials $F, G$ as
 
 $$
-\begin{array}{c}
-{{F(\beta,\gamma):=(1+\beta)^{n}\cdot\prod\limits_{i\in\lbrack n \rbrack}(\gamma+f_{i})\prod\limits_{i\in\lbrack d-1 \rbrack}(\gamma(
-1+\beta)+t_{i}+\beta t_{i+1})}} \\ \\
-{{G(\beta,\gamma):=\prod\limits_{i\in\lbrack n+d-1 \rbrack}(\gamma(1+\beta)+s_{i}+\beta s_{i+1})}}\end{array}
+\begin{array}{rcl}
+F(\beta, \gamma) & := &
+    (1 + \beta)^n
+        \cdot \prod\limits_{i \in \lbrack n \rbrack} (\gamma + f_i)
+        \cdot \prod\limits_{i \in \lbrack d-1 \rbrack} (\gamma(1 + \beta) + t_i + \beta t_{i+1}) \\ \\
+G(\beta, \gamma) & := &
+    \prod\limits_{i \in \lbrack n + d - 1 \rbrack} (\gamma(1 + \beta) + s_i + \beta s_{i+1})
+\end{array}
 $$
 
 where $F \equiv G$ if and only if:
@@ -84,17 +91,21 @@ where $F \equiv G$ if and only if:
 follows.
 
 $$
-\begin{array}{c}{{F(\beta,\gamma):=(1+\beta)^{n+d-1}\cdot\prod\limits_{i\in\lbrack n \rbrack}(\gamma+f_{i})\prod\limits_{i\in\lbrack
-d-1 \rbrack}(\gamma+\frac{t_{i}+\beta t_{i+1}}{1+\beta})}}\\ \\
-{{G(\beta,\gamma):=(1+\beta)^{n+d-1}\cdot\prod\limits_{i\in\lbrack n+d-1 \rbrack}(\gamma+\frac{s_{i}+\beta s_{i+1}}{1+\beta})
-}}\end{array}
+\begin{array}{rcl}
+F(\beta,\gamma) & := &
+    (1+\beta)^{n+d-1}\cdot
+        \prod\limits_{i\in [n]} \left(\gamma + f_{i}\right)
+\prod\limits_{i\in [d-1]} \left(\gamma + \frac{t_{i} + \beta t_{i+1}}{1+\beta}\right) \\ \\
+G(\beta,\gamma) & := &
+    (1+\beta)^{n+d-1}
+        \cdot\prod\limits_{i\in [n+d-1]} \left(\gamma + \frac{s_{i} + \beta s_{i+1}}{1+\beta}\right)
+\end{array}
 $$
-
 
 Each element of $f$ will correspond to a pair of adjacent elements in $s$,. Similarly, each pair of adjacent elements in $t$ will also
 correspond to a pair of adjacent elements in $s$. See the image below for better visualization.
 
-![](attachments/plookup_visualization.png)
+![plookup_visualization](attachments/plookup_visualization.png)
 
 Below is the biconditional proof for our theorem.
 
@@ -104,7 +115,9 @@ $s$ is sorted by $t$, so for each $j \in \lbrack d−1 \rbrack$, there is a dist
 t_j , t_{j+1}) = (s_i , s_{i+1}).$ The corresponding factors in $F, G$ are equal. That is,
 
 $$
-(\gamma + \frac{t_j + \beta t_{j+1}}{1 + \beta }) = (\gamma + \frac{s_i + \beta s_{i+1}}{1 + \beta })
+\begin{array}{rcl}
+\left(\gamma + \frac{t_j + \beta t_{j+1}}{1 + \beta}\right) & = & \left(\gamma + \frac{s_i + \beta s_{i+1}}{1 + \beta}\right)
+\end{array}
 $$
 
 Let $P' \subset \lbrack n + d − 1 \rbrack$ the set of these $d − 1$ indices $i$ , and let $P := \lbrack n + d − 1 \rbrack \ \backslash
@@ -114,10 +127,12 @@ each $i
 \in P, s_i = f_{j(i)}$ . For each $i \in P$, the corresponding factor of $G$, will be
 
 $$
-\gamma + \frac{s_i + \beta s_{i+1}}{1 + \beta } = \gamma + s_i = \gamma + f_{j(i)},
+\begin{array}{rcl}
+\gamma + \frac{s_i + \beta s_{i+1}}{1 + \beta } & = & \gamma + s_i = \gamma + f_{j(i)}
+\end{array}
 $$
 
-2. Assume $F \equiv G$ as polynomials in $\mathbb{F}\lbrack \beta , \gamma \rbrack$
+- Assume $F \equiv G$ as polynomials in $\mathbb{F}\lbrack \beta , \gamma \rbrack$
 
 Then $F \equiv G$ also as elements of $\mathbb{F}(\beta )\lbrack \gamma \rbrack$. Since $\mathbb{F}(\beta )\lbrack \gamma \rbrack$ is a
 unique factorization domain (more details in [Appendix B](#appendix-B)), we know that the linear factors of $F, G$, as written above
@@ -125,7 +140,9 @@ must be equal. Thus, for each $i \in \lbrack d−1 \rbrack, G$ must have a facto
 In other words, for some $j \in \lbrack n+d−1 \rbrack,$
 
 $$
-(\gamma + \frac{t_i + \beta t_{i+1}}{1 + \beta }) = (\gamma + \frac{s_j + \beta s_{j+1}}{1 + \beta })
+\begin{array}{rcl}
+(\gamma + \frac{t_i + \beta t_{i+1}}{1 + \beta }) & = & (\gamma + \frac{s_j + \beta s_{j+1}}{1 + \beta })
+\end{array}
 $$
 
 which implies
@@ -134,10 +151,20 @@ the set of these $d − 1$ indices $j$. For any index $j \in \lbrack n + d − 1
 “coming from $f$” in $F$ that equals the corresponding factor in $G$. More precisely, for such $j$ there exists $i \in \lbrack n
 \rbrack$ such that
 
-$$\gamma + f_i = \gamma + \frac{s_j + \beta s_{j+1}}{1 + \beta },$$
+$$
+\begin{array}{rcl}
+\gamma + f_i & = & \gamma + \frac{s_j + \beta s_{j+1}}{1 + \beta }
+\end{array}
+$$
 
 or equivalently
-$$f_i + \beta f_i = s_j + \beta s_{j+1}$$
+
+$$
+\begin{array}{rcl}
+f_i + \beta f_i & = & s_j + \beta s_{j+1}
+\end{array}
+$$
+
 which implies $f_i = s_j = s_{j+1}$
 
 Thus, we know that whenever consecutive values in $s$ are different, they are exactly equal to two consecutive values in $t$, and all
@@ -149,21 +176,21 @@ We have the above theorem, the rest is to prove $F \equiv G$, using a “grand p
 to [PLONK's Permutation Argument](#appendix-A). It will be convenient to assume $d = n+1$ (if $d \leq n$ then pad $t$ with $n − d + 1$
 repetitions of the last element).
 
-**Protocol**
-
-1. Let $s \in \mathbb{F}^{2n+1}$ be the vector that is $(f, t)$ sorted by $t$. We represent $s$ by $h_1, h_2 \in \mathbb{F}_ {\lt
+- Let $s \in \mathbb{F}^{2n+1}$ be the vector that is $(f, t)$ sorted by $t$. We represent $s$ by $h_1, h_2 \in \mathbb{F}_ {\lt
    n+1}\lbrack X
    \rbrack$ as follows. $h_1(g^i ) = s_i$ for $i \in \lbrack n + 1 \rbrack$; and $h_2(g^i ) = s_{n+i}$ for each $i \in \lbrack n + 1
    \rbrack$. So $h_1$ represents $\lbrace s_1, s_2, ..., s_{n+1}\rbrace$, $h_2$ represents $\lbrace s_{n+1}, s_{n+2}, ..., s_
    {2n+1}\rbrace$ which mean:
 
 $$
-h_1(g^{n+1}) = h_2(g) = s_{n+1}
+\begin{array}{rcl}
+h_1(g^{n+1}) & = & h_2(g) = s_{n+1}
+\end{array}
 $$
 
-2. ${\bf P}$ computes the polynomials $h_1, h_2$ and sends them to the ideal party ${\bf I}$
-3. ${\bf V}$ chooses random $\beta , \gamma \in \mathbb{F}$ and sends them to ${\bf P}$
-4. ${\bf P}$ computes a polynomial $Z \in \mathbb{F}_{\lt n+1}\lbrack X \rbrack$ that aggregates the value $F(\beta , \gamma  )/G(
+- ${\bf P}$ computes the polynomials $h_1, h_2$ and sends them to the ideal party ${\bf I}$
+- ${\bf V}$ chooses random $\beta , \gamma \in \mathbb{F}$ and sends them to ${\bf P}$
+- ${\bf P}$ computes a polynomial $Z \in \mathbb{F}_{\lt n+1}\lbrack X \rbrack$ that aggregates the value $F(\beta , \gamma  )/G(
    \beta ,
    \gamma  )$ where $F, G$ are as described above. Specifically, we let
 
@@ -172,23 +199,28 @@ $\quad \quad$**a**. $Z(g) = 1$
 $\quad \quad$**b**. For $2 \leq i \leq n$
 
 $$
-Z({\bf g}^{i})=\frac{(1+\beta)^{i-1}\prod_{j\lt i}(\gamma+f_{j})\cdot\prod_{1\leq j\lt i}(\gamma(1+\beta)+t_{j}+\beta t_{j+1})}{\prod_
-{1\leq j\lt i}(\gamma(1+\beta)+s_{j}+\beta s_{j+1})(\gamma(1+\beta)+s_{n+j}+\beta s_{n+j+1})},
+\begin{array}{rcl}
+Z({\bf g}^{i}) & = & \frac{(1+\beta)^{i-1} \cdot \prod\limits_{j < i} (\gamma + f_j) \cdot
+\prod\limits_{1 \leq j < i} (\gamma(1+\beta) + t_j + \beta t_{j+1})}
+{\prod\limits_{1 \leq j < i} (\gamma(1+\beta) + s_j + \beta s_{j+1}) (\gamma(1+\beta) + s_{n+j} + \beta s_{n+j+1})}
+\end{array}
 $$
 
 $\quad \quad$ or equivalently
 
 $$
-Z(g^{i+1})=Z(g^{i})\times\frac{(1+\beta)(\gamma+f_{i})(\gamma(1+\beta)+t_{i}+\beta t_{i+1})}{(\gamma(1+\beta)+s_{i}+\beta s_{i+1})(
-\gamma(1+\beta)+s_{n+i}+\beta s_{n+i+1})},
+\begin{array}{rcl}
+Z(g^{i+1}) & = & Z(g^{i}) \times \frac{(1+\beta)(\gamma + f_i)(\gamma(1+\beta) + t_i + \beta t_{i+1})}
+{(\gamma(1+\beta) + s_i + \beta s_{i+1})(\gamma(1+\beta) + s_{n+i} + \beta s_{n+i+1})},
+\end{array}
 $$
 
 $\quad \quad$ and
 
 $\quad \quad$**c**. $Z(g^{n+1})=1$
 
-5. ${\bf P}$ sends $Z$ to ${\bf I}$.
-6. ${\bf V}$ checks that $Z$ is indeed of the form described above, and that $Z(g^{n+1}) = 1$. More precisely, ${\bf V}$ checks the
+- ${\bf P}$ sends $Z$ to ${\bf I}$.
+- ${\bf V}$ checks that $Z$ is indeed of the form described above, and that $Z(g^{n+1}) = 1$. More precisely, ${\bf V}$ checks the
    following identities for all $x \in H$.
 
 $\quad \quad$**a**. $L_1({\bf x})(Z({\bf x}) − 1) = 0.$
@@ -196,10 +228,12 @@ $\quad \quad$**a**. $L_1({\bf x})(Z({\bf x}) − 1) = 0.$
 $\quad \quad$**b**.
 
 $$
-\begin{array}{c}{{({\bf x}-{\bf g}^{n+1})Z({\bf x})(1+\beta)(\gamma+f({\bf x})(\gamma(1+\beta)+t({\bf x})+\beta t({\bf
-g}\cdot{\bf x}))}} \\
-{{=({\bf x}-{\bf g}^{n+1})Z({\bf g}\cdot{\bf x})(\gamma(1+\beta)+h_{1}({\bf x})+\beta h_{1}({\bf g}\cdot{\bf x}))(\gamma(1+\beta)+h_
-{2}({\bf x})+\beta h_{2}({\bf g}\cdot{\bf x}))}}\end{array}
+\begin{array}{rl}
+& ({\bf x}-{\bf g}^{n+1})Z({\bf x})(1 + \beta)(\gamma + f({\bf x}))(\gamma(1 + \beta) + t({\bf x}) + \beta t({\bf g} \cdot {\bf x})) \\
+= & ({\bf x} - {\bf g}^{n+1})Z({\bf g} \cdot {\bf x})
+    (\gamma(1 + \beta) + h_{1}({\bf x}) + \beta h_{1}({\bf g} \cdot {\bf x}))
+    (\gamma(1 + \beta) + h_{2}({\bf x}) + \beta h_{2}({\bf g} \cdot {\bf x}))
+\end{array}
 $$
 
 $\quad \quad$**c.** $L_{n+1}({\bf x})(h_1({\bf x}) − h_2({\bf g \cdot x})) = 0.$
@@ -216,14 +250,14 @@ Suppose $\bf P$ has $\omega$ polynomials $f_1, f_2, ..., f_{\omega} \in {\mathbb
 $t^{ * } \in (\mathbb{F}^\omega)^d$ of $d$ rows and $\omega$ columns, and to prove that $\forall j \in \lbrack n \rbrack, (f_1(g^j),
 f_2(g^j), ..., f_{\omega}(g^j)) \in t^{ * }$, we can use random folding.
 
-1. For each $i \in \lbrack \omega \rbrack$ we will include in the set of preprocessed polynomials $t_i \in \mathbb{F}_ {\lt d}\lbrack X
+- For each $i \in \lbrack \omega \rbrack$ we will include in the set of preprocessed polynomials $t_i \in \mathbb{F}_ {\lt d}\lbrack X
    \rbrack$
    with $t_i(g^j ) = t^{ * }_ {i,j}$ for each $j \in \lbrack d \rbrack.$
-2. $\bf V$ selects a random number $\alpha$ to send to $\bf P$
-3. $\bf P$ recalculates the polynomial and data that require lookup
-    - $f = \sum_{i \in \lbrack \omega \rbrack}{\alpha^i f_i}$
-    - $t = \sum_{i \in \lbrack \omega \rbrack}{\alpha^i t_i}$
-4. Using $f$ and $t$ for the previous lookup process
+- $\bf V$ selects a random number $\alpha$ to send to $\bf P$
+- $\bf P$ recalculates the polynomial and data that require lookup
+  - $f = \sum_{i \in \lbrack \omega \rbrack}{\alpha^i f_i}$
+  - $t = \sum_{i \in \lbrack \omega \rbrack}{\alpha^i t_i}$
+- Using $f$ and $t$ for the previous lookup process
 
 A natural use case for this vector lookup primitive is a key-value setting, where we have a function $f$ with $\omega − 1$ inputs, and
 wish to verify a vector is of the form $(x_1, . . . , x_{\omega−1}, f(x_1, . . . , x_{\omega−1}))$ for some input $(x_1, . . . , x_
@@ -261,8 +295,8 @@ says [Flookup](https://eprint.iacr.org/2022/1447.pdf).
 For two sequences of length $n$, $(f_1,f_2,…,f_n)$ and $(g_1,g_2,…,g_n)$, the prover wants to convince the verifier that $g_i=f_
 {\sigma (i)}$ for $1\leq i\leq n$ for a permutation $\sigma$ that is known to both parties. It proceeds as follows:
 
-1. The verifier sends random $\beta , \gamma \in \mathbb{F}$ to the prover.
-2. The prover constructs two new sequences $(f_1,f_2,…,f_n)$ and $(g_1,g_2,…,g_n)$ where
+- The verifier sends random $\beta , \gamma \in \mathbb{F}$ to the prover.
+- The prover constructs two new sequences $(f_1,f_2,…,f_n)$ and $(g_1,g_2,…,g_n)$ where
 
 $$
 \begin{aligned}
@@ -271,20 +305,24 @@ g'_i=g_i+\beta ⋅\sigma (i)+\gamma
 \end{aligned}
 $$
 
-3. The prover then sends a sequence defined recursively as
+- The prover then sends a sequence defined recursively as
 
 $$
+\begin{aligned}
 s_0 = 1, \ s_i = s_{i-1} \cdot \frac{f'_i}{g'_i}
+\end{aligned}
 $$
 
 This is the "grand product" in our grand product argument, where the name comes from the fact that this recursion is equivalently
 defined as
 
 $$
+\begin{aligned}
 s_i = \frac{\prod_{1 \leq j \leq i}{{f'}_ {j}}}{\prod_{1 \leq j \leq i}{g'_j}}
+\end{aligned}
 $$
 
-4. The verifier checks that the following equations hold on the set $\omega ,\omega ^2,…,\omega ^n$ (the set we used to define the
+- The verifier checks that the following equations hold on the set $\omega ,\omega ^2,…,\omega ^n$ (the set we used to define the
    interpolation of the sequences)
 
 $$
