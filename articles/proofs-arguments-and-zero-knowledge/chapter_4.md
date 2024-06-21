@@ -2,7 +2,9 @@
 Title: Interactive Proofs
 Status: Done
 Level: "5"
+comments: true
 ---
+
 # Chapter 4 - Interactive Proofs
 
 In this chapter, our primary focus is on the Sum-check protocol and [GKR protocol](../../terms/gkr_protocol.md). While other
@@ -24,7 +26,13 @@ the function on $\{0, 1\}^n$ that the formula computes.
 **GOAL**:  compute the number of satisfying assignments of $\phi$:  $\sum_{x \in \{0, 1\}^n} \phi (x)$
 
 **Interactive proof for # SAT**
-Define $g$ as an extension of $\phi$, $$\sum_{x \in \{0, 1\}^n} g(x)  = \sum_{x \in \{0, 1\}^n} \phi(x)$$
+Define $g$ as an extension of $\phi$,
+
+$$
+\begin{aligned}
+\sum_{x \in \{0, 1\}^n} g(x)  = \sum_{x \in \{0, 1\}^n} \phi(x)
+\end{aligned}
+$$
 
 Turn $\phi$ into an *arithmetic circuit* $\psi$ over $F$ that computes the extension $g$ of $\phi$. The process of replacing the
 Boolean formula $\phi$ to $\psi$ is called ==arithmetization==.
@@ -37,13 +45,13 @@ Replace:
 
 Number of gates in $\psi$ at most $3S$.
 
-For the polynomial $g$ computed by $\psi$ ,  $\sum^n_{i=1}deg_i(g) \le S$.
+For the polynomial $g$ computed by $\psi$ , $\sum^n_{i=1}deg_i(g) \le S$.
 
 The cost:
 
-| Communication         | Rounds | $V$ time | $P$ time |
-| --------------------- | ------ | -------- | -------- |
-| $O(S)$ field elements | $n$       | $O(S)$         | $O(S^2 \cdot 2^n)$         |
+| Communication         | Rounds | $V$ time | $P$ time           |
+|-----------------------|--------|----------|--------------------|
+| $O(S)$ field elements | $n$    | $O(S)$   | $O(S^2 \cdot 2^n)$ |
 
 **IP = PSPACE**
 See [Adleman's Theorem](../../terms/adleman_theorem.md)
@@ -61,16 +69,36 @@ be the adjacency matrix of $G$.
 
 **Output**: the number of unordered node triples which are all connected to each other.
 
-We view $A$ as a function $f_A$ :  $\{0, 1\}^{logn} × \{0, 1\}^{logn}  \rightarrow \{0, 1\}$.
-The number of triangles: $$\Delta = \frac{1}{6} \sum_{x, y,z \in \{0,1\}^{logn}} f_A(x, y)· f_A(y, z)· f_A(x, z)$$ Let $F$ be a finite
+We view $A$ as a function $f_A$ :  $\{0, 1\}^{logn} × \{0, 1\}^{logn} \rightarrow \{0, 1\}$.
+The number of triangles:
+
+$$
+\begin{aligned}
+\Delta = \frac{1}{6} \sum_{x, y,z \in \{0,1\}^{logn}} f_A(x, y)· f_A(y, z)· f_A(x, z)
+\end{aligned}
+$$
+
+Let $F$ be a finite
 field of size $p \ge 6n^3$. Recalling that $\tilde f_A$ is the [MLE](../../terms/uniqueness_of_multilinear_extension.md) of $f_A$ over
 $F$, define the ($3logn$)-variate polynomial $g$:
-$$g(X, Y, Z) = \tilde f_A(X, Y) \cdot \tilde f_A(Y, Z) \cdot \tilde f_A(Z, X)$$.
+
+$$
+\begin{aligned}
+g(X, Y, Z) = \tilde f_A(X, Y) \cdot \tilde f_A(Y, Z) \cdot \tilde f_A(Z, X)
+\end{aligned}
+$$
+
 So we have:
-$$6\Delta = \sum_{x, y, z \in \{0, 1\}^{logn}} g(x, y, z)$$
+
+$$
+\begin{aligned}
+6\Delta = \sum_{x, y, z \in \{0, 1\}^{logn}} g(x, y, z)
+\end{aligned}
+$$
+
 Then, we apply [sum-check protocol](../../terms/sumcheck_protocol.md) to compute $\Delta$.
 
-**Cost**:
+### Cost
 
 - $3logn$ round. Communication cost is O($logn$).
 - Verifiers run at O($n^2$).
@@ -84,14 +112,22 @@ If [Freivalds' Algorithm](chapter_2.md#Freivalds'%20Algorithm%20`f'rei%20volz`) 
 step the product matrix must be sent, necessitating $\Omega(n^2)$ communication. In $MATMULT$, $P$ does not need to send the full
 answer matrix and the communication cost is O($log n$).
 
-**Advantages:**
+### Advantages
 
 - It does not care how the prover finds the right answer.
 - The prover in the protocol of this section simply finds the right answer and then does O($n^2$) extra work to prove correctness.
 
-**The protocol**
+#### The protocol
+
 First, we interpret $A$, $B$, and $C$ as the functions $f_A, f_B, f_C$ mapping $\{0,1\}^{logn} ×\{0,1\}^{logn}$ to $F$:
-$$f_A(i_1,...,i_{logn}, j_1,...,j_{logn}) = A_{ij}$$ and $\tilde f_A, \tilde f_B, \tilde f_C$ denote the
+
+$$
+\begin{aligned}
+f_A(i_1,...,i_{logn}, j_1,...,j_{logn}) = A_{ij}
+\end{aligned}
+$$
+
+and $\tilde f_A, \tilde f_B, \tilde f_C$ denote the
 [MLEs](../../terms/uniqueness_of_multilinear_extension.md) of their.
 We can see this protocol as a protocol for evaluating $\tilde f_C$ at any given point ($r1,r2$).
 
@@ -101,15 +137,26 @@ We also have: $\tilde f_C(x,y) = \sum_{b \in \{0, 1\}^{logn}} \tilde f_A(x, b) �
 vector $i, j \in \{0, 1\}^{logn}$).
 Hence, we compute $\tilde f_C(r1, r2)$ by applying the [sum-check protocol](../../terms/sumcheck_protocol.md) to the ($logn$)-variate
 polynomial:
-$$g(z):= \tilde f_A(r_1, z) · \tilde f_B(z, r_2)$$
 
-**Discussion of costs**
+$$
+\begin{aligned}
+g(z):= \tilde f_A(r_1, z) · \tilde f_B(z, r_2)
+\end{aligned}
+$$
+
+#### Discussion of costs
 
 - Since $g$ is a ($logn$)-variate polynomial of degree 2, so the total communication is O($logn$).
 - $V$: $g$ can be evaluate at any point in O($n^2$) time.
 - $P$: because in each round $k$, $P$ sends a quadratic polynomial $g_k(X_k)$ claim to equal:
-$$\sum_{b_{k+1} \in \{0, 1\}}...\sum_{b_{logn} \in \{0, 1\}} g(r_{3, 1},...r_{3,k-1},X_k,b_{k+1},...b_{logn})$$ Then, $P$ just sends
-the value $g_k(0), g_k(1),g_k(2)$. So there are: $3 \times n / 2^k$ points in round $k$.
+
+$$
+\begin{aligned}
+\sum_{b_{k+1} \in \{0, 1\}}...\sum_{b_{logn} \in \{0, 1\}} g(r_{3, 1},...r_{3,k-1},X_k,b_{k+1},...b_{logn})
+\end{aligned}
+$$
+
+Then, $P$ just sends the value $g_k(0), g_k(1),g_k(2)$. So there are: $3 \times n / 2^k$ points in round $k$.
 
 There are 3 methods to perform these evaluations:
 
@@ -124,34 +171,59 @@ $\Theta (n^2)$ per round and the total runtime is O($nlogn$)
 
 ### Method 3
 
-**Informal fact:** If two entries $(i, j), (i', j') \in \{0, 1\}^{logn} \times \{0, 1\}^{logn}$  agree in their last $l$ bits, then
+**Informal fact:** If two entries $(i, j), (i', j') \in \{0, 1\}^{logn} \times \{0, 1\}^{logn}$ agree in their last $l$ bits, then
 $A_{i,j}$ and $A_{i',j'}$ contribute to the same three points in each of final $l$ rounds of the protocol.
 The specific points that they contribute to in each round $k \ge log(n) - l$ :
-$$z=(r_{3,1},...r_{3, k-1}, {0, 1, 2},b_{k+1},...,b_{logn})$$ where $(b_{k+1},...b_{logn})$ equal the trailing bits of
+
+$$
+\begin{aligned}
+z=(r_{3,1},...r_{3, k-1}, {0, 1, 2},b_{k+1},...,b_{logn})
+\end{aligned}
+$$
+
+where $(b_{k+1},...b_{logn})$ equal the trailing bits of
 $(i,j), (i', j')$. $P$ can treat
 $(i', j')$ and $(i, j)$ as a single entity. There are only $n^2/2^k$ entities after $k$ variables have been bound, then the total work
-that $P$ does is: $$O(\sum^{2logn}_{k=1} n^2/2^k)= O(n^2)$$
+that $P$ does is:
+
+$$
+\begin{aligned}
+O(\sum^{2logn}_{k=1} n^2/2^k)= O(n^2)
+\end{aligned}
+$$
 
 ## 4.5 Applications of the Super-Efficient MATMULT IP
 
 ### 4.5.1 For Counting Triangles
 
 Let $A$ is the adjacency matrix of a simple graph. The formula to compute number of triangles in the graph is:
-$$6\Delta = \sum _ {i,j\in\{1,...,n\}}(A^2) _ {i,j} \cdot A _ {ij}$$
+
+$$
+\begin{aligned}
+6\Delta = \sum _ {i,j\in\{1,...,n\}}(A^2) _ {i,j} \cdot A _ {ij}
+\end{aligned}
+$$
 
 which $\Delta$ is the number of triangles, $(A^2)_{i,j}$ counts the number of common neighbors of vertices $i$ and $j$.
 It is possible to give an $IP$ for counting triangles in which $P$ essentially establishes that he correctly materialized $A^2$ and
 use it to generate output via the formula above.
 
-**The protocol**
+#### The protocol
 
 As in [Section 4.3](chapter_4.md#4.3%20Second%20Application%20A%20Simple%20IP%20for%20Counting%20Triangles%20in%20Graphs), the formula
-above equals $$\sum_{x,y \in \{0,1\}^{logn}} \tilde f_{A^2}(x, y)\cdot f_{A}(x, y)$$
+above equals
+
+$$
+\begin{aligned}
+\sum_{x,y \in \{0,1\}^{logn}} \tilde f_{A^2}(x, y)\cdot f_{A}(x, y)
+\end{aligned}
+$$
+
 At the end of this protocol, the **Verifier** can evaluate $\tilde f_A(r1,r2)$ in $O(n^2)$ time using
 [VSBW13](../../terms/lagrange_interpolation.md#VSBW13) and $\tilde f_{A^2}(r1, r2)$ using **MATMULT** in
 [Section 4.4](chapter_4.md#4.4%20Third%20Application%20Super-Efficient%20IP%20for%20MATMULT%20(matrix%20multiplication)).
 
-**Costs of the Counting Triangles Protocol**
+#### Costs of the Counting Triangles Protocol
 
 - Communication and Rounds: $O(logn)$
 - Verifier runtime: $O(n^2)$
@@ -165,18 +237,18 @@ points:  $b, c \in F^{logn}$.
 We cover a simple 1-round IP that reduces the evaluation of $\tilde W(b)$ and $\tilde W(c)$ to the evaluation of $\tilde W(r)$ with
 $r \in F^{logn}$.
 
-**The protocol**
+#### The protocol
 
 Let $l: F \rightarrow F^{logn}$ be some canonical line passing through $b$ and $c$. For example: $l(0) = b$ and $l(1) = c$. $P$ sends
 a univariate polynomial $q$ of degree at most $logn$ that is claimed to be $\tilde W \circ l$, the
-[restriction](../../terms/restriction.md) of $\tilde W$ to $l$.  
+[restriction](../../terms/restriction.md) of $\tilde W$ to $l$.
 
 **Verifier** interprets $q(0)$ and $q(1)$ as the claims to the values of $\tilde W(b)$ and $\tilde W(c)$. $V$ picks a random point
 $r^∗ \in F$, sets $r = l(r^∗)$, and interprets $q(r^∗)$ as the prover’s claim as to the value of $\tilde W(r)$.
 
 **Claim 4.6:** Let $\tilde W$ be a multilinear polynomial over $F$ in $logn$ variables. If $q = \tilde W \circ l$, then
-$q(0) = \tilde W(b)$,  $q(1) = \tilde W(c)$, and $q(r^∗) = \tilde W(l(r^∗))$ for all $r^∗ \in F$. Meanwhile, if
-$q \ne  \tilde W \circ l$, then with probability at least $1 - logn/|F|$ over a randomly chosen
+$q(0) = \tilde W(b)$, $q(1) = \tilde W(c)$, and $q(r^∗) = \tilde W(l(r^∗))$ for all $r^∗ \in F$. Meanwhile, if
+$q \ne \tilde W \circ l$, then with probability at least $1 - logn/|F|$ over a randomly chosen
 $r^∗ \in F$, $q(r^∗) \ne \tilde W (l(r^∗))$.
 
 This is the schematic of how to reduce verifying claims:
@@ -196,7 +268,14 @@ Suppose that a **Verifier** wants to evaluate a single entry of the powered matr
 **IP** of  [Section 4.4](chapter_4.md#4.4%20Third%20Application%20Super-Efficient%20IP%20for%20MATMULT%20(matrix%20multiplication)),
 he can do this with $O(logk \cdot logn)$ rounds and communication, and run in $O(n^2 + log(k)log(n))$ time.
 
-Clearly we can express the matrix $A^k$ as a product of smaller powers of $A$: $$A^k= A^{k/2} \cdot A^{k/2}$$
+Clearly we can express the matrix $A^k$ as a product of smaller powers of $A$:
+
+$$
+\begin{aligned}
+A^k= A^{k/2} \cdot A^{k/2}
+\end{aligned}
+$$
+
 Let $g_l$ denote the multilinear extension of the matrix $A^l$, so we compute $(A^k)_{n, n}$ = $g_k(1,1)$. ($(1, 1)$ is meant to
 denote the binary string indexing the bottom-right matrix entry)
 
@@ -204,7 +283,9 @@ At the end of the **MATMULT**, [IP](../../terms/ip.md) applied to two $n \times 
 $\tilde f_{A^′}$ and $\tilde f_{B′}$ at the respective points $(r1,r2)$ and $(r2,r3)$, both in $F^{logn} × F^{logn}$. In the equation,
 $A'$ and $B'$ equal $A^{k/2}$.
 
-Via [Section 4.5.2](chapter_4.md#4.5%20Applications%20of%20the%20Super-Efficient%20MATMULT%20IP#4.5.2%20Reducing%20Multiple%20Polynomial%20Evaluations%20to%20One), the $V$ can reduces evaluating a polynomial at two point to a single point.  We can use recursion to compute $A^{k/2}$ via $A^{k/4}$. After $logk$ layers of recursion, there is no need to recurse further since the verifier can evaluate $g_1 = \tilde f_A$ at any desired input in $O(n^2)$ time.
+Via [Section 4.5.2](chapter_4.md), the $V$ can reduce evaluating a polynomial at two point to a single point. We can use recursion to
+compute $A^{k/2}$ via $A^{k/4}$. After $logk$ layers of recursion, there is no need to recurse further since the verifier can evaluate
+$g_1 = \tilde f_A$ at any desired input in $O(n^2)$ time.
 
 ### 4.5.4 A General Paradigm for IPs with Super-Efficient Provers
 
@@ -213,11 +294,19 @@ compute an answer that is much smaller than $C$ itself.
 
 Consider the problem of computing the diameter of a directed graph $G$. Let $A$ denote the adjacency matrix of $G$, and $I$ is the
 $n \times n$ identity matrix. Then the diameter of $G$ is the  
-least positive number $d$ such that: $$(A + I)^d_{ij} \ne 0$$ for all $(i, j)$.
+least positive number $d$ such that:
+
+$$
+\begin{aligned}
+(A + I)^d_{ij} \ne 0
+\end{aligned}
+$$
+
+for all $(i, j)$.
 
 So the protocol is:
 
-- $P$ sends the claimed output $d$ to $V$ and an $(i, j)$ such that  $(A + I)^{d-1}_{ij} = 0$
+- $P$ sends the claimed output $d$ to $V$ and an $(i, j)$ such that $(A + I)^{d-1}_{ij} = 0$
 - $V$ needs to check:
   - all entries of $(A + I)^d$ are nonzero
   - $(A + I)^{d-1}_{ij}$ is indeed zero

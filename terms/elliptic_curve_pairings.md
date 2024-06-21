@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Elliptic Curve Pairings
 
 [Link](https://crypto.stanford.edu/pbc/notes/elliptic/divisor.html)

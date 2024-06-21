@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Commitment scheme
 
 In a commitment scheme, there are two parties, a committer and a verifier. The committer wishes to bind itself to a message without
@@ -15,7 +19,7 @@ claimed message $m'$ provided by the committer, and any opening information $d$ 
 the commitment. See the diagram below for a better visualization.
 
 ```mermaid
-flowchart TD;
+flowchart TD
     subgraph Setup
         A[KeyGen: Generates ck for committer]
         B[KeyGen: Generates vk for verifier]
@@ -34,8 +38,10 @@ flowchart TD;
 ```
 
 A commitment scheme is correct if $Verify(vk,Commit(m, ck),m)$ accepts with probability $1$, for any $m$ (i.e., an honest committer can
-always successfully open the commitment to the value that was committed). A commitment scheme is ==perfectly hiding== if the distribution
+always successfully open the commitment to the value that was committed). A commitment scheme is ==perfectly hiding== if the
+distribution
 of the commitment $Commit(m, ck)$ is independent of $m$. Finally, a commitment scheme is ==computationally binding== if it require
 exorbitant computational power to find some $d', m' \neq m$ such that $Verify(vk,(c,d),m) = Verify(vk,(c,d'),m') = 1$.
 
-One crucial type of commitment scheme that you will often see is [polynomial commitment scheme](polynomial-commitment/000_polynomial_commitment.md). 
+One crucial type of commitment scheme that you will often see
+is [polynomial commitment scheme](polynomial-commitment/000_polynomial_commitment.md).

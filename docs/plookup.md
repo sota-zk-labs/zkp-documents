@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Plookup: A Simplified Polynomial Protocol for Lookup Tables
 
 **References**:
@@ -74,11 +78,11 @@ Now, given $t \in \mathbb{F}^d , f \in \mathbb{F}^n , s \in \mathbb{F}^{n+d}$ , 
 $$
 \begin{array}{rcl}
 F(\beta, \gamma) & := &
-    (1 + \beta)^n
-        \cdot \prod\limits_{i \in \lbrack n \rbrack} (\gamma + f_i)
-        \cdot \prod\limits_{i \in \lbrack d-1 \rbrack} (\gamma(1 + \beta) + t_i + \beta t_{i+1}) \\ \\
+(1 + \beta)^n
+\cdot \prod\limits_{i \in \lbrack n \rbrack} (\gamma + f_i)
+\cdot \prod\limits_{i \in \lbrack d-1 \rbrack} (\gamma(1 + \beta) + t_i + \beta t_{i+1}) \\ \\
 G(\beta, \gamma) & := &
-    \prod\limits_{i \in \lbrack n + d - 1 \rbrack} (\gamma(1 + \beta) + s_i + \beta s_{i+1})
+\prod\limits_{i \in \lbrack n + d - 1 \rbrack} (\gamma(1 + \beta) + s_i + \beta s_{i+1})
 \end{array}
 $$
 
@@ -93,12 +97,12 @@ follows.
 $$
 \begin{array}{rcl}
 F(\beta,\gamma) & := &
-    (1+\beta)^{n+d-1}\cdot
-        \prod\limits_{i\in [n]} \left(\gamma + f_{i}\right)
+(1+\beta)^{n+d-1}\cdot
+\prod\limits_{i\in [n]} \left(\gamma + f_{i}\right)
 \prod\limits_{i\in [d-1]} \left(\gamma + \frac{t_{i} + \beta t_{i+1}}{1+\beta}\right) \\ \\
 G(\beta,\gamma) & := &
-    (1+\beta)^{n+d-1}
-        \cdot\prod\limits_{i\in [n+d-1]} \left(\gamma + \frac{s_{i} + \beta s_{i+1}}{1+\beta}\right)
+(1+\beta)^{n+d-1}
+\cdot\prod\limits_{i\in [n+d-1]} \left(\gamma + \frac{s_{i} + \beta s_{i+1}}{1+\beta}\right)
 \end{array}
 $$
 
@@ -177,10 +181,10 @@ to [PLONK's Permutation Argument](#appendix-A). It will be convenient to assume 
 repetitions of the last element).
 
 - Let $s \in \mathbb{F}^{2n+1}$ be the vector that is $(f, t)$ sorted by $t$. We represent $s$ by $h_1, h_2 \in \mathbb{F}_ {\lt
-   n+1}\lbrack X
-   \rbrack$ as follows. $h_1(g^i ) = s_i$ for $i \in \lbrack n + 1 \rbrack$; and $h_2(g^i ) = s_{n+i}$ for each $i \in \lbrack n + 1
-   \rbrack$. So $h_1$ represents $\lbrace s_1, s_2, ..., s_{n+1}\rbrace$, $h_2$ represents $\lbrace s_{n+1}, s_{n+2}, ..., s_
-   {2n+1}\rbrace$ which mean:
+  n+1}\lbrack X
+  \rbrack$ as follows. $h_1(g^i ) = s_i$ for $i \in \lbrack n + 1 \rbrack$; and $h_2(g^i ) = s_{n+i}$ for each $i \in \lbrack n + 1
+  \rbrack$. So $h_1$ represents $\lbrace s_1, s_2, ..., s_{n+1}\rbrace$, $h_2$ represents $\lbrace s_{n+1}, s_{n+2}, ..., s_
+  {2n+1}\rbrace$ which mean:
 
 $$
 \begin{array}{rcl}
@@ -191,8 +195,8 @@ $$
 - ${\bf P}$ computes the polynomials $h_1, h_2$ and sends them to the ideal party ${\bf I}$
 - ${\bf V}$ chooses random $\beta , \gamma \in \mathbb{F}$ and sends them to ${\bf P}$
 - ${\bf P}$ computes a polynomial $Z \in \mathbb{F}_{\lt n+1}\lbrack X \rbrack$ that aggregates the value $F(\beta , \gamma  )/G(
-   \beta ,
-   \gamma  )$ where $F, G$ are as described above. Specifically, we let
+  \beta ,
+  \gamma  )$ where $F, G$ are as described above. Specifically, we let
 
 $\quad \quad$**a**. $Z(g) = 1$
 
@@ -221,7 +225,7 @@ $\quad \quad$**c**. $Z(g^{n+1})=1$
 
 - ${\bf P}$ sends $Z$ to ${\bf I}$.
 - ${\bf V}$ checks that $Z$ is indeed of the form described above, and that $Z(g^{n+1}) = 1$. More precisely, ${\bf V}$ checks the
-   following identities for all $x \in H$.
+  following identities for all $x \in H$.
 
 $\quad \quad$**a**. $L_1({\bf x})(Z({\bf x}) − 1) = 0.$
 
@@ -231,8 +235,8 @@ $$
 \begin{array}{rl}
 & ({\bf x}-{\bf g}^{n+1})Z({\bf x})(1 + \beta)(\gamma + f({\bf x}))(\gamma(1 + \beta) + t({\bf x}) + \beta t({\bf g} \cdot {\bf x})) \\
 = & ({\bf x} - {\bf g}^{n+1})Z({\bf g} \cdot {\bf x})
-    (\gamma(1 + \beta) + h_{1}({\bf x}) + \beta h_{1}({\bf g} \cdot {\bf x}))
-    (\gamma(1 + \beta) + h_{2}({\bf x}) + \beta h_{2}({\bf g} \cdot {\bf x}))
+(\gamma(1 + \beta) + h_{1}({\bf x}) + \beta h_{1}({\bf g} \cdot {\bf x}))
+(\gamma(1 + \beta) + h_{2}({\bf x}) + \beta h_{2}({\bf g} \cdot {\bf x}))
 \end{array}
 $$
 
@@ -251,8 +255,8 @@ $t^{ * } \in (\mathbb{F}^\omega)^d$ of $d$ rows and $\omega$ columns, and to pro
 f_2(g^j), ..., f_{\omega}(g^j)) \in t^{ * }$, we can use random folding.
 
 - For each $i \in \lbrack \omega \rbrack$ we will include in the set of preprocessed polynomials $t_i \in \mathbb{F}_ {\lt d}\lbrack X
-   \rbrack$
-   with $t_i(g^j ) = t^{ * }_ {i,j}$ for each $j \in \lbrack d \rbrack.$
+  \rbrack$
+  with $t_i(g^j ) = t^{ * }_ {i,j}$ for each $j \in \lbrack d \rbrack.$
 - $\bf V$ selects a random number $\alpha$ to send to $\bf P$
 - $\bf P$ recalculates the polynomial and data that require lookup
   - $f = \sum_{i \in \lbrack \omega \rbrack}{\alpha^i f_i}$
@@ -323,7 +327,7 @@ s_i = \frac{\prod_{1 \leq j \leq i}{{f'}_ {j}}}{\prod_{1 \leq j \leq i}{g'_j}}
 $$
 
 - The verifier checks that the following equations hold on the set $\omega ,\omega ^2,…,\omega ^n$ (the set we used to define the
-   interpolation of the sequences)
+  interpolation of the sequences)
 
 $$
 \begin{aligned}

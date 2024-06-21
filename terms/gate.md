@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Gate
 
 A constraint $q_i \cdot p(\dots)=0$ can be switched off for a particular row $i$ by setting $q_i=0$. In this case we sometimes refer to

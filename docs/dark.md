@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # DARK: Diophantine Argument of Knowledge
 
 **Reference**:
@@ -5,7 +9,7 @@
 - [DARK paper](https://eprint.iacr.org/2003/105)
 - [rkm0959's blog](https://rkm0959.tistory.com/193)
 
-![](attachments/dark.png)
+![dark_overview](attachments/dark.png)
 
 ## Integer Commitment Scheme
 
@@ -135,7 +139,7 @@ formulas:
 - $\omega_{7}\leftarrow\omega_{1}^{[\mu_{2}]}$
 - $\omega_{8}\leftarrow\omega_{1}^{[\mu_{2}+1]}$
 
-where $a^{[n]}$ is calculated according to the formula $a^{[n]}= a \cdot a^{[n-1]} - a^{[n-2]}$, with initial conditions 
+where $a^{[n]}$ is calculated according to the formula $a^{[n]}= a \cdot a^{[n-1]} - a^{[n-2]}$, with initial conditions
 $a^{[0]}=0$ and $a^{[1]}=1$. Below is the pseudo code to calculate $a^{[n]}$ with $O(logn)$ time complexity:
 
 ```python
@@ -146,16 +150,17 @@ def za(a: int, n: int) -> int:
     for i in range(l, -1, -1):
         t = z
         if n >> i & 1:
-            z = z * (a*t - z_prime*2)
-            z_prime = t*t - z_prime*z_prime
+            z = z * (a * t - z_prime * 2)
+            z_prime = t * t - z_prime * z_prime
         else:
-            z = t*t - z_prime*z_prime
-            z_prime = z_prime * (2*t - a*z_prime)
+            z = t * t - z_prime * z_prime
+            z_prime = z_prime * (2 * t - a * z_prime)
     return z_prime
 ```
 
 This code is implemented based on the following identities:
-- $a^{[2n]} = a^{[n]}(2a^{[n+1]} − a \cdot a^{[n]}) = a^{[n]}(a \cdot a^{[n]} - 2a^{[n-1]})$ 
+
+- $a^{[2n]} = a^{[n]}(2a^{[n+1]} − a \cdot a^{[n]}) = a^{[n]}(a \cdot a^{[n]} - 2a^{[n-1]})$
 - $a^{[2n+1]} = (a^{[n+1]})^{2} - (a^{[n]})^{2}$
 
 ### Bounded Arithmetic

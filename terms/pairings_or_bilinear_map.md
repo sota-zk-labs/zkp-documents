@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Pairings or Bilinear Maps
 
 Read the full article on pairings or bilinear

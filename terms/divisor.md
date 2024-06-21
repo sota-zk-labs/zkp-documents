@@ -1,5 +1,6 @@
 ---
 cards-deck: terms
+comments: true
 ---
 
 # Divisor

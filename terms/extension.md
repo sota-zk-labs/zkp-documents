@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Extension
 
 We consider a finite field $F$ and a function $f:\{0, 1\}^{v}\rightarrow F$. A $v$-variate polynomial $g$ over $F$ is

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Coordinate Pair Accumulator
 
 > [!NOTE]
@@ -7,7 +11,11 @@
 
 The coordinate pair accumulator $p(x)$ is defined as:
 
-$$p(x + 1) = p(x) \cdot (\upsilon_1 + X(x) + \upsilon_2 \cdot Y(x))$$
+$$
+\begin{aligned}
+p(x + 1) = p(x) \cdot (\upsilon_1 + X(x) + \upsilon_2 \cdot Y(x))
+\end{aligned}
+$$
 
 - $X(x)$ and $Y(x)$ are two polynomials representing the $x$ and $y$ coordinates of a set of points.
 - $\upsilon_1$ and $\upsilon_2$: random constants

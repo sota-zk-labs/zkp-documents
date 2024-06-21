@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Relation
 
 A relation $R$ specifies a collection of “valid” instance-witness

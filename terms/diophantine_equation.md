@@ -1,6 +1,8 @@
 ---
 cards-deck: terms
+comments: true
 ---
+
 # Diophantine equation []()
 
 A polynomial equation of the form $R_S(\mu, \omega)=0$, where $R_S(\mu, \omega)$ is a polynomial with **integer coefficients**.

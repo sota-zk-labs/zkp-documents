@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Knowledge Of Exponent (KOE)
 
 Given points $P$ and $Q$ with $P . k = Q$ ($k$ is an unknown variable), and another point $C$, it is impossible to determine $C.k$

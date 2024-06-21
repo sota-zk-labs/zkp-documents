@@ -2,6 +2,7 @@
 Title: The Power of Randomness (Fingerprinting and Freivalds’ Algorithm)
 Status: Done
 Level: "3"
+comments: true
 ---
 
 # Chapter 2: The Power of Randomness (Fingerprinting and Freivalds’ Algorithm)

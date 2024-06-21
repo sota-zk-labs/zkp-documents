@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # ZkPorter: Revolutionizing Layer 2 Scaling []()
 
 For a more in-depth exploration, refer to the detailed blog post on

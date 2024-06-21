@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Common Reference String (CRS)
 
 Common Reference String is a common set of parameters that is drawn from some specified distribution and all the participants have

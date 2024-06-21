@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Zk Comparison
 
 ## Summary

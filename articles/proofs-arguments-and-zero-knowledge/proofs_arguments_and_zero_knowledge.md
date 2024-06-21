@@ -1,3 +1,10 @@
+---
+Title: Proofs, Arguments, and Zero-Knowledge
+Status: In Progress
+Level: "6"
+comments: true
+---
+
 # Proofs, Arguments, and Zero-Knowledge
 
 [Proofs Args and Zk](attachments/proofs_args_and_zk.pdf)

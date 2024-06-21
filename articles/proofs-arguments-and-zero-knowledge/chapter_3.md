@@ -2,6 +2,7 @@
 Title: Definitions and Technical Preliminaries
 Status: Done
 Level: "3"
+comments: true
 ---
 
 # Chapter3 - Definitions and Technical Preliminaries
@@ -61,8 +62,20 @@ Read the definitions of [Multilinear](../../terms/multilinear.md) and [Extension
 available [here](../../terms/uniqueness_of_multilinear_extension.md).
 
 We use the notation $\tilde{f}$ for this special extension of $f$:
-$$\tilde{f}(x_1, ..., x_v) = \sum_{w\in \{0,1\}^v} f(w)· χ_w(x_1, ..., x_v), $$
+
+$$
+\begin{aligned}
+\tilde{f}(x_1, ..., x_v) = \sum_{w\in \{0,1\}^v} f(w)· χ_w(x_1, ..., x_v)
+\end{aligned}
+$$
+
 where, for any $w = (w_1,...w_v)$:
-$$χ_w(x_1,...,x_v) := \prod_{i=1}^v (x_iw_i + (1 - x_i)(1-w_i)). $$
+
+$$
+\begin{aligned}
+χ_w(x_1,...,x_v) := \prod_{i=1}^v (x_iw_i + (1 - x_i)(1-w_i))
+\end{aligned}
+$$
+
 The set $\{χ_w: w \in \{0, 1\}^v\}$ is referred to as the set of
 ==*multilinear [Lagrange basis polynomials](../../terms/lagrange_interpolation.md)*==.

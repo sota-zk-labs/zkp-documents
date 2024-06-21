@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Trusted Setup
 
 The term "trusted setup" implies a reliance on the assumption that participants in the setup process are honest and not
