@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Elliptic Curve (EC)
 
 Explore the fascinating world of Elliptic Curve cryptography through the following resources:
@@ -79,7 +83,7 @@ Theoretically, any point on a curve (except $O$) can be $g$; all that matters is
 
 ## Applications
 
-* Encryption
-* Signatures
-* Deterministic threshold signatures
-* Quadratic arithmetic programs
+- Encryption
+- Signatures
+- Deterministic threshold signatures
+- Quadratic arithmetic programs

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Lagrange Interpolation
 
 > [!NOTE]
@@ -6,7 +10,8 @@
 > [!NOTE]
 > By avoiding the conversion of points into coefficients, we can potentially reduce time complexity by $O(\log n)$.
 
-This is a method of creating an unique polynomial of the lowest degree (at most $n-1$) that interpolate (go through) $n$ points in a graph.
+This is a method of creating an unique polynomial of the lowest degree (at most $n-1$) that interpolate (go through) $n$ points in a
+graph.
 
 ## Univariate
 

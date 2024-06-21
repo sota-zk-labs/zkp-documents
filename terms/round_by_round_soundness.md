@@ -1,9 +1,13 @@
+---
+comments: true
+---
+
 # Round-by-round Soundness
 
-A protocol $I$  for a [language](language.md) $L$ satisfies round-by-round soundness if the following properties hold:
+A protocol $I$ for a [language](language.md) $L$ satisfies round-by-round soundness if the following properties hold:
 
 - At any stage of any execution of $I$, there is a well-defined state and some states are "doomed". Once the protocol $I$ is in a
-doomed state, it will (except with negligible probability) forever remain doomed.
+  doomed state, it will (except with negligible probability) forever remain doomed.
 - If $x \notin L$ then the initial state is doomed.
 - If at the end of the interaction the state is doomed, then the verifier will reject.
 

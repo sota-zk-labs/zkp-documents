@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 # GKR Protocol
 
@@ -26,7 +29,7 @@ Let $S_i$ denote the number of gates at layer $i$ of the circuit $C$. Assume $S_
 So, number the gate at layer $i$ from 0 to $S_i - 1$, and let $W_i : \{0, 1\}^{k_i} \rightarrow F$ denote the function that takes as
 input a binary gate label, and outputs the corresponding gate’s value at layer $i$.
 
-**Example:**
+### Example
 
 ![gkr](attachments/gkr_circuit.png)
 
@@ -40,55 +43,61 @@ Denote two function:
 For example, which the Figure above, $mult_0$ evaluates to 1 on the following inputs: $(0,(0,0),(0,1))$ and $(1,(1,0),(1,1))$ and
 evaluates to 0 for all others.
 
-**Detailed Description**
+### Detailed Description
 
 The symbol $\tilde f$ means the MLE of the function $f$.
 
 The GKR protocol consists of $d$ iterations, one for each layer of the circuit. Each iteration $i$ starts with $P$ claiming a value
 for $\tilde W_i(r_i)$ for some point in $r_i \in F^{k_i}$.
 
-At the start of the first iteration, let $D: \{0, 1\}^{k_0} \rightarrow F$  denote the function that maps the label of an output gate
+At the start of the first iteration, let $D: \{0, 1\}^{k_0} \rightarrow F$ denote the function that maps the label of an output gate
 to the claimed value of that output. Then verifier can pick a random point $r_0 \in F^{k_0}$ and check if
 $\tilde D(r_0) = \tilde W_0(r_0)$ (i.e., if the **MLE** of the claimed outputs equals the **MLE** of the correct outputs when
 evaluated at a randomly chosen point), then it is safe for the verifier to believe that
-all of the claimed outputs are correct. But to evaluate $\tilde W_0(r_0)$, verifier need to claim about $\tilde W_1$, and so on.  
+all of the claimed outputs are correct. But to evaluate $\tilde W_0(r_0)$, verifier need to claim about $\tilde W_1$, and so on.
 
 **Applying the [Sum-Check Protocol](sumcheck_protocol.md)**
 
 **Lemma:** We have an explicit expression for $\tilde W$:
-$$\tilde W_i(z) = \sum_{b, c \in \{0, 1\}^{k_{i+1}}} \tilde{add_i}(z, b, c) (\tilde W_{i +1}(b)+\tilde W_{i +1}(c)) +
-\tilde{mult_i}(z, b, c) (\tilde W_{i +1}(b)\cdot\tilde W_{i +1}(c))$$
 
-**Description of the GKR protocol**
+$$
+\begin{aligned}
+\tilde W_i(z) = \sum_{b, c \in \{0, 1\}^{k_{i+1}}} \tilde{add_i}(z, b, c) (\tilde W_{i +1}(b)+\tilde W_{i +1}(c)) +
+\tilde{mult_i}(z, b, c) (\tilde W_{i +1}(b)\cdot\tilde W_{i +1}(c))
+\end{aligned}
+$$
+
+#### Description of the GKR protocol
 
 1. At the start of the protocol, $P$ sends a function $D: \{0,1\}^{k_0} \rightarrow F$ claimed to equal $W_0$.
 2. $V$ picks a random $r_0 \in F^{k0}$ and lets $m_0 \leftarrow \tilde D(r_0)$. The remainder of the protocol is devoted to confirming
    that $m_0 = \tilde W_0(r_0)$.
 3. For $i = 0, 1, ..., d-1$:
-   - Define the $(2k_{i+1})$-variate polynomial:
-   $$f_{r_i}^{(i)}(b,c):=\tilde{add_i}(r_i, b, c)(\tilde W_{i +1}(b)+\tilde W_{i +1}(c))+\tilde{mult_i}(r_i,b,c)(\tilde W_{i +1}(b)\cdot\tilde W_{i+1}(c))$$
-   - P claims that $\sum_{b,c \in \{0,1\}^{k_{i+1}}} f_{r_i}^{(i)}(b,c) = m_i$.
-   - So that $V$ may check this claim, $P$ and $V$ apply the [sum-check protocol](sumcheck_protocol.md) to
-   $f_{r_i}^{(i)}$, up until $V’s$ final check in that protocol, when $V$ must evaluate $f_{r_i}^{(i)}$ at randomly chosen point
-   $(b^∗,c^∗) \in F^{k_{i+1}} \times F^{k_{i+1}}$.
-   - Let $l$ be the unique line satisfying $l(0) = b^∗$ and $l(1) = c^∗$. $P$ sends a univariate polynomial $q$ of degree at most
-   $k_{i+1}$ to $V$, claimed to equal $\tilde W_{i+1}$ restricted to $l$.
-   - $V$ now performs the final check in the [sum-check protocol](sumcheck_protocol.md), using $q(0)$ and $q(1)$ instead
-   of  $\tilde W_{i+1}(b^∗)$ and $\tilde W_{i+1}(c^∗)$.
-   - $V$ chooses $r^∗ \in F$ at random and sets $r_{i+1} = l(r^∗)$ and $m_{i+1} \leftarrow q(r^*)$ (for details, see
-   [Section 4.5.2](chapter_4.md#4.5%20Applications%20of%20the%20Super-Efficient%20MATMULT%20IP#4.5.2%20Reducing%20Multiple%20Polynomial%20Evaluations%20to%20One)).
-   - To evaluate $\tilde{add _ i}(r _ i, b^ * , c^ * )$,  $\tilde{mult _ i}(r _ i, b^ * , c^ * )$, we can do it in polylogarithmic
-   time. We will discuss this
-   in [Section 4.6.6](chapter_4.md#4.6.6%20Evaluating%20$%20tilde%20{add}_i$%20and%20$%20tilde%20{mult}_i$%20Efficiently).
+    - Define the $(2k_{i+1})$-variate polynomial:
+      $f_{r_i}^{(i)}(b,c):=\tilde{add_i}(r_i, b, c)(\tilde W_{i +1}(b)+\tilde W_{i +1}(c))+\tilde{mult_i}(r_i,b,c)(\tilde W_{i +1}(b)
+      \cdot\tilde W_{i+1}(c))$
+    - P claims that $\sum_{b,c \in \{0,1\}^{k_{i+1}}} f_{r_i}^{(i)}(b,c) = m_i$.
+    - So that $V$ may check this claim, $P$ and $V$ apply the [sum-check protocol](sumcheck_protocol.md) to
+      $f_{r_i}^{(i)}$, up until $V’s$ final check in that protocol, when $V$ must evaluate $f_{r_i}^{(i)}$ at randomly chosen point
+      $(b^∗,c^∗) \in F^{k_{i+1}} \times F^{k_{i+1}}$.
+    - Let $l$ be the unique line satisfying $l(0) = b^∗$ and $l(1) = c^∗$. $P$ sends a univariate polynomial $q$ of degree at most
+      $k_{i+1}$ to $V$, claimed to equal $\tilde W_{i+1}$ restricted to $l$.
+    - $V$ now performs the final check in the [sum-check protocol](sumcheck_protocol.md), using $q(0)$ and $q(1)$ instead
+      of $\tilde W_{i+1}(b^∗)$ and $\tilde W_{i+1}(c^∗)$.
+    - $V$ chooses $r^∗ \in F$ at random and sets $r_{i+1} = l(r^∗)$ and $m_{i+1} \leftarrow q(r^*)$ (for details, see
+      [Section 4.5.2](chapter_4.md#4.5%20Applications%20of%20the%20Super-Efficient%20MATMULT%20IP)).
+    - To evaluate $\tilde{add _ i}(r _ i, b^ * , c^ * )$, $\tilde{mult _ i}(r _ i, b^ * , c^ * )$, we can do it in polylogarithmic
+      time. We will discuss this
+      in [Section 4.6.6](chapter_4.md#4.6.6%20Evaluating%20$%20tilde%20{add}_i$%20and%20$%20tilde%20{mult}_i$%20Efficiently).
 4. $V$ checks directly that $m_d = \tilde W_d(r_d)$ using [VSBW13](lagrange_interpolation.md#VSBW13). Note that $\tilde W_d$ is
-the **MLE** of input $x$, and $V$ can compute it in $O(n)$, which $n$ is the size of the input.
+   the **MLE** of input $x$, and $V$ can compute it in $O(n)$, which $n$ is the size of the input.
 
 **Example**: Compute $\tilde W$ in a circuit over $F_5$ consisting entirely of multiplication gates
 ![compute_w](attachments/compute_tilde_w.png)
 
 ### 4 Discussion of Costs and Soundness
 
-**V's runtime**
+#### V's runtime
 
 - The total communication cost is $O(S_0 + dlogS)$, where $S_0$ is the number of outputs.
 - The time cost to $V$ is $O(n + dlogS + t + S_0)$, where:
@@ -97,16 +106,16 @@ the **MLE** of input $x$, and $V$ can compute it in $O(n)$, which $n$ is the siz
   - $S_0$ is the time required to read the vector of claimed outputs and evaluate the corresponding **MLE**.
   - $dlogS$ is the time required for $V$ to send messages to $P$ and process and check the messages from $P$.
 
-**P's runtime**
+#### P's runtime
 
 - $O(S^3)$.
 - Can be improved by using [Lagrange Interpolation](../../terms/lagrange_interpolation.md).
 
-**Round complexity and communication cost**
+#### Round complexity and communication cost
 
 - $O(dlogS)$ rounds.
 
-**Soundness error**
+#### Soundness error
 
 - The soundness error is: $O(dlog(S)/|F|)$.
 
@@ -117,6 +126,6 @@ point $\omega \in F^{k _ i+2k _ {i+1}}$ is a tricky one.
 
 The papers [CMT12](https://arxiv.org/abs/1105.2003), [Tha13](https://arxiv.org/abs/1304.3812) show that the evaluation can be computed
 in $O(k_i + k_{i+1}) = O(logS)$ time for a variety of common wiring patterns and specific circuits.
-For the circuits where $\tilde {add}_i$  and $\tilde {mult}_i$ cannot be evaluated in time sublinear in the circuit size $S$ leverages
+For the circuits where $\tilde {add}_i$ and $\tilde {mult}_i$ cannot be evaluated in time sublinear in the circuit size $S$ leverages
 cryptography, there is a cryptographic primitive called a ==polynomial commitment scheme== to force the prover to accurately evaluate
-$\tilde {add}_i$  and $\tilde {mult}_i$ on its behalf.
+$\tilde {add}_i$ and $\tilde {mult}_i$ on its behalf.

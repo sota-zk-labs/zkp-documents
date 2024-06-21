@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Rollups: Streamlining Blockchain Scalability
 
 Rollups are designed to enhance blockchain scalability by simplifying transaction processing. The key concept involves

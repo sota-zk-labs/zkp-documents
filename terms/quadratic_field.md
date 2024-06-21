@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Quadratic Fields
 
 A quadratic field is a specific type of number field—a field containing rational numbers and closed under basic

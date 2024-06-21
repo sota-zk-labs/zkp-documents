@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Restriction
 
 If polynomial $q$ is a restriction of a polynomial $f$ to a line $l$, then for every random point $r$, we have $q(r) = f(l(r))$.

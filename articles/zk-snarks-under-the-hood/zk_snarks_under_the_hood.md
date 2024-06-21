@@ -3,6 +3,7 @@ Title: "Zk-SNARKs: Under the Hood"
 Status: Done
 Level: 6
 Note: There is a few places that are hard to fully understand
+comments: true
 ---
 
 [zkSNARKs under the hood by VitalikButerin](https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6)
@@ -44,6 +45,7 @@ using [discrete logarithm](../../terms/discrete_logarithm.md)
 > able to make fake proofs.
 
 Hence, what actually happens is that we add the following values to the [trusted setup](../../terms/trusted_setup.md):
+
 $$
 \begin{align}
 &G * A_1(t), G * A_1(t) * k_a \\
@@ -57,6 +59,7 @@ $$
 &…
 \end{align}
 $$
+
 Now, if someone gives you a pair of points $P, Q$ such that $P * k_a = Q$ (reminder: we don’t need $k_a$ to check this, as we can do
 a [pairing](../../terms/elliptic_curve.md#elliptic-curve-pairings) check), then you know that what they are giving you is a linear
 combination of $A_i$ polynomials evaluated at $t$. By evaluating polynomials at $t$, we reduce the need to send the whole matrix of the
@@ -68,6 +71,7 @@ Our coefficients in the linear combination at the end of the QAP step were $1, x
 polynomials at t, so they will turn into $G, G*t, G*t^2, G*t^3, ..., G*t^m$.
 
 Hence, so far the prover must give:
+
 $$
 \begin{align}
 &π_a = G * A(t), π’_a = G * A(t) * k_a \\
@@ -75,6 +79,7 @@ $$
 &π_c = G * C(t), π’_c = G * C(t) * k_c
 \end{align}
 $$
+
 Where $A(t)$ is a linear combination of $A_i$ evaluated at $t$ and so on.
 
 > [!NOTE]
@@ -99,7 +104,13 @@ To evaluate the proof, we have to check 3 things:
 
 We need to prove that $A * B - C = H * Z$. We do this once again with
 a [pairing](../../terms/elliptic_curve.md#elliptic-curve-pairings) check:
-$$e(\pi_a,\pi_b) / e(\pi_c, G) \stackrel{?}{=} e(\pi_h, G * Z(t))$$
+
+$$
+\begin{aligned}
+e(\pi_a,\pi_b) / e(\pi_c, G) \stackrel{?}{=} e(\pi_h, G * Z(t))
+\end{aligned}
+$$
+
 Where $\pi_h=G * H(t)$ and $H$ is the remainder polynomial. If the connection between this equation and $A * B - C = H * Z$ does not
 make sense to you, go back and read [our file on pairing](../../terms/elliptic_curve.md#elliptic-curve-pairings). Note that $e(\pi_c,
 G)$ = $\pi_c$ but we do this in order to use pairing math.
@@ -109,7 +120,11 @@ equivalent of the number one). We can add $G * Z(t)$ to the trusted setup. $H$ i
 little ahead of time about what its coefficients will be for each individual QAP solution. Hence, we need to add yet more data to the
 trusted setup; specifically, the sequence:
 
-$$G, G * t, G * t², G * t³, G * t⁴ ….$$
+$$
+\begin{aligned}
+G, G * t, G * t², G * t³, G * t⁴ \ldots
+\end{aligned}
+$$
 
 In the Zcash trusted setup, the sequence here goes up to about 2 million; this is how many powers of t you need to make sure that you
 will always be able to compute $H(t)$, at least for the specific QAP instance that they care about. And with that, the prover can
@@ -121,7 +136,13 @@ provide all of the information for the verifier to make the final check.
 # Coefficients Check
 
 The next step is to make sure that all three linear combinations have the same coefficients. This we can do by adding another set of
-values to the trusted setup: $$G * (A_i(t) + B_i(t) + C_i(t)) * b$$
+values to the trusted setup:
+
+$$
+\begin{aligned}
+G * (A_i(t) + B_i(t) + C_i(t)) * b
+\end{aligned}
+$$
 
 > [!NOTE]
 > b is another number that should be considered “toxic waste” and discarded as soon as the trusted setup is completed.
@@ -130,11 +151,19 @@ We can then have the prover create a linear combination with these values with t
 same [pairing](../../terms/elliptic_curve.md#elliptic-curve-pairings) trick as above to verify that this value matches up with the
 provided $A + B + C$.
 
-$$G * (A_i(t) + B_i(t) + C_i(t)) * b$$
+$$
+\begin{aligned}
+G * (A_i(t) + B_i(t) + C_i(t)) * b
+\end{aligned}
+$$
 
 should be (in pairing) equal to
 
-$$G * (1 + t^1 + t^2 + ...) * s * (A + B + C) * b$$
+$$
+\begin{aligned}
+G * (1 + t^1 + t^2 + ...) * s * (A + B + C) * b
+\end{aligned}
+$$
 
 # Validity of Knowledge Commitments for A, B, C
 

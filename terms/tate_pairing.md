@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Tate Pairing
 
 [Link](https://research.metastate.dev/plonk-by-hand-part-1/)

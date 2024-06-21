@@ -1,5 +1,6 @@
 ---
 cards-deck: terms
+comments: true
 ---
 
 # Diophantine Set
@@ -14,7 +15,13 @@ Read the definition of [Diophantine equation](diophantine_equation.md) first.
 > is a part of a solution for a fixed Diophantine equation. We call $R_S$ a **representing polynomial** of $S$, and $\omega$ an
 > auxiliary witness.
 
-Consider the Diophantine equation: $$\mu = \omega_1 \cdot \omega_2$$
+Consider the Diophantine equation:
+
+$$
+\begin{aligned}
+\mu = \omega_1 \cdot \omega_2
+\end{aligned}
+$$
 
 - Here, $\mu$ is a parameter, and $\omega_1$ and $\omega_2$ are unknowns.
 - The equation has a solution in $\omega_1$ and $\omega_2$ precisely when $\mu$ can be expressed as a product of two integers greater

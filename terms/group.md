@@ -1,11 +1,15 @@
+---
+comments: true
+---
+
 # Group
 
 Informally, a group $G$ is any set equipped with an operation $(\cdot)$. A group must satisfy the following four
 properties:
 
-- Closure: the product of two elements in $G$ are also in $G$, i.e., for all $a,b ∈ G$, $a  \cdot  b$ is also in $G$.
-- Associativity: for all $a,b, c ∈ G, a  \cdot (b  \cdot  c) = (a  \cdot  b) \cdot  c$.
-- Identity: there an element denoted $1_G ∈ G$ such that $1_G  \cdot  g = g  \cdot  1_G = g$ for all $g ∈ G$
+- Closure: the product of two elements in $G$ are also in $G$, i.e., for all $a,b ∈ G$, $a \cdot b$ is also in $G$.
+- Associativity: for all $a,b, c ∈ G, a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
+- Identity: there an element denoted $1_G ∈ G$ such that $1_G \cdot g = g \cdot 1_G = g$ for all $g ∈ G$
 - Invertibility: For each $g ∈ G$, there is an element $h$ in $G$ such that $g \cdot h = 1_G$. This element $h$ is denoted $g^{−1}$ .
   An example is the the set of **invertible** matrices, which forms a group under the matrix multiplication operation.
 

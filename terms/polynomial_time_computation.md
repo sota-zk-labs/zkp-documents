@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Polynomial-time computation
 
 ## TLDR

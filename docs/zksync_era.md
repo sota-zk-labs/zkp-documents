@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # zkSync Era
 
 ## ZKP-Type

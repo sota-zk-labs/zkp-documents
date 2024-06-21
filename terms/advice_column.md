@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Advice Column
 
 To create a proof of a [statement](statement.md), the prover will need to know the private inputs, and also intermediate values, called

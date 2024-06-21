@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Zero Knowledge Scalable Transparent Arguments of Knowledge (zkSTARK)
 
 They do not require a [trusted setup](trusted_setup.md) like [zkSNARK](zkSNARK.md). The absence of a trusted setup

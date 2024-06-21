@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Random Oracle Model (ROM)
 
 ## Random Oracle Model
@@ -19,7 +23,7 @@ This random oracle also keeps a record of its responses to make sure that it rep
 
 In the real world, random oracle is not valid because listing the value $R(x)$ for every input $x \in \mathbb{D}$ is not feasible,
 especially
-when dealing with a huge $\mathbb{D}$ (e.g., $|D| \ge 2^{256}$).  So, it is often replaced with a concrete hash function like
+when dealing with a huge $\mathbb{D}$ (e.g., $|D| \ge 2^{256}$). So, it is often replaced with a concrete hash function like
 **SHA-3**, which is
 succinctly specified via, e.g., a small circuit or computer program that evaluates the hash function on any input.
 
