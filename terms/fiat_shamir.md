@@ -1,6 +1,8 @@
 ---
 cards-deck: terms
+comments: true
 ---
+
 # Fiat Shamir
 
 ## Purpose []()

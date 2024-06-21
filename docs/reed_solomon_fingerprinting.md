@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Reed-Solomon Fingerprinting
 
 `rid-'solomon`

@@ -1,8 +1,12 @@
+---
+comments: true
+---
+
 # Non-Native Field Arithmetic
 
 **References:**
 
-- [Aztec Emulated Field and Group Operations for Efficient Large Number Arithmetic](https://hackmd.io/@kullervo/cryptographyExplorations/%2F%40kullervo%2FbignumberCircuits)
+- [Field & Group Operations for Large Number](https://hackmd.io/@kullervo/cryptographyExplorations/%2F%40kullervo%2FbignumberCircuits)
 - [Non-Native Field Arithmetic](https://hackmd.io/@JkY-zACaSqerTtn_UwFjKg/SJZw6x75o)
 - [Field selection for recursive SNARKs](https://medium.com/delendum/field-selection-for-recursive-snarks-726ad56c3a3c)
 - [Foreign field arithmetic](https://www.youtube.com/watch?v=IBeo5epQoYo)
@@ -20,7 +24,8 @@ few use cases:
   proofs) that may be defined over an arbitrary field ($\mathbb{F}_2, \mathbb{F}_q, ...$) inside our field $\mathbb{F}_n$.
 - **Proof aggregation:** merge multiple proofs and create a single proof from them to save resource.
 
-In this article, we will take advantage of [Chinese Remainder Theorem](../terms/chinese_remainder_theorem.md) (CRT) to solve the problem.
+In this article, we will take advantage of [Chinese Remainder Theorem](../terms/chinese_remainder_theorem.md) (CRT) to solve the
+problem.
 
 ## Problem
 
@@ -152,9 +157,9 @@ in our native field $\mathbb{F}_n$.
 
 ### Range check using lookup argument
 
-When decomposing an element into its limbs, we need to perform a ==range check== $a_i \in [0, 2^B) \forall i$, which can be done quickly using lookup argument (e.g., [Plookup](./plookup.md)). For example, with $B = 64$, we can create a lookup table $t = \lbrace 0, 1, ..., 2^8-1\rbrace$, and add the following constraints to ensure an element $x$ is in $[0, 2^B)$:
-
-
+When decomposing an element into its limbs, we need to perform a ==range check== $a_i \in [0, 2^B) \forall i$, which can be done
+quickly using lookup argument (e.g., [Plookup](./plookup.md)). For example, with $B = 64$, we can create a lookup table $t = \lbrace 0,
+1, ..., 2^8-1\rbrace$, and add the following constraints to ensure an element $x$ is in $[0, 2^B)$:
 
 $$
 \begin{aligned}

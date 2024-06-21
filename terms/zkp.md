@@ -1,8 +1,13 @@
+---
+comments: true
+---
+
 # Zero knowledge proof (ZKP)
 
 [seminar-innovative-internet-technologies.pdf](../articles/seminar-innovative-internet-technologies/NET-2022-07-1_08.pdf)
 
 <!-- TOC -->
+
 * [Zero knowledge proof (ZKP)](#zero-knowledge-proof-zkp)
   * [Definition](#definition)
   * [Applications](#applications)
@@ -15,6 +20,7 @@
     * [Non-interactive ZKPs](#non-interactive-zkps)
   * [Blackbox Workflow of a ZKP](#blackbox-workflow-of-a-zkp)
   * [Up-to-date technologies](#up-to-date-technologies)
+
 <!-- TOC -->
 
 ## Definition

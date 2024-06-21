@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # **Uniqueness of Multilinear Extension**
 
 > [!NOTE]  

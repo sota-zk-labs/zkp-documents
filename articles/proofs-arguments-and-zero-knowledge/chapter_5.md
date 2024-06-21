@@ -2,7 +2,9 @@
 Title: Publicly Verifiable, Non-interactive Arguments via Fiat-Shamir
 Status: Done
 Level: "4"
+comments: true
 ---
+
 # Chapter 5 - Publicly Verifiable, Non-interactive Arguments via Fiat-Shamir
 
 ## 5.1 The Random Oracle Model (ROM)
@@ -49,7 +51,7 @@ In contrast, suppose that a non-interactive argument runs at $60$ bits of intera
 about $2^{60}$ first messages before getting lucky. When applying [Fiat-Shamir](../../terms/fiat_shamir.md) transformation, the
 computational bottleneck in this attack may be simply performing $2^{60}$ hash  
 evaluations. However, in 2020, a bitcoin miners can perform $2^{80}$ **SHA-256** evaluations every 18 hours; hence, attacking in this
-manner is entirely feasible for modern computers.  
+manner is entirely feasible for modern computers.
 
 ## 5.3.2 Soundness in the Random Oracle Model for Constant-Round Protocols
 
@@ -61,10 +63,12 @@ prover running in polynomial time can convince the verifier in $Q$ of a false st
 
 ## 5.3.3 Fiat-Shamir Preserves Knowledge-Soundness in the Random Oracle Model
 
-In [Section 7.4](chapter_7.md#7.4 Knowledge-Soundness), we will be concerned with a strengthening of soundness called ==knowledge-soundness== that is relevant
+In [Section 7.4](chapter_7.md#7.4 Knowledge-Soundness), we will be concerned with a strengthening of soundness called
+==knowledge-soundness== that is relevant
 when the prover is claiming to know a witness satisfying a specified property.
 
-In the [ROM](../../terms/random_oracle_model.md), the [Fiat-Shamir](../../terms/fiat_shamir.md) transformation preserves knowledge-soundness. For example:
+In the [ROM](../../terms/random_oracle_model.md), the [Fiat-Shamir](../../terms/fiat_shamir.md) transformation preserves
+knowledge-soundness. For example:
 
 - [Section 9.2](chapter_9.md): Fiat-Shamir transformation preserves knowledge-soundness when apply to succinct arguments obtained
   from PCPs and IOPs.
@@ -77,11 +81,11 @@ When the concrete hash function $h$ is chosen at random from a hash family $H$ s
 plain model results in a sound
 argument.
 
-**What is correlation-intractability (CI)?**
+### What is correlation-intractability (CI)?
 
 You should read the definition [here](../../terms/correlation_intractability.md).
 
-**Recent results constructing CI hash families**
+### Recent results constructing CI hash families
 
 It is plausible that cryptographic hash families used in practice actually satisfy the relevant notions of
 [correlation-intractability](../../terms/correlation_intractability.md).

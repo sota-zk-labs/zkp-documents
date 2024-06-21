@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Boolean Circuit
 
 Boolean circuits are directed acyclic graphs whose internal nodes (or “gates”) are Boolean functions, most often the “standard”

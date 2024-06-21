@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Holography
 
 A system called holography (or a holographic system) is a system that employs a pre-processing, wherein a party can commit to

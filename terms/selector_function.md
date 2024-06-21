@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Selector Function
 
 A selector function, denoted as $f(x)$, serves as an alternative representation of an array $A=[a_0, a_2, ..., a_n]$,
@@ -8,7 +12,11 @@ The primary purpose of a selector function is to "compress" multiple checks into
 consider the need to verify an equation such as $a_i + b_i = c_i$. In this scenario, three selectors $A(x)$, $B(x)$, and
 $C(x)$ can be created, and the validation can be expressed as:
 
-$$A(x) + B(x) = C(x)$$
+$$
+\begin{aligned}
+A(x) + B(x) = C(x)
+\end{aligned}
+$$
 
 This approach streamlines the verification process by consolidating multiple checks into a more efficient single
 operation.

@@ -1,6 +1,8 @@
 ---
 cards-deck: docs
+comments: true
 ---
+
 # PLONK: Permutations over Lagrange-Bases for Oecumenical Noninteractive Knowledge
 
 **Reference:** [PLONK Blog Post](https://vitalik.eth.limo/general/2019/09/22/plonk.html)

@@ -2,6 +2,7 @@
 Title: Notations
 Status: Done
 Level: "1"
+comments: true
 ---
 
 # Chapter 2: Notations

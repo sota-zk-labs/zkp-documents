@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # ZK-Friendly Hash
 
 ## References
@@ -17,7 +21,11 @@ are built on top of hash functions.
 A hash function is also useful in the ZK protocol. One famous example is the membership check in a Merkle tree. For a Merkle root $r$,
 the prover will claim knowledge of the witness $w_1, .., w_n$ such that:
 
-$$H(...H(H(w_ 1, w_ 2), w_ 3))..., w_ n) = r$$
+$$
+\begin{aligned}
+H(...H(H(w_ 1, w_ 2), w_ 3))..., w_ n) = r
+\end{aligned}
+$$
 
 to prove their knowledge of element $w_1$, which is a member of the Merkle tree.
 
@@ -90,16 +98,16 @@ The proof system must support lookup arguments to enable these types of hash fun
 There are some hashes, including:
 
 - [Reinforced Concrete](https://eprint.iacr.org/2021/1038):
-    - Optimized for large prime fields around 256 bits.
-    - Significantly faster performance than other hash functions, but still slower than SHA-3.
-    - You can read more about [Reinforced Concrete Hash](terms/reinforced-concrete-hash.md) in our documentation.
+  - Optimized for large prime fields around 256 bits.
+  - Significantly faster performance than other hash functions, but still slower than SHA-3.
+  - You can read more about [Reinforced Concrete Hash](terms/reinforced-concrete-hash.md) in our documentation.
 - [Tip5](https://eprint.iacr.org/2023/107):
-    - Designed for a specialized 64-bit prime field, utilized in systems
+  - Designed for a specialized 64-bit prime field, utilized in systems
       like [Plonky2](https://polygon.technology/blog/introducing-plonky2).
 - [Monolith](https://eprint.iacr.org/2023/1025):
-    - Expands the design approach to additional fields (the same 64-bit field and a 31-bit field used
+  - Expands the design approach to additional fields (the same 64-bit field and a 31-bit field used
       in [Plonky3](https://github.com/Plonky3/Plonky3)).
-    - Achieves plain performance comparable to SHA-3 for the first time.
+  - Achieves plain performance comparable to SHA-3 for the first time.
 
 ## Designing a New ZK Hash Function
 

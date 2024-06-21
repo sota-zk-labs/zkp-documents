@@ -1,8 +1,12 @@
+---
+comments: true
+---
+
 # Fast Fourier Transforms
 
 ## Background
 
-Essentially,  Fourier Transforms convert data between the
+Essentially, Fourier Transforms convert data between the
 "frequency domain" and the "time domain". It means that if you have a piece of data, the algorithm will transform it into a
 collection of sine waves with different frequencies and amplitudes. Then, adding them together would approximate the
 original data. See the depiction below.
@@ -22,7 +26,13 @@ For the first operation, you can separately evaluate the polynomial at each poin
 Thus, the total runtime is $O(N^2)$ (considering $N$ coefficients and $N$ points).
 For the second operation, you first need to read about [Lagrange interpolation](./lagrange_interpolation.md) to understand how it
 works and what Lagrange basis polynomials are:
-$$L_i(x) = \prod_{j=0, j \neq i}^{n} \frac{x - x_j}{x_i - x_j}$$
+
+$$
+\begin{aligned}
+L_i(x) = \prod_{j=0, j \neq i}^{n} \frac{x - x_j}{x_i - x_j}
+\end{aligned}
+$$
+
 Compute this function takes $O(N^2)$ time (iterate $j$ take $O(N)$ times, and we need to compute $N$ functions).
 
 Is this slow? Yes, and the Fast Fourier Transforms below will significantly speed up both operations.
@@ -48,10 +58,10 @@ $\lbrace 1, 4, 16, 13 \rbrace$.
 
 First, we break up $f(x)$ into two parts, which we will call $evens$ and $odds$:
 
-- $evens$: \[1, 3\] or  $evens(x) = 1 + 3x$
+- $evens$: \[1, 3\] or $evens(x) = 1 + 3x$
 - $odds$: \[13, 3\] or $odds(x) = 13 + 3x$
 
-So, we have:  
+So, we have:
 
 - $f(x) = evens(x^2) + x \cdot odds(x^2)$
 - $f(-x) = evens(x^2) - x \cdot odds(x^2)$
@@ -84,9 +94,9 @@ def fft(vals, modulus, domain):
     R = fft(vals[1::2], modulus, domain[::2])
     o = [0 for i in vals]
     for i, (x, y) in enumerate(zip(L, R)):
-        y_times_root = y*domain[i]
-        o[i] = (x+y_times_root) % modulus
-        o[i+len(L)] = (x-y_times_root) % modulus
+        y_times_root = y * domain[i]
+        o[i] = (x + y_times_root) % modulus
+        o[i + len(L)] = (x - y_times_root) % modulus
     return o
 ```
 
@@ -102,7 +112,7 @@ We can try running it:
 To compute the inverse FFT, we run the FFT again , but reverse the result (except the first item stays in place) and divide every
 value by the length of the list. The reason is that when we use `fft()`, we transform a vector
 of $N$ coefficients into a vector of $N$ evaluations. This process can be viewed as converting
-a matrix of size $N \times 1$ into another matrix of the same size.  To accomplish this,
+a matrix of size $N \times 1$ into another matrix of the same size. To accomplish this,
 we perform matrix multiplication between the coefficient matrix and a square matrix of
 size $N \times N$. That matrix, in the case of FFT, is called the **Discrete Fourier Transform (DFT)** matrix:
 
@@ -142,9 +152,9 @@ So how can we halve the size of a domain? Here is the solution.
 Given a domain containing $2^k$ values, including zero, we can construct a new half-size domain $D'$ by taking
 $x \cdot (x+k)$. because the function $f(x) = x \cdot (x+k)$ returns the same value for $x$ and $x + k$.
 
-| $x$               | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  |
-| ----------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| $x \cdot (x + 1)$ | 0   | 0   | 6   | 6   | 7   | 7   | 1   | 1   | 4   | 4   | 2   | 2   | 3   | 3   | 5   | 5   |
+| $x$               | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|-------------------|---|---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|
+| $x \cdot (x + 1)$ | 0 | 0 | 6 | 6 | 7 | 7 | 1 | 1 | 4 | 4 | 2  | 2  | 3  | 3  | 5  | 5  |
 
 Let us explain this table:
 
@@ -154,13 +164,25 @@ Let us explain this table:
 - With $x = 15 \iff x = 1111$; $x + 1 = 1111 + 0001 = 1110 = 14$ $\to x \cdot (x + 1) = 1111 \cdot 1110 = 0101 = 5$
 
 So, to do FFT on binary field, we should convert $f(x)$ into:
-$$f(x) = evens(x \cdot (k-x)) + x \cdot odds(x \cdot (k-x))$$
+
+$$
+\begin{aligned}
+f(x) = evens(x \cdot (k-x)) + x \cdot odds(x \cdot (k-x))
+\end{aligned}
+$$
+
 And $f(x + k) = evens((x + k) \cdot (-x)) + (x + k) \cdot odds((x+k) \cdot (-x))$
 $= evens(x \cdot (k-x)) + (x + k) \cdot odds(x \cdot (k-x))$.
 
 To convert $f(x)$ to $evens$ and $odds$ above in $O(N \cdot logN)$, we can use the
 [freshman's dream](https://en.wikipedia.org/wiki/Freshman%27s_dream) theory that in binary field:
-$$(x + y)^2 = x^2 + y^2$$
+
+$$
+\begin{aligned}
+(x + y)^2 = x^2 + y^2
+\end{aligned}
+$$
+
 Then, do the same things as in the FFT section.
 
 Here is the code for all the implementation that we mentioned above:
@@ -169,5 +191,3 @@ Here is the code for all the implementation that we mentioned above:
 ## Reference
 
 [Fast Fourier Transforms](https://vitalik.eth.limo/general/2019/05/12/fft.html)
-<br>
-Vitalik Buterin

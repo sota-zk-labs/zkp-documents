@@ -1,6 +1,8 @@
 ---
 cards-deck: terms
+comments: true
 ---
+
 # Fermat's Little Theorem []()
 
 If $p$ is a [prime number](https://en.wikipedia.org/wiki/Prime_number "Prime number"), then for any integer $a$:

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Quadratic Arithmetic Programs (QAP)
 
 [Quadratic Arithmetic Programs](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649)

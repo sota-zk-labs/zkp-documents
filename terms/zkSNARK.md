@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Zero knowledge Succinct Non-interactive Arguments of Knowledge (zkSNARK)
 
 ## Definition

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Statement
 
 In a ZKP, the prover wants to convince the verifier that a certain [statement](statement.md) or assertion is true. This

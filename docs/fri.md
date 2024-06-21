@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Fast Reed - Solomon Interactive Oracle Proof of Proximity
 
 References:
@@ -77,13 +81,14 @@ of [roots of unity](../docs/plonk.md#Roots%20of%20Unity) over [here](https://en.
 $\ohm$ has size $n$ if and only if $n$ divides $p - 1$:
 
 + FRI-based [SNARKs](../terms/zkSNARK.md) works over fields like $\mathbb{F}_p$
- with $p = 2^{64} - 2^{32} + 1$. So $p - 1$ is divisible $2^{32}$.
+  with $p = 2^{64} - 2^{32} + 1$. So $p - 1$ is divisible $2^{32}$.
 + Running FRI over the field can support any power-of-two value of $n$ up to $2^{32}$.
 
 > [!NOTE]
 > For FRI to function properly, it's essential that for every element $\omega$ within the domain
-$\ohm$, the negative counterpart $-\omega$ is also present in $\ohm$.
+> $\ohm$, the negative counterpart $-\omega$ is also present in $\ohm$.
 >
+
 ### Folding Phase (or Commit Phase)
 
 #### High Level Idea
@@ -156,7 +161,7 @@ So to confirm that $q(r) = v$, the verifier applies FRI's fold and query procedu
 $(q(X) - v)(X - r)^{-1}$ using degree bound $d-1$.
 
 + Whenever the FRI verifier queries this function at a point in $\ohm$, the evaluation can
- be obtained with one query to $q$ at the same point.
+  be obtained with one query to $q$ at the same point.
 
 ## Security
 

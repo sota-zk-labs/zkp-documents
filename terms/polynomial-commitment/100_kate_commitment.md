@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Kate Commitment (KZG)
 
 In response to the challenges posed in the [polynomial commitment](000_polynomial_commitment.md) context, the Kate

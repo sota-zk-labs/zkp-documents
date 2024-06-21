@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Witness
 
 The witness is the confidential information or secret that the prover possesses, which proves the truth of

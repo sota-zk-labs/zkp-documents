@@ -3,6 +3,7 @@ Title: Seminar Innovative Internet Technologies
 Status: Done
 Level: 4
 Note: Somewhat easy to read
+comments: true
 ---
 
 # Seminar Innovative Internet Technologies

@@ -1,6 +1,8 @@
 ---
 cards-deck: terms
+comments: true
 ---
+
 # Homogeneous Polynomial or Projective Model
 
 ## Definition

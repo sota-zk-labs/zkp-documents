@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Scalar field
 
 In the context of [elliptic curve group](elliptic_curve_group.md), **scalar field** $F_r$ is the field of scalars used in the

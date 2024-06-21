@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Arithmetization
 
 The language that we use to express [circuits](circuit.md) for a particular proof system.

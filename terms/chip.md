@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Chip
 
 Provides efficient pre-built implementation of a particular functionality.
