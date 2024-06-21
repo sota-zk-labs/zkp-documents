@@ -1,3 +1,6 @@
+---
+cards-deck: docs
+---
 # PLONK: Permutations over Lagrange-Bases for Oecumenical Noninteractive Knowledge
 
 **Reference:** [PLONK Blog Post](https://vitalik.eth.limo/general/2019/09/22/plonk.html)
@@ -24,7 +27,11 @@ In the context of gates and wires, PLONK introduces two main types of constraint
 
 The linear systems are represented as equations of the form:
 
-$$(Q_{L_i})a_i + (Q_{R_i})b_i + (Q_{O_i})c_i + (Q_{M_i})a_{i}b_{i} + Q_{C_i} = 0$$
+$$
+\begin{aligned}
+(Q_{L_i})a_i + (Q_{R_i})b_i + (Q_{O_i})c_i + (Q_{M_i})a_{i}b_{i} + Q_{C_i} = 0
+\end{aligned}
+$$
 
 Here, $L$ denotes left, $R$ denotes right, $O$ denotes output, $M$ denotes multiplication, and $C$ denotes a constant.
 The variables $a_i$, $b_i$, and $c_i$ are provided by the user.
@@ -40,13 +47,19 @@ The gate constraints are categorized into three sets:
 Using [Lagrange Interpolation](../terms/lagrange_interpolation.md), constants in the linear systems are converted into
 corresponding polynomials:
 
-$$Q_L (x)a (x) + Q_R (x)b (x) + Q_O (x)c (x) + Q_M (x)a (x)b (x) + Q_C (x) = 0$$
+$$
+\begin{aligned}
+Q_L (x)a (x) + Q_R (x)b (x) + Q_O (x)c (x) + Q_M (x)a (x)b (x) + Q_C (x) = 0
+\end{aligned}
+$$
 
-### Roots of Unity
+### Roots of Unity []()
 
 The n-th roots of unity are employed, where $x^n = 1$.
 
 You can read about two context that used roots of unity it [here](https://hackmd.io/@benjaminion/bls12-381#Roots-of-unity).
+
+[](1713267785624)
 
 ### Copy Constraints
 

@@ -1,6 +1,7 @@
 [
   "obsidian-linter",
-  "obsidian-spaced-repetition",
   "table-editor-obsidian",
-  "dataview"
+  "dataview",
+  "flashcards-obsidian",
+  "omnisearch"
 ]
