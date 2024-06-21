@@ -20,8 +20,7 @@ few use cases:
   proofs) that may be defined over an arbitrary field ($\mathbb{F}_2, \mathbb{F}_q, ...$) inside our field $\mathbb{F}_n$.
 - **Proof aggregation:** merge multiple proofs and create a single proof from them to save resource.
 
-In this article, we will take advantage of [Chinese Remainder Theorem](../terms/chinese_remainder_theorem.md) (CRT)
-and [Plookup](reed_solomon_fingerprinting.md) to solve the problem, separately.
+In this article, we will take advantage of [Chinese Remainder Theorem](../terms/chinese_remainder_theorem.md) (CRT) to solve the problem.
 
 ## Problem
 
@@ -151,16 +150,15 @@ Now we have $a \cdot b - q \cdot p - r = 0 \mod n$ and $a \cdot b - q \cdot p - 
 means that $a \cdot b - q \cdot p - r = 0$. Note that we should choose $T$ such that $t_3 < n$ to be able to represent all our numbers
 in our native field $\mathbb{F}_n$.
 
-## Non-native Field Arithmetic with Lookup Argument
+### Range check using lookup argument
 
-<!-- > [!Warning]
-> This section is written according to my personal understanding, so it should be used for reference rather than belief
+When decomposing an element into its limbs, we need to perform a ==range check== $a_i \in [0, 2^B) \forall i$, which can be done quickly using lookup argument (e.g., [Plookup](./plookup.md)). For example, with $B = 64$, we can create a lookup table $t = \lbrace 0, 1, ..., 2^8-1\rbrace$, and add the following constraints to ensure an element $x$ is in $[0, 2^B)$:
 
-Investigating the statement "Cost of non-aligned field operations have gone down a lot since the introduction of schemes like Plookup."
-from this [article](https://notes.ethereum.org/@dankrad/kzg_commitments_in_proofs), I explored [Plookup](plookup.md) but couldn't find
-any articles about integrating Lookup with non-aligned field operations. Perhaps it's too straightforward to see?
 
-After exploring limbs decomposition, I think Plookup can be applied directly to non-native field arithmetic. For example, suppose we
-want to represent $6 \cdot 2$ in $\mathbb{F}_5$, we can decompose $6$ into some limbs, and then construct a table containing the
-mapping $(2,limbs(6)) \rightarrow 2$. -->
-#todo
+
+$$
+\begin{aligned}
+\lbrace x_0, x_1, \ldots, x_7\rbrace \in t \\
+\sum_{i=0}^7 x_i * 2^{7i} = x
+\end{aligned}
+$$
