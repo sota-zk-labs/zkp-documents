@@ -21,7 +21,7 @@ FRI protocol uses the idea of testing two polynomials with half the queries and 
 
 ## What is FRI For?
 
-Proving a vector commitment is (close to) a Reed-Solomon codeword (Low-degree polynomial).
+Proving a vector commitment is (close to) a Reed-Solomon [codeword](../terms/codeword.md) (Low-degree polynomial).
 
 ## How Does FRI Work?
 

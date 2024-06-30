@@ -56,7 +56,8 @@ Read the lemma [here](../../terms/schwartz_zippel_lemma.md).
 
 ### 3.5 Low Degree and Multilinear Extensions
 
-Read the definitions of [Multilinear](../../terms/multilinear.md) and [Extension](../../terms/extension).
+Read the definitions of [Low-degree extension](../../terms/low_degree_extension.md),
+[Multilinear](../../terms/multilinear.md) and [Extension](../../terms/extension).
 
 **Fact 3.5**: Any function $f: \{0, 1\}^v → F$ has a unique multilinear extension (MLE) over $F$. The proof is
 available [here](../../terms/uniqueness_of_multilinear_extension.md).
