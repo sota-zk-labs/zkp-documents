@@ -2,21 +2,33 @@
 comments: true
 ---
 
-# Commitment scheme
+# Commitment Scheme
 
-In a commitment scheme, there are two parties, a committer and a verifier. The committer wishes to bind itself to a message without
-revealing the message to the verifier. That is, once the committer sends a commitment to some message $m$, it should be unable to
-“open” to the commitment to any value other than $m$ (this property is called binding). But at the same time the commitment itself
-should not reveal information about $m$ to the verifier (this is called hiding). I highly recommend you watch
-[this video](https://www.youtube.com/watch?v=4w_b8Msxy14) to clearly understand these two properties.
+**Parties**: Committer and Verifier
 
-Formally, a commitment scheme is specified by three algorithms, $KeyGen$, $Commit$, and $Verify$. $KeyGen$ is a randomized algorithm
-that generates a commitment key $ck$ and a verification key $vk$ that are available to the committer and the verifier respectively (if
-all keys are public then $ck$ = $vk$), while $Commit$ is a randomized algorithm that takes as input the committing key $ck$ and the
-message $m$ to be committed and outputs the commitment $c$, as well as possibly extra “opening information” $d$ that the committer may
-hold onto and only reveal during the verification procedure. $Verify$ takes as input the commitment, the verification key, and a
-claimed message $m'$ provided by the committer, and any opening information $d$ and decides whether to accept $m$ as a valid opening of
-the commitment. See the diagram below for a better visualization.
+**Goal**: Committer binds to a message $m$ without revealing it. The commitment:
+
+1. **Binding**: Committer can't change the message after committing.
+2. **Hiding**: Verifier can't learn anything about the message from the commitment.
+
+**Recommended Resource**: [Video on Binding and Hiding](https://www.youtube.com/watch?v=4w_b8Msxy14).
+
+## Formal Definition
+
+### Algorithms
+
+1. **$KeyGen$**: Generates keys
+    - $ck$ for the committer
+    - $vk$ for the verifier
+    - If public, $ck = vk$
+2. **$Commit$**:
+    - Input: $ck$, message $m$
+    - Output: Commitment $c$, possibly extra info $d$
+3. **$Verify$**:
+    - Input: $c$, $vk$, claimed message $m'$, and opening info $d$
+    - Output: Accept or Reject
+
+### Diagram
 
 ```mermaid
 flowchart TD
@@ -37,11 +49,13 @@ flowchart TD
     D -->|Decision| F[Accept or Reject]
 ```
 
-A commitment scheme is correct if $Verify(vk,Commit(m, ck),m)$ accepts with probability $1$, for any $m$ (i.e., an honest committer can
-always successfully open the commitment to the value that was committed). A commitment scheme is ==perfectly hiding== if the
-distribution
-of the commitment $Commit(m, ck)$ is independent of $m$. Finally, a commitment scheme is ==computationally binding== if it require
-exorbitant computational power to find some $d', m' \neq m$ such that $Verify(vk,(c,d),m) = Verify(vk,(c,d'),m') = 1$.
+## Properties
 
-One crucial type of commitment scheme that you will often see
-is [polynomial commitment scheme](polynomial-commitment/000_polynomial_commitment.md).
+- **Correctness**: $Verify(vk, Commit(m, ck), m)$ accepts with probability 1 for any $m$.
+- **Perfectly Hiding**: Distribution of $Commit(m, ck)$ is independent of $m$.
+- **Computationally Binding**: It's computationally hard to find $d', m' \neq m$ such that
+  $Verify(vk, (c, d), m) = Verify(vk, (c, d'), m') = 1$.
+
+## Example
+
+[Polynomial Commitment Scheme](polynomial-commitment/000_polynomial_commitment.md)
