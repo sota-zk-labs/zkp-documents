@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Monolith Hash
 
 > [!WARNING]

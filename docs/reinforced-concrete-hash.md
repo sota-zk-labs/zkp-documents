@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Reinforced Concrete
 
 > [!WARNING]

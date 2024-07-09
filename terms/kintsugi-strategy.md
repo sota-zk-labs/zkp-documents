@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Kintsugi Strategy
 
 > [!WARNING]
@@ -18,8 +22,8 @@ Key principles include:
 + Split the integer form of a field element into chunks aligned with powers of two for lookup table in a ZK circuit.
 + Identify chunk value combinations that are absent because $p$ isn't a power of two.
 + Design intra-chunk transformations $S_i$ such that:
-    + Impossible chunk combinations never appear (e.g. by making some chunk values fixed points), and
-    + They can be implemented in constant time
+  + Impossible chunk combinations never appear (e.g. by making some chunk values fixed points), and
+  + They can be implemented in constant time
 + Recombine shuffled chunks into a field element, ensuring that the output remains within the field.
 
 ![kintsugi_strategy](attachments/kintsugi_strategy.png)
