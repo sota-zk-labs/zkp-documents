@@ -22,9 +22,9 @@ properties or lies within a desired distribution. Here’s a detailed breakdown:
 ## Importance and Applications
 
 1. **Trapdoor Functions**:
-    - Preimage sampling is often used with trapdoor functions. These functions are easy to compute in one direction but hard to reverse
-      unless you have special information (the trapdoor). Preimage sampling can leverage the trapdoor to efficiently find preimages
-      with desired properties.
+    - Preimage sampling is often used with [trapdoor](trapdoor.md) functions. These functions are easy to compute in one direction but
+      hard to reverse unless you have special information (the trapdoor). Preimage sampling can leverage the trapdoor to efficiently
+      find preimages with desired properties.
 
 2. **Digital Signatures**:
     - In digital signature schemes like those based on the Learning With Errors (LWE) or Ring-LWE problems, preimage sampling is used
@@ -34,13 +34,6 @@ properties or lies within a desired distribution. Here’s a detailed breakdown:
     - Preimage sampling is used in commitment schemes to ensure that a commitment can be opened to a specific value that meets required
       criteria.
 
-## Example: Lattice-Based Cryptography
+## Example
 
-Consider the SIS (Short Integer Solution) problem:
-
-- Given a matrix $A \in \mathbb{Z}^{m \times n}$ and a vector $\mathbf{y} \in \mathbb{Z}^m$, the task is to find a short
-  vector $\mathbf{x} \in \mathbb{Z}^n$ such that $A \mathbf{x} = \mathbf{y} \mod q$.
-- Preimage sampling involves finding such an $\mathbf{x}$ efficiently.
-
-In lattice-based schemes, this can be done using algorithms like the Gaussian sampler, which samples vectors according to a discrete
-Gaussian distribution centered around the target vector.
+[View this](trapdoor_uniform_random_matrix.md).
