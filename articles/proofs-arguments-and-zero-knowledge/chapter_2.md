@@ -48,9 +48,13 @@ Reason: The time complexity of multiplying a (n x n) matrix and a vector of size
 
    Consider matrices:
 
-   $`A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}`$
+$$
+A = \begin{bmatrix} 1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 \end{bmatrix}
+$$
 
-   $`B = \begin{bmatrix} 1 \\ r \\ r ^ 2 \end{bmatrix}`$
+$$ B = \begin{bmatrix} 1 \\ r \\ r ^ 2 \end{bmatrix} $$
 
    The product $C$ is obtained as follows:
 
@@ -62,7 +66,7 @@ Reason: The time complexity of multiplying a (n x n) matrix and a vector of size
 
    Resulting in:
 
-   $`C = \begin{bmatrix} 3r^2 + 2r + 1 \\ 6r^2 + 5r + 4 \\ 9r^2 + 8r + 7 \end{bmatrix}`$
+$$ C = \begin{bmatrix} 3r^2 + 2r + 1 \\ 6r^2 + 5r + 4 \\ 9r^2 + 8r + 7 \end{bmatrix} $$
 
 ## An Alternative View of Fingerprinting and Freivalds’ Algorithm
 
@@ -78,7 +82,7 @@ There are other ways to interpret $a$ as the description of a univariate polynom
 
 **Lemma 2.3**: For any vector $a = (a_1,...,a_n)$ ∈ $F_n$, there is a unique univariate polynomial $q_a$ of degree at
 most $n−1$ such that:
-$q_a(i)  = a_{i + 1}$ for i: 0 -> n - 1
+$q_a(i)  = a_{i + 1}$ for i: $0 \rightarrow n - 1$
 
 Now, use Lagrange basis polynomials to find $q_a$
 $δ_i(X) = \prod_{k: 0-> n - 1, k != i} (X - k) / (i - k)$
