@@ -15,8 +15,8 @@ comments: true
 
 ![GSW Encryption Scheme](attachments/gsw_encryption_scheme.png)
 
-- $A$: is the public key; an [LWE matrix](../terms/learning_with_errors.md) (columns are LWE samples): $s^T A = e^T \approx 0^T$
-- $s$: is the secret key.
+- $A$: The public key; an [LWE matrix](../terms/learning_with_errors.md) (columns are LWE samples): $s^T A = e^T \approx 0^T$
+- $s$: The secret key.
 
 ### Encryption
 
@@ -27,18 +27,17 @@ $$
 C = AR + xG
 $$
 
-- **[Gadget Matrix](../terms/gadget_matrix.md) $G$**:
-  [Easy to solve](https://www.jeremykun.com/2021/12/11/the-gadget-decomposition-in-fhe/) $x$ given $G$ and
-  $s$:
+- **[Gadget Matrix](../terms/gadget_matrix.md) $G$**: A matrix that makes it easy to solve $x$ given $G$ and $s$:
 
 $$
-G = (1,2,4,\ldots,2^l) \otimes I_n \in \mathbb{Z}_q^{n \times nl}
+G = (1, 2, 4, \ldots, 2^l) \otimes I_n \in \mathbb{Z}_q^{n \times nl}
 $$
 
-- **Public Trapdoor**: The "binary decomposition," $G^{-1}:\mathbb{Z}_q^{n \times nl} \rightarrow \{0,1\}^{nl \times k}$
-  such that
+- **Public Trapdoor**: The "binary decomposition," $G^{-1}:\mathbb{Z}_q^{n \times nl} \rightarrow \{0,1\}^{nl \times k}$ such that
 
-$$GG^{-1}(A) = A$$
+$$
+GG^{-1}(A) = A
+$$
 
 ### Decryption
 
@@ -86,7 +85,7 @@ $$
 
 ### Correctness
 
-- $R_1$, $R_2$, $x_1$ short ⇒ $R_+$, $R_\times$ also short
+- $R_1$, $R_2$, $x_1$ are short, so $R_+$ and $R_\times$ are also short.
 
 ### Evaluation
 
@@ -131,10 +130,6 @@ Example: [Lattices, Learning with Errors (page 73)](https://people.csail.mit.edu
 
 Where $A$ is actually $C$ and $\mu$ is actually $x$.
 
-#### Applications
-
-![GSW Applications](attachments/gsw_applications.png)
-
 ## GSW as a Homomorphic Commitment
 
 $$
@@ -143,8 +138,8 @@ $$
 
 - View $C$ as the commitment, $x$ as the message, and $R$ as the opening (must be short).
 
-- **Statistically Binding**: Follows from the correctness of GSW (in fact, extractable)
-- **Computationally Hiding**: Follows from the security of GSW (under LWE)
+- **Statistically Binding**: Follows from the correctness of GSW (in fact, extractable).
+- **Computationally Hiding**: Follows from the security of GSW (under LWE).
 
 ### Commitment Procedure
 
@@ -171,6 +166,9 @@ $$
 
 The verifier can compute this using the "Input-Independent Evaluation" technique above.
 
+> [!NOTE]
+> We can choose $A$ as a uniformly random matrix since we don't need to decrypt the message.
+
 - **Opening**:
 
 $$
@@ -182,20 +180,7 @@ $$
 
 - By using this formula, the verifier doesn't need to know any $R_i$.
 - The prover knows $R_1, \ldots, R_n$.
-- $H_{f,x}$ can be computed given the function $f$ and $x$
+- $H_{f,x}$ can be computed given the function $f$ and $x$.
 
 - **Check**:
   - The verifier can then verify $C_f = AR_{f,x} + f(x)G$ as described in the picture above.
-
-### From Commitments to Non-Interactive Zero-Knowledge
-
-### Soundness
-
-[Soundness](../../terms/zkp.md#soundness)
-
-### Trapdoor
-
-**Random matrix** $A \times$ **short matrix trapdoor** $R$ = gadget matrix $G$
-
-> [!NOTE]
-> Given $u = f_A(x)$ and $R$, can sample short $x'$ where $f_A(x')=u$
