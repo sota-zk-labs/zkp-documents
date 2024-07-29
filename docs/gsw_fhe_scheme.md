@@ -131,10 +131,6 @@ Example: [Lattices, Learning with Errors (page 73)](https://people.csail.mit.edu
 
 Where $A$ is actually $C$ and $\mu$ is actually $x$.
 
-#### Applications
-
-![GSW Applications](attachments/gsw_applications.png)
-
 ## GSW as a Homomorphic Commitment
 
 $$
@@ -171,6 +167,10 @@ $$
 
 The verifier can compute this using the "Input-Independent Evaluation" technique above.
 
+> [!NOTE]
+> We can choose $A$ as a uniformly random matrix, since we don't need to decrypt the message.
+
+
 - **Opening**:
 
 $$
@@ -187,15 +187,5 @@ $$
 - **Check**:
   - The verifier can then verify $C_f = AR_{f,x} + f(x)G$ as described in the picture above.
 
-### From Commitments to Non-Interactive Zero-Knowledge
 
-### Soundness
 
-[Soundness](../../terms/zkp.md#soundness)
-
-### Trapdoor
-
-**Random matrix** $A \times$ **short matrix trapdoor** $R$ = gadget matrix $G$
-
-> [!NOTE]
-> Given $u = f_A(x)$ and $R$, can sample short $x'$ where $f_A(x')=u$

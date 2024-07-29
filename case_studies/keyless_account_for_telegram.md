@@ -1,14 +1,20 @@
 # Keyless Account for Telegram
 
+!TOC
+
 ## Introduction
 
 Currently, there is support for users to utilize web3 applications without managing their own public and private key pairs, and without
 using custodial wallets, by using their credentials directly from authentication providers like Google or Apple. This is made possible
 thanks to zero-knowledge (ZK) technology and account abstraction. However, the current solution
 (e.g., [zkLogin](https://docs.sui.io/concepts/cryptography/zklogin)) only supports authentication providers that offer OIDC (OpenID
-Connect). Providers like Telegram cannot use this, so we need to devise an alternative solution.
+Connect). Other providers like Telegram cannot be supported using the same technique, so we need to devise an alternative solution.
 
-In this document, we will introduce the modified flow suited for Telegram.
+In this document, we will analyze and then try to introduce the modified flow that is suited for Telegram.
+
+> [!NOTE]
+> Although we couldn't successfully create a fully working flow. we hope that this will help to bring some info for the interested
+> reader.
 
 ## Telegram OAuth Properties
 
@@ -25,7 +31,7 @@ There is no support for custom fields as opposed to OIDC, which users can use to
 signature. This provides an easy way (as demonstrated in steps (1) and (2) in the OIDC Compatible section of the figure below) to
 ensure no one else can create a valid proof and link it with an arbitrary web3 account.
 
-## The Solution
+## The Overview Flow
 
 ![Keyless Account](./attachments/keyless_account.png)
 
@@ -44,7 +50,7 @@ ensure no one else can create a valid proof and link it with an arbitrary web3 a
 
 3. **Circuit Verification:** In the circuit, use the `user_info` provided by the user and combine it with the
    embedded `Hash(bot_token)` value to calculate the `user_info_hash`. This is done in an encrypted context (a feature provided by
-   using ZK and [Fully Homomorphic Encryption (FHE)](../terms/homomorphic_encryption.md) techniques) so no one can read it.
+   using [Homomorphic Commitment](../terms/homomorphic_encryption.md) techniques) so no one can read it.
 
 4. **Hash Consistency Check:** The newly calculated `user_info_hash` is combined with the `ephemeral public key` provided by the user
    to compare with `Hash_E` to ensure consistency.
@@ -60,28 +66,28 @@ ensure no one else can create a valid proof and link it with an arbitrary web3 a
 
 This definition is taken from [RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104):
 
-$$
-\begin{align}
-\operatorname{HMAC}(K, m) &= \operatorname{H}\Bigl(\bigl(K' \oplus opad\bigr) \parallel
-\operatorname{H} \bigl(\left(K' \oplus ipad\right) \parallel m\bigr)\Bigr) \\
-K' &= \begin{cases}
-\operatorname{H}\left(K\right) & \text{if}\ K\text{ is larger than block size} \\
-K & \text{otherwise}
-\end{cases}
-\end{align}
+$$  
+\begin{align}  
+\text{HMAC}(K, m) &= \text{H}\Bigl(\bigl(K' \oplus opad\bigr) \parallel  
+\text{H} \bigl(\left(K' \oplus ipad\right) \parallel m\bigr)\Bigr) \\  
+K' &= \begin{cases}  
+\text{H}\left(K\right) & \text{if K is larger than block size} \\  
+K & \text{otherwise}  
+\end{cases}  
+\end{align}  
 $$
 
 where:
 
-- $\operatorname{H}$ is a cryptographic hash function.
-- $m$ is the message to be authenticated.
-- $K$ is the secret key.
-- $K'$ is a block-sized key derived from the secret key, either by padding to the right with 0s up to the block size, or by hashing
+- `H` is a cryptographic hash function.
+- `m` is the message to be authenticated.
+- `K` is the secret key.
+- `K'` is a block-sized key derived from the secret key, either by padding to the right with 0s up to the block size, or by hashing
   down to less than or equal to the block size first and then padding to the right with zeros.
 - $\parallel$ denotes `concatenation`.
 - $\oplus$ denotes bitwise `exclusive or` (XOR).
-- `opad` is the block-sized outer padding, consisting of repeated bytes valued 0x5c.
-- `ipad` is the block-sized inner padding, consisting of repeated bytes valued 0x36.
+- `opad` is the block-sized outer padding, consisting of repeated bytes valued `0x5c`.
+- `ipad` is the block-sized inner padding, consisting of repeated bytes valued `0x36`.
 
 ### HMAC-SHA-256
 
