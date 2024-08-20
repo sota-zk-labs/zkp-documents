@@ -24,9 +24,8 @@ contributing a value $s_i$. The resulting secret key is the sum of all contribut
 secret sharing can be performed non-interactively.
 
 $\frac{s_i}{\lambda_i}$ represents Shamir's secret sharing of the same secret $s$, where $\lambda_i$ are the
-[Lagrange](./lagrange_interpolation.md) coefficients (Basis Polynomials). In FROST, participants use this technique during signing
+[Lagrange](./lagrange_interpolation.md) coefficients (basis polynomials). In FROST, participants use this technique during signing
 operations to non-interactively generate a nonce that is Shamir secret shared among all signing participants.
-
 
 ## FROST
 
@@ -39,7 +38,7 @@ $S = \lbrace p_1, \dots, p_\alpha \rbrace$. Let $\lambda_i$ denote the Lagrange 
 
 ### Features
 
-Signature Aggregator Role: FROST using a semi-trusted signature aggregator role, denoted as $SA$. This role can be performed by anyone
+Signature Aggregator Role: FROST uses a semi-trusted signature aggregator role, denoted as $SA$. This role can be performed by anyone
 inside or outside the protocol, provided they know the participants' public-key shares $Y_i$. The $SA$ is trusted to report
 misbehaving participants and publish the group signature.
 
@@ -62,7 +61,7 @@ misbehaving participants and publish the group signature.
 
 - Each $P_i$ sends a secret share $(p, f_i(p))$ to $P_p$ , and deletes $f_i$.
 - Each $P_i$ verifies their received shares : $g^{f_p(i)} \stackrel{?}{=} \prod_{k=0}^{t-1} A_{p_k}^{i^k \mod q}$
-- Each $P_i$ computes their long-lived private signing share $s_i = \sum_{p=1}^n(f_p(i))$ for $p = 1,\dots, n$, stores $s_i$ securely
+- Each $P_i$ computes their long-lived private signing share $s_i = \sum_{p=1}^n(f_p(i))$,  stores $s_i$ securely
   and deletes each $f_p(i)$.
 - Each $P_i$ computes their public verification share $Y_i = g^{s_i}$ and the group's public key $Y = \prod(A_{j0})$ for
   $j = 1,\dots,n$. Any $P_i$ can compute the public verification share  $Y_i = \prod_{j=1}^{n} \prod_{k=0}^{t-1}A_{jk}^{i^k \mod q}$
@@ -108,7 +107,7 @@ Workflows:
   - $z_i = d_i + (e_i \cdot \rho_i) + \lambda_i \cdot s_i \cdot c$
 - Each $P_i$ returns $z_i$ to $SA$
 - $SA$ performs:
-  - $\rho_i = H_1(i, m, S)$ and $R_i = D_{ij} \cdot (E_{ij})^{\rho_i}$ for $i \in S$
+  - $\rho_i = H_1(i, m, B)$ and $R_i = D_{ij} \cdot (E_{ij})^{\rho_i}$ for $i \in S$
   - $R = \prod_{i∈S}R_i$  and $c = H_2(R, Y, m)$
   - Check $P_i$'s response: $g^{z_i} \stackrel{?}{=} R_i \cdot Y_i^{c \cdot \lambda_i}$
   - Group response: $z = \sum z_i$

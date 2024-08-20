@@ -12,7 +12,7 @@ Read the definition of DKG [here](./distributed_key_generation.md).
 
 ### Definition []()
 
-A $(t, n)$ VSS includes two phases: *Share* and *Reconstruct* as follow:
+A $(k, n)$ VSS includes two phases: *Sharing* and *Reconstruction* as follows:
 
 **Share:**
 
@@ -21,7 +21,7 @@ A $(t, n)$ VSS includes two phases: *Share* and *Reconstruct* as follow:
 
 **Reconstruct**:
 
-- Each party $P_i$ publishes its share $s_i$ from the sharing phase for reconstruction $s$.
+- Each party $P_i$ publishes its share $s_i$ from the sharing phase for reconstructing $s$.
 
 If $D$ is dishonest, then at the end of **sharing** phase, there exists a value $s^*$ such that all parties agree on it at the end of
 **reconstruct** phase.
