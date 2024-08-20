@@ -1,0 +1,1208 @@
+{
+  "nodes": [
+    {
+      "id": "344d1da34de25622",
+      "type": "text",
+      "text": " Proof Option: {\n\t- Number of queries\n\t- LDE_blowup_factor $^{[3]}$\n\t- Proof_of_work_bits\n\t- FRI_folding_factor\n\t- FRI_max_remainder_coeffs\n}",
+      "styleAttributes": {},
+      "x": -1200,
+      "y": -1490,
+      "width": 340,
+      "height": 240,
+      "color": "3"
+    },
+    {
+      "id": "703cf44e69ad5b56",
+      "type": "text",
+      "text": "Required security bit $^{[11]}$",
+      "styleAttributes": {},
+      "x": 1280,
+      "y": -1415,
+      "width": 260,
+      "height": 56
+    },
+    {
+      "id": "65e2b8e2ccc3321c",
+      "type": "text",
+      "text": "- Proof:\n\t- *options*\n\t- *trace_len*\n\t- *base_trace_commitment*, *extension_trace_commitment*, *composition_trace_commitment*\n\t- *ood_evals*\n\t- *nonce*\n\t- *fri_proof*\n\t- *trace_queries*",
+      "styleAttributes": {},
+      "x": 730,
+      "y": -1691,
+      "width": 400,
+      "height": 332,
+      "color": "2"
+    },
+    {
+      "id": "124f547b1c8b1363",
+      "type": "text",
+      "text": "Prover",
+      "styleAttributes": {},
+      "x": -773,
+      "y": -1160,
+      "width": 106,
+      "height": 50,
+      "color": "1"
+    },
+    {
+      "id": "e91dc4cf5e8f07f5",
+      "type": "text",
+      "text": "Verifier",
+      "styleAttributes": {},
+      "x": 1224,
+      "y": -1160,
+      "width": 112,
+      "height": 50,
+      "color": "#385bc2"
+    },
+    {
+      "id": "4fe84d9aecf30064",
+      "type": "text",
+      "text": "- Generate *AIR* from *trace_len*, *public_input*, *options*.\n\t- *AIR* {\n\t\t- *constraints*\n\t\t- *composition_constraint*  \n\t\t- *ce_blowup_factor*\n\t- }",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": -1020,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "8ce6fcfbc8430adb",
+      "type": "text",
+      "text": "- Verify **Proof of work** with the provided *nonce*",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 908,
+      "width": 400,
+      "height": 92
+    },
+    {
+      "id": "269228b282775928",
+      "type": "text",
+      "text": "- Generate *FRI_verifier*:\n\t- Generate a list of alpha values\n\t- Generate a list of layers commitments from proof\n\t- FRI Proof\n\t- FRI Domain",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 608,
+      "width": 400,
+      "height": 220
+    },
+    {
+      "id": "680692047817bebe",
+      "type": "text",
+      "text": "- Compute *hints* from *AIR* and *challenges*.\n",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": -647,
+      "width": 400,
+      "height": 94
+    },
+    {
+      "id": "9a30fc8305c7d973",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": -435,
+      "width": 400,
+      "height": 55
+    },
+    {
+      "id": "d326d3c0dd71675a",
+      "type": "text",
+      "text": "**DEEP method** \n- Define ood evals:  (*execution_trace_oods, composition_trace_oods*)",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": -220,
+      "width": 400,
+      "height": 140
+    },
+    {
+      "id": "3e0ca4085c937f4e",
+      "type": "text",
+      "text": "- Zip *trace_arguments* with their *execution_trace_oods* -> *trace_ood_eval_map*\n- Compute *composition constraint*  at  *z* using *composition_coeffs*  -> *calculated_ood_constraint_eval*",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 26,
+      "width": 400,
+      "height": 234
+    },
+    {
+      "id": "6a7692b8707ea4ed",
+      "type": "text",
+      "text": "- Evaluate *composition_trace_oods* at $z$.  -> *provided_ood_constraint_eval* \n- Compare it with *calculated_ood_constraint_eval*.",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 350,
+      "width": 400,
+      "height": 170
+    },
+    {
+      "id": "882aac58ee59c20e",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": -830,
+      "width": 154,
+      "height": 50,
+      "color": "4"
+    },
+    {
+      "id": "0840ec68c8fcef34",
+      "type": "text",
+      "text": "Claim {\n- Public Input\n- Compiled Program\n- Output\n}  ",
+      "styleAttributes": {},
+      "x": 180,
+      "y": -1490,
+      "width": 260,
+      "height": 192,
+      "color": "3"
+    },
+    {
+      "id": "177f586f86880500",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": -600,
+      "width": 154,
+      "height": 77,
+      "color": "4"
+    },
+    {
+      "id": "976f61cb121c4361",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": 60,
+      "width": 154,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "21943ef5fbd656a8",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": -255,
+      "width": 154,
+      "height": 50,
+      "color": "4"
+    },
+    {
+      "id": "540f23a7d7d2ead3",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": 405,
+      "width": 154,
+      "height": 75,
+      "color": "4"
+    },
+    {
+      "id": "9104462916e8e33e",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": 908,
+      "width": 154,
+      "height": 76,
+      "color": "4"
+    },
+    {
+      "id": "4002eb5aafcfcf90",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 440,
+      "y": -900,
+      "width": 154,
+      "height": 1900,
+      "color": "4"
+    },
+    {
+      "id": "7f35117bf22cf9d2",
+      "type": "text",
+      "text": "Random Oracle Model",
+      "styleAttributes": {},
+      "x": 440,
+      "y": -1020,
+      "width": 154,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "bc2c26f7067038ea",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": 425,
+      "width": 154,
+      "height": 55,
+      "color": "4"
+    },
+    {
+      "id": "fbcedc912ead7c45",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": -275,
+      "width": 154,
+      "height": 55,
+      "color": "4"
+    },
+    {
+      "id": "a60f24d6dd925b50",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": 90,
+      "width": 154,
+      "height": 53,
+      "color": "4"
+    },
+    {
+      "id": "b1473c6fc791b09f",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": 730,
+      "width": 154,
+      "height": 50,
+      "color": "4"
+    },
+    {
+      "id": "cc7c568c505329a3",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": 1150,
+      "width": 154,
+      "height": 50,
+      "color": "4"
+    },
+    {
+      "id": "8efc073f4869ffff",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": 1478,
+      "width": 154,
+      "height": 50,
+      "color": "4"
+    },
+    {
+      "id": "a71f335947dfb174",
+      "type": "text",
+      "text": "",
+      "styleAttributes": {},
+      "x": 50,
+      "y": -372,
+      "width": 154,
+      "height": 1900,
+      "color": "4"
+    },
+    {
+      "id": "9d3503dd46a75fe4",
+      "type": "text",
+      "text": "Random Oracle Model",
+      "styleAttributes": {},
+      "x": 50,
+      "y": -492,
+      "width": 154,
+      "height": 120,
+      "color": "4"
+    },
+    {
+      "id": "9199efd82a895dca",
+      "type": "text",
+      "text": "Witness {\n- AIR private Input\n- Register states\n- Memory\n}",
+      "styleAttributes": {},
+      "x": -667,
+      "y": -1490,
+      "width": 267,
+      "height": 192,
+      "color": "3"
+    },
+    {
+      "id": "8f4c2a331f20a7f2",
+      "type": "text",
+      "text": "- Interpolate *base_trace* columns over the *trace_domain*$^{[2]}$ -> *base_trace_polys*\n- Evaluate *base_trace_polys* over the *lde_domain*$^{[3]}$ -> Matrix: *base_trace_lde*\n- Commit *base_trace_lde* via a Merkle Tree",
+      "styleAttributes": {},
+      "x": -956,
+      "y": -492,
+      "width": 473,
+      "height": 190
+    },
+    {
+      "id": "8db0eafc69217f92",
+      "type": "text",
+      "text": "- Compute *hints* from *AIR* and *challenges*.\n- Build *extension_trace*$^{[1]}$ from *trace* and *challenges*\n- Interpolate *extension_trace* columns over the *trace_domain* -> *extension_trace_polys*\n- Evaluate *extension_trace_polys* over the *lde_domain* -> Matrix: *extension_trace_lde*\n- Commit *extension_trace_lde* via a Merkle Tree",
+      "styleAttributes": {},
+      "x": -956,
+      "y": -230,
+      "width": 473,
+      "height": 280
+    },
+    {
+      "id": "6613b5b2149610b8",
+      "type": "text",
+      "text": "- Evaluate *composition_constraint* (with *composition_coeffs*) over the *ce_domain*. -> a matrix $1 \\times n$\n- Interpolate this matrix over the *ce_domain* -> *composition_poly*\n- Split *composition_poly* into *ce_blowup_factor* many parts.$^{[5]}$ -> *composition trace polys*\n- Evaluate *composition trace polys* over the *lde_domain* -> Matrix: *composition_trace_lde* \n- Commit *composition_trace_lde* via a Merkle Tree",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 120,
+      "width": 473,
+      "height": 360
+    },
+    {
+      "id": "fc20f9042f578fb6",
+      "type": "text",
+      "text": "**DEEP method** $^{[6]}$\n- Compute ood evals:  (*execution_trace_oods*$^{[8]}$, *composition_trace_oods*$^{[9]}$) from *trace_arguments*$^{[7]}$ and *z*. ",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 560,
+      "width": 473,
+      "height": 147
+    },
+    {
+      "id": "7a5898ff57f121e5",
+      "type": "text",
+      "text": "**DEEP method**\n- Compute *deep_composition_poly*:\n\t- Divide out OOD point from trace polys using DEEP coeffs -> quotients\n\t- Combine the quotients and adjust the degree\n- Evaluate *deep_composition_poly* over the *lde_domain* -> *deep_composition_lde*",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 780,
+      "width": 473,
+      "height": 268
+    },
+    {
+      "id": "0a534d1b5efe013d",
+      "type": "text",
+      "text": "**FRI**\n- Build the FRI prover with *options*\n- Construct FRI layers from *deep_composition_lde*",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 1130,
+      "width": 473,
+      "height": 140
+    },
+    {
+      "id": "69b4fd5d8716d6f0",
+      "type": "text",
+      "text": "**Proof of Work** $^{[10]}$\n- Compute the *nonce*.",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 1340,
+      "width": 473,
+      "height": 85
+    },
+    {
+      "id": "002f484a488d575c",
+      "type": "text",
+      "text": "- Compute FRI proofs for each *query_position* -> *fri_proof*\n- Compute *trace_queries*:\n\t- *trace_proofs*: Merkle proofs for each row of the 3 *LDEs* at each *query_position*\n\t- *trace_values*: row values of the 3 *LDEs* at each *query_position*.",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 1503,
+      "width": 473,
+      "height": 240
+    },
+    {
+      "id": "e45939035b517d54",
+      "type": "text",
+      "text": "- Generate Proof:\n\t- *options*\n\t- *trace_len*\n\t- *base_trace_commitment*, *extension_trace_commitment*, *composition_trace_commitment*\n\t- *ood_evals*\n\t- *nonce*\n\t- *fri_proof*\n\t- *trace_queries*",
+      "styleAttributes": {},
+      "x": -956,
+      "y": 1820,
+      "width": 473,
+      "height": 340
+    },
+    {
+      "id": "ef7a4fec8476ebeb",
+      "type": "text",
+      "text": "- Generate *execution_trace* from *Claim* and *Witness*.\n\t- *execution trace* {\n\t\t- *base_trace* $^{[1]}$\n\t\t- *auxiliary values*\n\t- }\n- *trace_len*: number of *base_trace* rows\n- Generate *AIR* from *trace_len*, *public_input*, *options*.\n\t- *AIR* {\n\t\t- *constraints*\n\t\t- *composition_constraint*  \n\t\t- *ce_blowup_factor* $^{[4]}$\n\t- }",
+      "styleAttributes": {},
+      "x": -956,
+      "y": -1009,
+      "width": 473,
+      "height": 459
+    },
+    {
+      "id": "40366b11e11448c1",
+      "type": "text",
+      "text": "\n| memory | range check | flags | ... |\n| ------ | ----------- | ----- | --- |\n| 0      | 0           | 0     |     |\n| 1      | 0           | 0     |     |\n| ...    | ...         | ...   |     |\n\n- initial registers\n- final registers\n- segment address\n- ...",
+      "styleAttributes": {},
+      "x": -1520,
+      "y": -1110,
+      "width": 380,
+      "height": 330
+    },
+    {
+      "id": "3dfd241657e80532",
+      "type": "text",
+      "text": "\n| pc  | ap  | fp  |\n| --- | --- | --- |\n|     |     |     |\nMemory: [....]",
+      "styleAttributes": {},
+      "x": -905,
+      "y": -1780,
+      "width": 285,
+      "height": 180
+    },
+    {
+      "id": "8c0ce51177c622b1",
+      "type": "text",
+      "text": "\n| ... | mem permutation | diluted check | ... |\n| --- | --------------- | ------------- | --- |\n|     |                 |               |     |\n",
+      "styleAttributes": {},
+      "x": -1567,
+      "y": -205,
+      "width": 440,
+      "height": 200
+    },
+    {
+      "id": "81c2e958157357f6",
+      "type": "file",
+      "file": "Blockchain/attachments/stark_quotients.png",
+      "styleAttributes": {},
+      "x": -1442,
+      "y": 820,
+      "width": 140,
+      "height": 94
+    },
+    {
+      "id": "efc66b3b5fabf48c",
+      "type": "file",
+      "file": "Blockchain/attachments/deep_poly.png",
+      "styleAttributes": {},
+      "x": -1720,
+      "y": 940,
+      "width": 638,
+      "height": 88
+    },
+    {
+      "id": "02fb22dbe5f67417",
+      "type": "file",
+      "file": "Blockchain/attachments/reed_solomon_encoding.png",
+      "styleAttributes": {},
+      "x": -1540,
+      "y": -700,
+      "width": 400,
+      "height": 369
+    },
+    {
+      "id": "446d55a183d9e2c4",
+      "type": "text",
+      "text": "3 LDEs: \n- *base_trace_lde*\n- *extension_trace_lde*\n- *composition_trace_lde*",
+      "styleAttributes": {},
+      "x": -1340,
+      "y": 1503,
+      "width": 302,
+      "height": 153
+    },
+    {
+      "id": "a60d874b58fb6567",
+      "type": "file",
+      "file": "Blockchain/attachments/composition_lde.png",
+      "styleAttributes": {},
+      "x": -1829,
+      "y": 200,
+      "width": 662,
+      "height": 304
+    },
+    {
+      "id": "725c39f4267c0670",
+      "type": "file",
+      "file": "Blockchain/attachments/composition_poly.png",
+      "styleAttributes": {},
+      "x": -1440,
+      "y": 50,
+      "width": 276,
+      "height": 93
+    },
+    {
+      "id": "05701a161998fa60",
+      "type": "text",
+      "text": "H(z)",
+      "styleAttributes": {},
+      "x": 1580,
+      "y": 410,
+      "width": 102,
+      "height": 50
+    },
+    {
+      "id": "123e65e2686642c2",
+      "type": "text",
+      "text": "H(x) = ",
+      "styleAttributes": {},
+      "x": -1540,
+      "y": 62,
+      "width": 100,
+      "height": 70
+    },
+    {
+      "id": "3ad11214eafff8e8",
+      "type": "text",
+      "text": "Compute at $z$:",
+      "styleAttributes": {},
+      "x": 1631,
+      "y": 26,
+      "width": 269,
+      "height": 194
+    },
+    {
+      "id": "558658ee98927239",
+      "type": "file",
+      "file": "Blockchain/attachments/composition_poly.png",
+      "styleAttributes": {},
+      "x": 1651,
+      "y": 120,
+      "width": 228,
+      "height": 77
+    },
+    {
+      "id": "9bb216cbb62e6158",
+      "type": "file",
+      "file": "Blockchain/attachments/execution_evals.png",
+      "styleAttributes": {},
+      "x": -1317,
+      "y": 560,
+      "width": 150,
+      "height": 84
+    },
+    {
+      "id": "6099c95260bab4a3",
+      "type": "file",
+      "file": "Blockchain/attachments/composition_ood.png",
+      "styleAttributes": {},
+      "x": -1563,
+      "y": 707,
+      "width": 398,
+      "height": 64
+    },
+    {
+      "id": "ce9780d2d42aaf75",
+      "type": "text",
+      "text": "- Compute *deep_composition_evaluation* at *query positions*:\n\t- Retrieve the indicated values from *trace_values*\n\t- Compute the quotient values with *DEEP_coeffs*\n\t- Sum all the values and adjust degree.\n\t",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 1300,
+      "width": 400,
+      "height": 352
+    },
+    {
+      "id": "7fe6c23bbd2a653c",
+      "type": "text",
+      "text": "Verify *trace_values* using Merkle Proof",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 1120,
+      "width": 400,
+      "height": 80
+    },
+    {
+      "id": "8dced2199a0d9967",
+      "type": "file",
+      "file": "Blockchain/attachments/deep_poly.png",
+      "styleAttributes": {},
+      "x": 1660,
+      "y": 1432,
+      "width": 638,
+      "height": 88
+    },
+    {
+      "id": "5253bc4f05b51523",
+      "type": "text",
+      "text": "**FRI  verify**:\n- Verify each layer using *deep_composition_evaluation*\n- Verify the remainder\n- => Accept / Reject",
+      "styleAttributes": {},
+      "x": 1080,
+      "y": 1778,
+      "width": 400,
+      "height": 182
+    },
+    {
+      "id": "5d39d8735002988f",
+      "type": "text",
+      "text": "**Annotation**:\n(Many annotations are already defined in [BrainSTARK](https://aszepieniec.github.io/stark-brainfuck/), so I wont define here.)\n- $^{[1]}$  The two-stage [RAP](https://aszepieniec.github.io/stark-brainfuck/engine#two-stages) defines *base columns* in the first stage, and *extension columns* in the second stage.\n- $^{[2]}$ *trace_domain*: the domain of length *trace_len*\n- $^{[3]}$ *lde_domain*: the FRI domain, with *length = trace_len $\\times$ lde_blowup_factor*\n- $^{[4]}$ *ce_domain*: the domain that can store the *composition_constraints*,  *length = trace_len $\\times$ ce_blowup_factor*. (NOTE: *lde_domain* $\\ge$ *ce_domain*)\n- $^{[5]}$ Explained in this [section](https://medium.com/starkware/starkdex-deep-dive-the-stark-core-engine-497942d0f0ab#Combining%20the%20Constraints) \n- $^{[6]}$ The DEEP method is explained [here](https://medium.com/starkware/starkdex-deep-dive-the-stark-core-engine-497942d0f0ab#Committing%20to%20the%20Composition%20Polynomial)\n- $^{[7]}$ *trace_argument*: a set of pairs $(col, offset)$ that appear in the constraint polynomials.\n- $^{[8]}$ *execution_trace_oods*: OOD evaluations for the execution trace polynomials, i.e,  $y_j = f_{col}(z \\cdot g^{offset})$\n- $^{[9]}$ *composition_trace_oods*: OOD evaluations for the composition trace polynomials, i.e, $H_i(z ^ {ce-blowup-factor})$\n- $^{[10]}$ For security requirements, the prover needs to perform Proof of Work to compute the *nonce*. [link](https://medium.com/starkware/starkdex-deep-dive-the-stark-core-engine-497942d0f0ab#Grinding)\n- $^{[11]}$ For measuring security, see this [section](https://github.com/starkware-libs/ethSTARK/blob/master/README.md#7-Measuring-Security)\n- $^{[12]}$ *Random Oracle Model*:  With any query $x$, the oracle returns $R(x)$ where $R$ is a random function (a concrete hash function in practice). It ensures that the ROM provides the same response if $x$ is queried again.",
+      "styleAttributes": {},
+      "x": -120,
+      "y": 2060,
+      "width": 1064,
+      "height": 520
+    }
+  ],
+  "edges": [
+    {
+      "id": "07019231145d1e71",
+      "styleAttributes": {
+        "pathfindingMethod": "direct"
+      },
+      "fromNode": "0840ec68c8fcef34",
+      "fromSide": "bottom",
+      "toNode": "124f547b1c8b1363",
+      "toSide": "right"
+    },
+    {
+      "id": "db554b82428c8f83",
+      "styleAttributes": {
+        "pathfindingMethod": "direct"
+      },
+      "fromNode": "0840ec68c8fcef34",
+      "fromSide": "bottom",
+      "toNode": "e91dc4cf5e8f07f5",
+      "toSide": "left"
+    },
+    {
+      "id": "7b58c812ea8a1e34",
+      "styleAttributes": {},
+      "fromNode": "124f547b1c8b1363",
+      "fromSide": "bottom",
+      "toNode": "ef7a4fec8476ebeb",
+      "toSide": "top"
+    },
+    {
+      "id": "18471b95427c38ca",
+      "styleAttributes": {},
+      "fromNode": "9199efd82a895dca",
+      "fromSide": "bottom",
+      "toNode": "124f547b1c8b1363",
+      "toSide": "top"
+    },
+    {
+      "id": "5b72e86892e96139",
+      "styleAttributes": {},
+      "fromNode": "344d1da34de25622",
+      "fromSide": "right",
+      "toNode": "124f547b1c8b1363",
+      "toSide": "left"
+    },
+    {
+      "id": "6585948039e75515",
+      "styleAttributes": {},
+      "fromNode": "ef7a4fec8476ebeb",
+      "fromSide": "bottom",
+      "toNode": "8f4c2a331f20a7f2",
+      "toSide": "top"
+    },
+    {
+      "id": "af5fa9e2302a52cb",
+      "styleAttributes": {},
+      "fromNode": "8f4c2a331f20a7f2",
+      "fromSide": "right",
+      "toNode": "fbcedc912ead7c45",
+      "toSide": "left",
+      "color": "5",
+      "label": "base_trace_commitment"
+    },
+    {
+      "id": "6035af2d4a04459c",
+      "styleAttributes": {},
+      "fromNode": "8f4c2a331f20a7f2",
+      "fromSide": "bottom",
+      "toNode": "8db0eafc69217f92",
+      "toSide": "top"
+    },
+    {
+      "id": "9080baf519b731c0",
+      "styleAttributes": {},
+      "fromNode": "fbcedc912ead7c45",
+      "fromSide": "left",
+      "toNode": "8db0eafc69217f92",
+      "toSide": "right",
+      "color": "2",
+      "label": "air challenges"
+    },
+    {
+      "id": "311c0749068774fd",
+      "styleAttributes": {},
+      "fromNode": "8db0eafc69217f92",
+      "fromSide": "bottom",
+      "toNode": "6613b5b2149610b8",
+      "toSide": "top"
+    },
+    {
+      "id": "5fee976660911436",
+      "styleAttributes": {},
+      "fromNode": "6613b5b2149610b8",
+      "fromSide": "right",
+      "toNode": "bc2c26f7067038ea",
+      "toSide": "left",
+      "color": "5",
+      "label": "composition_trace_commitment"
+    },
+    {
+      "id": "a21d1a65b2d1b902",
+      "styleAttributes": {},
+      "fromNode": "6613b5b2149610b8",
+      "fromSide": "bottom",
+      "toNode": "fc20f9042f578fb6",
+      "toSide": "top"
+    },
+    {
+      "id": "bce097a1102c0067",
+      "styleAttributes": {},
+      "fromNode": "bc2c26f7067038ea",
+      "fromSide": "left",
+      "toNode": "fc20f9042f578fb6",
+      "toSide": "right",
+      "color": "2",
+      "label": "z: Ood point"
+    },
+    {
+      "id": "68b3e49c76c13bfc",
+      "styleAttributes": {},
+      "fromNode": "fc20f9042f578fb6",
+      "fromSide": "right",
+      "toNode": "b1473c6fc791b09f",
+      "toSide": "left",
+      "color": "5",
+      "label": "Odd evals"
+    },
+    {
+      "id": "5da253eae2a13c08",
+      "styleAttributes": {},
+      "fromNode": "b1473c6fc791b09f",
+      "fromSide": "left",
+      "toNode": "7a5898ff57f121e5",
+      "toSide": "right",
+      "color": "2",
+      "label": "DEEP coeffs"
+    },
+    {
+      "id": "e6b4aff024c88e02",
+      "styleAttributes": {},
+      "fromNode": "fc20f9042f578fb6",
+      "fromSide": "bottom",
+      "toNode": "7a5898ff57f121e5",
+      "toSide": "top"
+    },
+    {
+      "id": "76deea9c51b8b261",
+      "styleAttributes": {},
+      "fromNode": "7a5898ff57f121e5",
+      "fromSide": "bottom",
+      "toNode": "0a534d1b5efe013d",
+      "toSide": "top"
+    },
+    {
+      "id": "e004a1e25d3034be",
+      "styleAttributes": {},
+      "fromNode": "0a534d1b5efe013d",
+      "fromSide": "right",
+      "toNode": "cc7c568c505329a3",
+      "toSide": "left",
+      "color": "5",
+      "label": "FRI"
+    },
+    {
+      "id": "01a331d23f39199e",
+      "styleAttributes": {},
+      "fromNode": "0a534d1b5efe013d",
+      "fromSide": "bottom",
+      "toNode": "69b4fd5d8716d6f0",
+      "toSide": "top"
+    },
+    {
+      "id": "cd0b6b240cd5e2fe",
+      "styleAttributes": {},
+      "fromNode": "69b4fd5d8716d6f0",
+      "fromSide": "right",
+      "toNode": "8efc073f4869ffff",
+      "toSide": "left",
+      "color": "5",
+      "label": "Nonce"
+    },
+    {
+      "id": "eadfd9cffc93cc5b",
+      "styleAttributes": {},
+      "fromNode": "8efc073f4869ffff",
+      "fromSide": "left",
+      "toNode": "002f484a488d575c",
+      "toSide": "right",
+      "color": "2",
+      "label": "Query positions"
+    },
+    {
+      "id": "277b7d5232f8ebc7",
+      "styleAttributes": {},
+      "fromNode": "69b4fd5d8716d6f0",
+      "fromSide": "bottom",
+      "toNode": "002f484a488d575c",
+      "toSide": "top"
+    },
+    {
+      "id": "d997f1d33a3f4b48",
+      "styleAttributes": {},
+      "fromNode": "002f484a488d575c",
+      "fromSide": "bottom",
+      "toNode": "e45939035b517d54",
+      "toSide": "top"
+    },
+    {
+      "id": "407cab560bdd89bb",
+      "styleAttributes": {},
+      "fromNode": "8db0eafc69217f92",
+      "fromSide": "right",
+      "toNode": "a60f24d6dd925b50",
+      "toSide": "left",
+      "color": "5",
+      "label": "extension_trace_commitment"
+    },
+    {
+      "id": "94a426d2ea5a80e3",
+      "styleAttributes": {},
+      "fromNode": "a60f24d6dd925b50",
+      "fromSide": "left",
+      "toNode": "6613b5b2149610b8",
+      "toSide": "right",
+      "color": "2",
+      "label": "composition_coeffs"
+    },
+    {
+      "id": "7646b7b9f6260116",
+      "styleAttributes": {},
+      "fromNode": "65e2b8e2ccc3321c",
+      "fromSide": "bottom",
+      "toNode": "e91dc4cf5e8f07f5",
+      "toSide": "top"
+    },
+    {
+      "id": "790750206ec27b80",
+      "styleAttributes": {},
+      "fromNode": "703cf44e69ad5b56",
+      "fromSide": "bottom",
+      "toNode": "e91dc4cf5e8f07f5",
+      "toSide": "top"
+    },
+    {
+      "id": "c541629b14d100cb",
+      "styleAttributes": {},
+      "fromNode": "e91dc4cf5e8f07f5",
+      "fromSide": "bottom",
+      "toNode": "4fe84d9aecf30064",
+      "toSide": "top"
+    },
+    {
+      "id": "4c597c0ad3ec544a",
+      "styleAttributes": {},
+      "fromNode": "4fe84d9aecf30064",
+      "fromSide": "left",
+      "toNode": "882aac58ee59c20e",
+      "toSide": "right",
+      "color": "5",
+      "label": "base_trace_commitment"
+    },
+    {
+      "id": "d80533b1b2d50ef9",
+      "styleAttributes": {},
+      "fromNode": "882aac58ee59c20e",
+      "fromSide": "right",
+      "toNode": "680692047817bebe",
+      "toSide": "left",
+      "color": "2",
+      "label": "AIR challenges"
+    },
+    {
+      "id": "6fdcc02e1e56c55b",
+      "styleAttributes": {},
+      "fromNode": "4fe84d9aecf30064",
+      "fromSide": "bottom",
+      "toNode": "680692047817bebe",
+      "toSide": "top"
+    },
+    {
+      "id": "d9e88ce498a1f484",
+      "styleAttributes": {},
+      "fromNode": "680692047817bebe",
+      "fromSide": "left",
+      "toNode": "177f586f86880500",
+      "toSide": "right",
+      "color": "5",
+      "label": "extension_trace_commitment"
+    },
+    {
+      "id": "249ae7f27e46bdec",
+      "styleAttributes": {},
+      "fromNode": "177f586f86880500",
+      "fromSide": "right",
+      "toNode": "9a30fc8305c7d973",
+      "toSide": "left",
+      "color": "2",
+      "label": "composition coeffs"
+    },
+    {
+      "id": "95f2ca7de7164797",
+      "styleAttributes": {},
+      "fromNode": "680692047817bebe",
+      "fromSide": "bottom",
+      "toNode": "9a30fc8305c7d973",
+      "toSide": "top"
+    },
+    {
+      "id": "ef4f23bf89035470",
+      "styleAttributes": {},
+      "fromNode": "9a30fc8305c7d973",
+      "fromSide": "left",
+      "toNode": "21943ef5fbd656a8",
+      "toSide": "right",
+      "color": "5",
+      "label": "composition_trace_commitment"
+    },
+    {
+      "id": "5a8c5b78e058d197",
+      "styleAttributes": {},
+      "fromNode": "21943ef5fbd656a8",
+      "fromSide": "right",
+      "toNode": "d326d3c0dd71675a",
+      "toSide": "left",
+      "color": "2",
+      "label": "z: Ood point"
+    },
+    {
+      "id": "4d26a08d2af156b0",
+      "styleAttributes": {},
+      "fromNode": "d326d3c0dd71675a",
+      "fromSide": "left",
+      "toNode": "976f61cb121c4361",
+      "toSide": "right",
+      "color": "5",
+      "label": "Ood evals"
+    },
+    {
+      "id": "6d790d17d9e0827f",
+      "styleAttributes": {},
+      "fromNode": "d326d3c0dd71675a",
+      "fromSide": "bottom",
+      "toNode": "3e0ca4085c937f4e",
+      "toSide": "top"
+    },
+    {
+      "id": "e2bb330f78896c0f",
+      "styleAttributes": {},
+      "fromNode": "9a30fc8305c7d973",
+      "fromSide": "bottom",
+      "toNode": "d326d3c0dd71675a",
+      "toSide": "top"
+    },
+    {
+      "id": "8d9893587f6469d2",
+      "styleAttributes": {},
+      "fromNode": "3e0ca4085c937f4e",
+      "fromSide": "bottom",
+      "toNode": "6a7692b8707ea4ed",
+      "toSide": "top"
+    },
+    {
+      "id": "500a78ecf94b0227",
+      "styleAttributes": {},
+      "fromNode": "976f61cb121c4361",
+      "fromSide": "right",
+      "toNode": "269228b282775928",
+      "toSide": "left",
+      "color": "2",
+      "label": "DEEP coeffs"
+    },
+    {
+      "id": "bd5c6528b21b5880",
+      "styleAttributes": {},
+      "fromNode": "6a7692b8707ea4ed",
+      "fromSide": "bottom",
+      "toNode": "269228b282775928",
+      "toSide": "top"
+    },
+    {
+      "id": "be26242254c8af61",
+      "styleAttributes": {},
+      "fromNode": "540f23a7d7d2ead3",
+      "fromSide": "right",
+      "toNode": "269228b282775928",
+      "toSide": "left",
+      "color": "5",
+      "label": "FRI"
+    },
+    {
+      "id": "904247b8d6084003",
+      "styleAttributes": {},
+      "fromNode": "269228b282775928",
+      "fromSide": "bottom",
+      "toNode": "8ce6fcfbc8430adb",
+      "toSide": "top"
+    },
+    {
+      "id": "ebd613cd7c979702",
+      "styleAttributes": {},
+      "fromNode": "8ce6fcfbc8430adb",
+      "fromSide": "left",
+      "toNode": "9104462916e8e33e",
+      "toSide": "right",
+      "color": "5",
+      "label": "nonce"
+    },
+    {
+      "id": "a6010a7e9900ecb4",
+      "styleAttributes": {},
+      "fromNode": "9104462916e8e33e",
+      "fromSide": "right",
+      "toNode": "ce9780d2d42aaf75",
+      "toSide": "left",
+      "color": "2",
+      "label": "query positions"
+    },
+    {
+      "id": "f3d866b75be922c0",
+      "styleAttributes": {},
+      "fromNode": "ce9780d2d42aaf75",
+      "fromSide": "bottom",
+      "toNode": "5253bc4f05b51523",
+      "toSide": "top"
+    },
+    {
+      "id": "ae6f094e204ddf5f",
+      "styleAttributes": {},
+      "fromNode": "8ce6fcfbc8430adb",
+      "fromSide": "bottom",
+      "toNode": "7fe6c23bbd2a653c",
+      "toSide": "top"
+    },
+    {
+      "id": "23dab345201acf09",
+      "styleAttributes": {},
+      "fromNode": "cc7c568c505329a3",
+      "fromSide": "left",
+      "toNode": "0a534d1b5efe013d",
+      "toSide": "right",
+      "color": "2"
+    },
+    {
+      "id": "c17a51d61325d7e8",
+      "styleAttributes": {},
+      "fromNode": "269228b282775928",
+      "fromSide": "left",
+      "toNode": "540f23a7d7d2ead3",
+      "toSide": "right",
+      "color": "2"
+    },
+    {
+      "id": "ab85780feb8984b6",
+      "styleAttributes": {},
+      "fromNode": "ef7a4fec8476ebeb",
+      "fromSide": "left",
+      "toNode": "40366b11e11448c1",
+      "toSide": "right"
+    },
+    {
+      "id": "92d5847413b9f438",
+      "fromNode": "8db0eafc69217f92",
+      "fromSide": "left",
+      "toNode": "8c0ce51177c622b1",
+      "toSide": "right"
+    },
+    {
+      "id": "1261df022319d062",
+      "styleAttributes": {},
+      "fromNode": "725c39f4267c0670",
+      "fromSide": "right",
+      "toNode": "6613b5b2149610b8",
+      "toSide": "left"
+    },
+    {
+      "id": "6b63ea6d5ed551f1",
+      "styleAttributes": {},
+      "fromNode": "9bb216cbb62e6158",
+      "fromSide": "right",
+      "toNode": "fc20f9042f578fb6",
+      "toSide": "left"
+    },
+    {
+      "id": "cd7dab49c3916997",
+      "styleAttributes": {},
+      "fromNode": "81c2e958157357f6",
+      "fromSide": "right",
+      "toNode": "7a5898ff57f121e5",
+      "toSide": "left"
+    },
+    {
+      "id": "1ae2bb3f38d0673d",
+      "styleAttributes": {},
+      "fromNode": "efc66b3b5fabf48c",
+      "fromSide": "right",
+      "toNode": "7a5898ff57f121e5",
+      "toSide": "left"
+    },
+    {
+      "id": "f2d2d104ab90825d",
+      "styleAttributes": {},
+      "fromNode": "002f484a488d575c",
+      "fromSide": "left",
+      "toNode": "446d55a183d9e2c4",
+      "toSide": "right"
+    },
+    {
+      "id": "dae1fb685d76e34e",
+      "styleAttributes": {},
+      "fromNode": "a60d874b58fb6567",
+      "fromSide": "right",
+      "toNode": "6613b5b2149610b8",
+      "toSide": "left"
+    },
+    {
+      "id": "343043db6e7adde7",
+      "styleAttributes": {},
+      "fromNode": "05701a161998fa60",
+      "fromSide": "left",
+      "toNode": "6a7692b8707ea4ed",
+      "toSide": "right"
+    },
+    {
+      "id": "02eb0754747cbf3f",
+      "styleAttributes": {},
+      "fromNode": "3ad11214eafff8e8",
+      "fromSide": "left",
+      "toNode": "3e0ca4085c937f4e",
+      "toSide": "right"
+    },
+    {
+      "id": "8ebbf70392ec8d76",
+      "styleAttributes": {},
+      "fromNode": "6099c95260bab4a3",
+      "fromSide": "right",
+      "toNode": "fc20f9042f578fb6",
+      "toSide": "left"
+    },
+    {
+      "id": "27ecabd1940844ae",
+      "styleAttributes": {},
+      "fromNode": "7fe6c23bbd2a653c",
+      "fromSide": "bottom",
+      "toNode": "ce9780d2d42aaf75",
+      "toSide": "top"
+    },
+    {
+      "id": "3cf0d6f229341ca5",
+      "styleAttributes": {},
+      "fromNode": "8dced2199a0d9967",
+      "fromSide": "left",
+      "toNode": "ce9780d2d42aaf75",
+      "toSide": "right"
+    },
+    {
+      "id": "4b502dcafc163942",
+      "styleAttributes": {},
+      "fromNode": "3dfd241657e80532",
+      "fromSide": "bottom",
+      "toNode": "9199efd82a895dca",
+      "toSide": "top"
+    },
+    {
+      "id": "2b82351184f76990",
+      "styleAttributes": {},
+      "fromNode": "8f4c2a331f20a7f2",
+      "fromSide": "left",
+      "toNode": "02fb22dbe5f67417",
+      "toSide": "right"
+    }
+  ],
+  "metadata": {}
+}
