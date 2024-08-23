@@ -3,6 +3,7 @@ Title: Publicly Verifiable, Non-interactive Arguments via Fiat-Shamir
 Status: Done
 Level: "4"
 comments: true
+cards-deck: articles::proofs-arguments-and-zero-knowledge
 ---
 
 # Chapter 5 - Publicly Verifiable, Non-interactive Arguments via Fiat-Shamir
@@ -24,7 +25,7 @@ that run in polynomial time. Specifically, if an interactive proof $I$ for a [la
 property called [round-by-round soundness](../../terms/round_by_round_soundness) then $Q$ is sound in the
 [ROM](../../random_oracle_model.md).
 
-## 5.3.1 “Bits Of Security”: Statistical vs. Computational
+## 5.3.1 “Bits Of Security”: Statistical vs. Computational []()
 
 In [chapter 4](chapter_4.md), we have seen that interactive protocols can satisfy statistical (i.e., information-theoretic) security.
 The logarithm of the soundness error $(log(\delta _ s))$ of these protocols is the number of ==bits of statistical security==.
@@ -35,8 +36,9 @@ false statement. The logarithm of this amount of work is the number of ==bits of
 In many succinct interactive arguments, there are many properties that adversaries cannot break a cryptographic primitive (e.g.,
 cannot find a collision in a collision-resistant hash function) and also cannot convince the verifier to accept a false statement with
 probability more than $2^{-s}$. Here, $s$ is the number of ==bits of interactive security==.
+[](1724551100463)
 
-**Appropriate security levels for interactive vs. non-interactive arguments.**
+### Appropriate Security Levels for Interactive vs. Non-interactive Arguments 
 
 Non-interactive arguments are generally recommended to be deployed with at least $100$ or $128$ bits of computational security. In
 contrast, it may be appropriate in some contexts to set statistical or interactive security levels lower.
@@ -67,6 +69,7 @@ In [Section 7.4](chapter_7.md#7.4 Knowledge-Soundness), we will be concerned wit
 ==knowledge-soundness== that is relevant
 when the prover is claiming to know a witness satisfying a specified property.
 
+
 In the [ROM](../../terms/random_oracle_model.md), the [Fiat-Shamir](../../terms/fiat_shamir.md) transformation preserves
 knowledge-soundness. For example:
 
@@ -81,11 +84,11 @@ When the concrete hash function $h$ is chosen at random from a hash family $H$ s
 plain model results in a sound
 argument.
 
-### What is correlation-intractability (CI)?
+### What is Correlation-intractability (CI)?
 
 You should read the definition [here](../../terms/correlation_intractability.md).
 
-### Recent results constructing CI hash families
+### Recent Results Constructing CI Hash Families
 
 It is plausible that cryptographic hash families used in practice actually satisfy the relevant notions of
 [correlation-intractability](../../terms/correlation_intractability.md).

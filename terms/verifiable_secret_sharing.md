@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 # Verifiable Secret Sharing
 
@@ -9,7 +10,7 @@ Read the definition of DKG [here](./distributed_key_generation.md).
 
 ## Verifiable Secret Sharing (VSS)
 
-### Definition
+### Definition []()
 
 A $(k, n)$ VSS includes two phases: *Sharing* and *Reconstruction* as follows:
 
@@ -25,11 +26,13 @@ A $(k, n)$ VSS includes two phases: *Sharing* and *Reconstruction* as follows:
 If $D$ is dishonest, then at the end of **sharing** phase, there exists a value $s^*$ such that all parties agree on it at the end of
 **reconstruct** phase.
 
-## Pedersen Construction
+[](1724492402758)
+
+## Pedersen Construction 
 
 We describe a VSS protocol from **Pedersen**.
 
-### The Commitment Scheme
+### The Commitment Scheme  
 
 Let $p, q$ be large primes such that $q$ divides $p-1$ and let $G_q$ be the unique subgroup of $\mathbb{Z}^*_p$ of order $q$. Let $g$
 and $h$ be elements of $G_q$ where $g$ is the generator of $G_q$ and no one knows the value $d$ such that $h = g^d$. These elements

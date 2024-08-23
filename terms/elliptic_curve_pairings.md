@@ -1,12 +1,13 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Elliptic Curve Pairings
 
 [Link](https://crypto.stanford.edu/pbc/notes/elliptic/divisor.html)
 
-## Pairings
+## Pairings []()
 
 See [bilinearity property](pairings_or_bilinear_map.md) for more details.
 
@@ -18,9 +19,11 @@ See [bilinearity property](pairings_or_bilinear_map.md) for more details.
 > We can encrypt $p$: $p \cdot G = P$ and then can check $P$ to verify the value of $p$ without actually knowing the
 > plain value $p$.
 
+[](1724428076553)
+
 ## Elliptic Curve Pairings
 
-### Definition
+### Definition []()
 
 An elliptic curve pairing is a map $\mathbb{G_2} \times \mathbb{G_1} \rightarrow \mathbb{G_t}$, where:
 
@@ -38,6 +41,8 @@ means that:
 > $e(P, Q + R) = e(P, Q) \cdot e(P, R)$
 >
 > $e(P + Q, R) = e(P, R) \cdot e(Q, R)$
+
+[](1724428076566)
 
 ### How Does it Work?
 

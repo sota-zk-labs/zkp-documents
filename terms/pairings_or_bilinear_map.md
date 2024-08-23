@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Pairings or Bilinear Maps
@@ -7,7 +8,7 @@ comments: true
 Read the full article on pairings or bilinear
 maps [here](https://alinush.github.io/2022/12/31/pairings-or-bilinear-maps.html).
 
-## Definition
+## Definition []()
 
 A function $e$ is considered a bilinear function or map if it satisfies the following conditions:
 
@@ -18,6 +19,7 @@ A function $e$ is considered a bilinear function or map if it satisfies the foll
   - **Non-degeneracy**: $e(P, Q) \neq 1$.
   - **Computability**: $e(P, Q)$ can be computed efficiently.
 
+
 ## Properties
 
 - $e(aP, bQ) = e(P, Q)^{ab}$
@@ -25,6 +27,8 @@ A function $e$ is considered a bilinear function or map if it satisfies the foll
 - $e(P, {a}Q) = e(P, Q)^{a}$
 
 - $e(P, Q + R) = e(P, Q) \cdot e(P, R)$
+
+[](1724466285194)
 
 ## Example
 

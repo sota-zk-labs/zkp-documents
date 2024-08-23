@@ -1,12 +1,15 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Preimage Sampling
+# Preimage Sampling []()
 
 Preimage sampling is a process used in cryptographic systems, particularly in lattice-based cryptography. It involves finding a
 preimage (an original input) that maps to a given output under a certain function, such that this preimage possesses specific
-properties or lies within a desired distribution. Here’s a detailed breakdown:
+properties or lies within a desired distribution. 
+
+[](1724467238674)
 
 ## Context in Cryptography
 

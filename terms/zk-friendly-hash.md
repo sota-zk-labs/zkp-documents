@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # ZK-Friendly Hash
@@ -10,11 +11,13 @@ comments: true
 - [New Directions in ZK Hashing](https://www.youtube.com/watch?v=SXnb7T9YATs&ab_channel=ZeroKnowledge)
 - [Dealing with Hashes in ZK](https://blog.taceo.io/whats-the-deal-with-hashes-in-zk/)
 
-## Hash Function
+## Hash Function []()
 
 A [cryptographic hash function](https://en.wikipedia.org/wiki/Cryptographic_hash_function) is one of the basic primitives for
 cryptography. Cryptographic schemes such as digital signatures, message authentication codes, commitment schemes, and authentications
 are built on top of hash functions.
+
+[](1724492441082)
 
 ## Usage of Hashes in the ZK Protocol
 
@@ -54,7 +57,7 @@ We can categorize these hashes into three different classes:
 - Low-degree equivalent round functions
 - Lookup-based round functions
 
-### Low-degree Round Functions
+### Low-degree Round Functions []()
 
 The low-degree round function is mapping $y = x^d$ (usually $d$ is either 3, 5, or 7, depending on the prime field).
 
@@ -68,7 +71,9 @@ and [Neptune](https://eprint.iacr.org/2021/1695).
 In total, this approach still allows for greater performance than using standardized hash functions operating on bits like SHA-2, while
 remaining relatively straightforward to analyze in terms of cryptanalysis attacks.
 
-### Low-degree Equivalence
+[](1724548567317)
+
+### Low-degree Equivalence []()
 
 This design uses the power map $y = x^{1/d}$. Therefore, it will be slower in plain than the low-degree approach.
 
@@ -78,7 +83,9 @@ These hash functions are [Rescue](https://eprint.iacr.org/2019/426) (and
 Rescue-Prime), [Anemoi](https://eprint.iacr.org/2022/840), [Grendel](https://eprint.iacr.org/2021/984),
 and [Griffin](https://eprint.iacr.org/2022/403).
 
-### Lookups
+[](1724548567332)
+
+### Lookups []()
 
 These hashes utilize lookup tables for more cost-effective computations.
 
@@ -108,6 +115,8 @@ There are some hashes, including:
   - Expands the design approach to additional fields (the same 64-bit field and a 31-bit field used
       in [Plonky3](https://github.com/Plonky3/Plonky3)).
   - Achieves plain performance comparable to SHA-3 for the first time.
+
+[](1724548567335)
 
 ## Designing a New ZK Hash Function
 

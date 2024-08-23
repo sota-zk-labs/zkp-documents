@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Zero knowledge proof (ZKP)
@@ -23,7 +24,7 @@ comments: true
 
 <!-- TOC -->
 
-## Definition
+## Definition []()
 
 * Problem: $x \in L$ ? Given language $L$ and input $x$
 * $x$ and $L$ are public
@@ -34,19 +35,25 @@ verify that [argument](arguments.md) without knowing the witness.
 
 ![zkp.png](attachments/zkp.png)
 
+[](1724492671990)
+
 ## Applications
 
 ## Properties
 
-### Completeness
+### Completeness []()
 
 For every $x \in L$ the *truthful* prover can convince the verifier with **HIGH** probability (e.g. $~100\%$).
 
 *perfect completeness* = $~100\%$.
 
-### Soundness
+[](1724492680941)
+
+### Soundness []()
 
 For every $x \notin L$ the *untruthful* prover can convince the verifier with **LOW** probability (e.g. $~0\%$).
+
+[](1724492680954)
 
 ### Zero knowledge
 

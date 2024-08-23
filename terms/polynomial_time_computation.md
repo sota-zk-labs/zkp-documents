@@ -1,15 +1,18 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Polynomial-time computation
+# Polynomial-time computation 
 
-## TLDR
+## TLDR []()
 
 In the context of Zero-Knowledge Proofs (ZKPs), polynomial time refers to the efficiency with which a computational task
 can be completed.
 More specifically, a polynomial-time algorithm is one whose running time is polynomial in the size of the input.
 In contrast, exponential time algorithms grow much faster and are generally considered impractical for large inputs.
+
+[](1724466375820)
 
 - **Examples:**
   - Polynomial-time examples include algorithms like bubble sort $O(n^2)$ or matrix multiplication $O(n^3)$.
@@ -43,3 +46,5 @@ In summary, the efficiency of ZKPs, measured in terms of polynomial time, is cru
 in various applications where privacy and confidentiality are essential.
 It ensures that parties can engage in secure transactions or interactions without compromising the computational
 feasibility of the underlying cryptographic protocols.
+
+

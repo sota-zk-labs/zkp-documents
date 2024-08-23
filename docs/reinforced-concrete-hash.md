@@ -21,7 +21,7 @@ Other helpful resources:
 + [Reinforced Concrete and Plonkup Video](https://www.youtube.com/watch?v=Pnc9J7uQgqs&ab_channel=ZeroKnowledge).
 + [Reinforced Concrete by Dmitry Khovratovich](https://www.youtube.com/watch?v=SXnb7T9YATs&ab_channel=ZeroKnowledge).
 
-## Overview
+## Overview []()
 
 The Reinforced Concrete (RC) hash function works in the sponge framework, transforming a fixed-length bijective function into a
 variable-length hash.

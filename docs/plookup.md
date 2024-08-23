@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Plookup: A Simplified Polynomial Protocol for Lookup Tables
@@ -10,45 +11,46 @@ comments: true
 - [On Plonk and Plookup](https://research.metastate.dev/on-plonk-and-plookup)
 - [XOR Circuit Example](https://anoma.net/blog/hash-functions-in-plonkup#an-example-circuit)
 
-## Symbol Description
+## Symbol Description 
 
 - $H = \lbrace g, ... g^{n+1}=1 \rbrace$ is a multiplicative [group](../terms/group.md) of order $n+1$ in $\mathbb{F}$
 - $\lbrack n \rbrack$ represents $\lbrace 1,2,3...,n \rbrace$
 - For $f \in \mathbb{F}\lbrack X \rbrack$, if $f_i=f(g^i), i \in \lbrack n+1 \rbrack$ then $f_i$ can be expressed as $f(g^i)$
 - The vector $f \in \mathbb{F}^n$ can also be expressed by the polynomial $f \in \mathbb{F}_{\lt n}\lbrack X \rbrack$ , where $f(g^i) =
   f_i$
-- Given two vectors $f \in \mathbb{F}^n, t \in \mathbb{F}^d, f \subset t$ represents $\lbrace f_i\rbrace_{i \in \lbrack n \rbrack}
-  \subset \lbrace t_i\rbrace_{i \in \lbrack d \rbrack}$
+- Given two vectors $f \in \mathbb{F}^n, t \in \mathbb{F}^d, f \subset t$ represents $\lbrace f_i\rbrace_{i \in \lbrack n \rbrack}\subset \lbrace t_i\rbrace_{i \in \lbrack d \rbrack}$
 - $L_i \in \mathbb{F}_{\lt n}\lbrack X \rbrack$ is the $i$'th [Lagrange](../terms/lagrange_interpolation.md) polynomial for $H$, that
   satisfies
   $L_i(g^i) = 1$ and $L_i(g^j) = 0$ for $j \neq i$
 
-## Introduction
+## Introduction []()
 
 *Plookup* is a protocol for checking the values of a committed polynomial $f \in \mathbb{F}_{\lt n}\lbrack X \rbrack$ over a
-multiplicative subgroup $H \in \mathbb{F}$ of size $n$, are contained in the values of a table $t \in \mathbb{F}^d$ (i.e $f \subset
-t$).
+multiplicative subgroup $H \in \mathbb{F}$ of size $n$, are contained in the values of a table $t \in \mathbb{F}^d$ (i.e $f \subset t$).
 
-A typical scenario is to do a ==range check== in a zk-SNARK, verifying that all evaluations are on $\lbrack 0, m
-\rbrack.$ Suppose we want to check that a variable $a$ has to be in a prescribed range, such as a `u8`. One simple yet ineffective way
+A typical scenario is to do a ==range check== in a zk-SNARK, verifying that all evaluations are on $\lbrack 0, m \rbrack.$ Suppose we want to check that a variable $a$ has to be in a prescribed range, such as a `u8`. One simple yet ineffective way
 to do so is to express $a$ in its binary form $a_0a_1a_2...a_7$ and check that:
+
+[](1724549857168)
 
 1. Every variable is boolean $a_i(1−a_i)=0$
 2. $a=\sum a_k2^k$
 
 This approach makes us add several additional constraints, which scale proportionally with the number of bits. Original paper
 investigate an alternative approach, where for commonly used operations we precompute a lookup table of the legitimate (input, output)
-combinations; and the prover argues the witness values exist in this table. By performing a random folding $(f = a + \zeta b +
-\zeta^2c$ encodes for tuple $(a,b,c))$, we can reduce to the case of looking up single field elements instead of tuples.
+combinations; and the prover argues the witness values exist in this table. By performing a random folding $(f = a + \zeta b +\zeta^2c$ encodes for tuple $(a,b,c))$, we can reduce to the case of looking up single field elements instead of tuples.
 
 > [!Note]
 > For simplicity, we can assume that $\lbrace f_i\rbrace$ is sorted, $\lbrace t_i\rbrace$ has no repeated values
 >
 
+[](1724549857171)
+
 ## Randomized Differences
 
-Note that if $f \subset t$, then these ==sets of non-zero differences== are the same (the difference set of a set $\lbrace f_1,
-f_2, ..., f_n\rbrace$ is the set $\lbrace f_2-f_1, f_3-f_2, ..., f_n-f_{n-1}\rbrace$). For example, we have:
+Note that if $f \subset t$, then these ==sets of non-zero differences== are the same (the difference set of a set $\lbrace f_1, f_2, ..., f_n\rbrace$ is the set $\lbrace f_2-f_1, f_3-f_2, ..., f_n-f_{n-1}\rbrace$). For example, we have:
+
+[](1724549857175)
 
 $$
 \begin{array}{rcl}
@@ -61,6 +63,8 @@ having the same difference set $\lbrace 3,4\rbrace$. However, the converse is no
 difference set $\lbrace 4,3\rbrace$). For this reason, Plookup instead uses a ==randomized difference set== consisting of elements of
 the form $f_i + \beta \cdot f_{i+1}$ for a random $\beta \in \mathbb{F}$ (e.g. $f_{diff}= \lbrace 1+4\beta, 4+8\beta \rbrace$).
 
+[](1724549857177)
+
 ## The Main Scheme
 
 ### Notation
@@ -68,6 +72,8 @@ the form $f_i + \beta \cdot f_{i+1}$ for a random $\beta \in \mathbb{F}$ (e.g. $
 When $f \in t$ , we say that $f$ is ==sorted by== $t$ when values appear in the same order in $f$ as they do in $t$. Formally, for any
 $i \lt i' \in \lbrack n \rbrack$ such that $f_i \neq f_{i'}$ , if $j, j' \in \lbrack d \rbrack$ are such that $t_j = f_i , t_{j'} = f_
 {i'}$ then $j \lt j'$ . For example, $f = \lbrace 2, 4, 4, 3, 3, 5 \rbrace$ is sorted by $t = \lbrace 2,4,3,5 \rbrace$.
+
+[](1724549857179)
 
 We denote by $s \in F^{ n+d }$ the sorted version of the *concatenation* of $f$ and $t$
 
@@ -248,11 +254,10 @@ $\quad \quad$ and outputs $acc$ if all checks hold.
 
 ## Applications
 
-### Vector lookups
+### Vector lookups []()
 
 Suppose $\bf P$ has $\omega$ polynomials $f_1, f_2, ..., f_{\omega} \in {\mathbb{F}}_ {\lt n}\lbrack X \rbrack$ and a data table
-$t^{ * } \in (\mathbb{F}^\omega)^d$ of $d$ rows and $\omega$ columns, and to prove that $\forall j \in \lbrack n \rbrack, (f_1(g^j),
-f_2(g^j), ..., f_{\omega}(g^j)) \in t^{ * }$, we can use random folding.
+$t^{ * } \in (\mathbb{F}^\omega)^d$ of $d$ rows and $\omega$ columns, and to prove that $\forall j \in \lbrack n \rbrack, (f_1(g^j),f_2(g^j), ..., f_{\omega}(g^j)) \in t^{ * }$, we can use random folding.
 
 - For each $i \in \lbrack \omega \rbrack$ we will include in the set of preprocessed polynomials $t_i \in \mathbb{F}_ {\lt d}\lbrack X
   \rbrack$
@@ -264,22 +269,22 @@ f_2(g^j), ..., f_{\omega}(g^j)) \in t^{ * }$, we can use random folding.
 - Using $f$ and $t$ for the previous lookup process
 
 A natural use case for this vector lookup primitive is a key-value setting, where we have a function $f$ with $\omega − 1$ inputs, and
-wish to verify a vector is of the form $(x_1, . . . , x_{\omega−1}, f(x_1, . . . , x_{\omega−1}))$ for some input $(x_1, . . . , x_
-{\omega−1}).$
+wish to verify a vector is of the form $(x_1, . . . , x_{\omega−1}, f(x_1, . . . , x_{\omega−1}))$ for some input $(x_1, . . . , x_{\omega−1}).$
 
-### Multiple tables
+[](1724549857182)
+
+### Multiple tables []()
 
 Suppose further that we have in fact have multiple tables $t_1^{ * }, ...,t_l^{ * }$ and for each $i \in \lbrack n \rbrack$ wish to
 check that for some predefined $j = j(i) \in \lbrack l \rbrack (f_1(g^i), ..., f_{\omega}(g^i )) \in t_j^{ * }$ . We can reduce to the
 previous setting as follows. We create a preprocessed table containing $t_1^{ * }, ...,t_l^{ * }$ as sub-tables, by adding a column
 specifying the table index.
 
-That is, suppose for simplicity that for each $j \in \lbrack l \rbrack, t_j^{ * } \in  (\mathbb{F}^w)^{d/l}$. We construct $t^{ * }
-\in  (\mathbb{F}^{\omega+1})^d$ , containing for each $j \in \lbrack l \rbrack, i \in \lbrack d/l \rbrack$ of the element $(j,(
-t_j^{ * })\ i).$ We preprocess a polynomial $q \in \mathbb{F}_ {\lt n}\lbrack X \rbrack$ such that $q_i = j(i)$, where again $j(i)$ is
+That is, suppose for simplicity that for each $j \in \lbrack l \rbrack, t_j^{ * } \in  (\mathbb{F}^w)^{d/l}$. We construct $t^{ * }\in  (\mathbb{F}^{\omega+1})^d$ , containing for each $j \in \lbrack l \rbrack, i \in \lbrack d/l \rbrack$ of the element $(j,(t_j^{ * })\ i).$ We preprocess a polynomial $q \in \mathbb{F}_ {\lt n}\lbrack X \rbrack$ such that $q_i = j(i)$, where again $j(i)$ is
 the
-subtable we wish the $i$’th value to be in. Now use Vector lookup to check that for each $i \in \lbrack n \rbrack, (q(g^i), f_1(
-g^i), ..., f_{\omega}(g^i)) \in t^{ * }$
+subtable we wish the $i$’th value to be in. Now use Vector lookup to check that for each $i \in \lbrack n \rbrack, (q(g^i), f_1(g^i), ..., f_{\omega}(g^i)) \in t^{ * }$
+
+[](1724549857185)
 
 ## Conclusion
 
@@ -349,4 +354,8 @@ g_1,g_2,…,g_n)$ are related by the permutation, so the verifier must check tha
 These sets of polynomials have a very important property: ==unique factorization==. Similar to how each integer can be factored
 uniquely (up to factors of $\pm 1$)  into a product of primes, each polynomial can be factored uniquely (up to an element of
 $\mathbb{F}$) into irreducible polynomials. This gives us a sufficient condition for two polynomials to be different: if they have a
-different factorization, they're different polynomials.
+different factorization, they're diffe
+[](1724549895247)
+rent polynomials.
+
+

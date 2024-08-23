@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Poseidon Hash Function
@@ -16,7 +17,7 @@ The $\mathrm{POSEIDON}$ hash function family is designed based on the $\mathrm{H
 speed and security level of the [R1CS](https://learn.0xparc.org/materials/circom/additional-learning-resources/r1cs%20explainer/)
 circuit and AET circuit.
 
-## The $\mathrm{POSEIDON}$ Hash Function
+## The $\mathrm{POSEIDON}$ Hash Function []()
 
 We propose the hash function $\mathrm{POSEIDON}$, which maps strings over $\mathbb{F}_p$ (for a prime $p \approx 2^n > 2^{31}$) to
 fixed-length strings over $\mathbb{F}_p$ ($\mathrm{POSEIDON}: \mathbb{F}^*_p \to \mathbb{F}^o_p$), where $o$ is the output length
@@ -25,6 +26,8 @@ $\mathrm{POSEIDON}^\pi$ permutation.
 
 We sometimes use the notation $p \approx 2^n$ and $N = n\cdot t \approx \log_2(p) \cdot t$ to denote the approximate size of the texts
 in bits.
+
+[](1724466852446)
 
 ### Sponge Construction for $\mathrm{POSIEDON}^\pi$
 

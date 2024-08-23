@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8c40735ce62909fb",
+        "id": "b464640cd6c5d328",
         "type": "tabs",
         "children": [
           {
-            "id": "a265245c40ded7ab",
+            "id": "4502e61b7e171b15",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/plonk_implementation.md",
+                "file": "terms/frost.md",
                 "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9989921b74f9a71f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "terms/structured_reference_string.md",
-                "mode": "source",
-                "backlinks": true,
                 "source": false
               }
             }
@@ -70,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#card",
+                "query": "stark_me",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,8 +65,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -100,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/plonk_implementation.md",
+                "file": "terms/frost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/plonk_implementation.md",
+                "file": "terms/frost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/plonk_implementation.md"
+                "file": "terms/frost.md"
               }
             }
           },
@@ -169,58 +154,59 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "audio-recorder:Start/stop recording": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "flashcards-obsidian:Generate flashcards": false
     }
   },
-  "active": "a265245c40ded7ab",
+  "active": "4502e61b7e171b15",
   "lastOpenFiles": [
-    "docs/zk_porter.md",
-    "docs/attachments/merkle_tree.png",
-    "anki/anki.colpkg",
-    "anki",
-    "terms/zk-friendly-hash.md",
-    "terms/scalar_field.md",
-    "terms/group.md",
-    "terms/elliptic_curve_group.md",
-    "terms/commitment_scheme.md",
-    "terms/base_field.md",
-    "terms/attachments/inverse_dft.png",
-    "terms/attachments/fourier_transforms.png",
-    "terms/attachments/dft_matrix.png",
-    "terms/abelian.md",
-    "articles/proofs-arguments-and-zero-knowledge/chapter_12.md",
-    "docs/zk_comparison.md",
-    "terms/embedding_degree.md",
-    "terms/succinct.md",
-    "terms/structured_reference_string.md",
-    "terms/rational_function.md",
-    "terms/np.md",
-    "terms/ip.md",
-    "terms/fundamental_theorem_of_algebra.md",
+    "terms/folding_scheme.md",
     "terms/fiat_shamir.md",
     "terms/fermat_little_theorem.md",
-    "docs/plonk.md",
+    "terms/fast_fourier_transforms.md",
+    "terms/extension_fields.md",
+    "terms/prime_or_finite_fields.md",
+    "terms/extension.md",
+    "terms/embedding_degree.md",
+    "terms/elliptic_curve_pairings.md",
+    "terms/elliptic_curve_group.md",
+    "terms/elliptic_curve.md",
+    "terms/doubly_efficient.md",
     "terms/divisor.md",
-    "terms/homogeneous_polynomial_or_projective_model.md",
-    "terms/arguments.md",
-    "docs/plonk_implementation.md",
-    "terms/holography.md",
-    "terms/bls12-381.md",
-    "attachments/Screenshot 2024-03-10 at 20.06.40.png",
-    "flashcards",
-    "presentations/~$~$plonk_implementation.pptx",
+    "terms/distributed_key_generation.md",
+    "terms/discrete_logarithm.md",
+    "terms/diophantine_set.md",
+    "terms/diophantine_equation.md",
+    "terms/correlation_intractability.md",
+    "terms/language.md",
+    "terms/coordinate_pair_accumulator.md",
+    "terms/computational_integrity.md",
+    "terms/computation.md",
+    "terms/common_reference_string.md",
+    "terms/commitment_scheme.md",
+    "terms/codeword.md",
+    "terms/circuit.md",
+    "terms/schnorr_signature.md~",
+    "terms/fermat_little_theorem.md~",
+    "terms/montgomery_reduction.md~",
+    "terms/frost.md~",
+    "terms/attachments/integrity_for_computations.png",
+    "terms/attachments/confidentiality_for_computation.png",
+    "docs/attachments/von_neumann_arc.png",
+    "docs/attachments/vm_interaction.png",
+    "docs/attachments/trace.png",
+    "docs/attachments/stark_workflow.png",
+    "docs/attachments/stark_stage.png",
+    "docs/attachments/homomorphic_signatures.png",
+    "docs/attachments/homomorphic_signatures.drawio",
+    "docs/attachments/gsw_h_matrix.png",
+    "docs/attachments/gsw_encryption_scheme.png",
+    "docs/attachments/gsw_commitment.drawio",
+    "terms/verifiable_secret_sharing.md~",
+    "terms/distributed_key_generation.md~",
+    "docs/stark_mechanics.md~",
+    "terms/low_degree_extension.md~",
     "Untitled 1.canvas",
-    "presentations/~$zk_machine_learning.pptx",
-    "presentations/~$zkp_gaming.pptx",
-    "presentations/~$zk_tech_overview.pptx",
-    "Untitled.canvas",
-    "presentations/~$zk_overall_meetup.pptx",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/proofs_args_and_zk.pdf",
-    "presentations/~$zkp_overall.pptx",
-    "presentations/gkr_protocol_depiction.png",
-    "articles/proofs-arguments-and-zero-knowledge/attachments/LDE.png",
-    "terms/attachments/fiat_shamir_depiction.png",
-    "articles/zk-snarks-under-the-hood/attachments/verification_steps.png",
-    "articles/quadratic-arithmetic-programs-from-zero-to-hero/attachments/pipeline.png"
+    "Untitled.canvas"
   ]
 }

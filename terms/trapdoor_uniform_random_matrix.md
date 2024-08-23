@@ -1,16 +1,19 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Trapdoor For Uniform Random Matrix
 
-## Definition
+## Definition []()
 
 The [trapdoor](trapdoor.md) $R$ is a **short** matrix such that given a uniform random matrix $A$, we have:
 
 $$A \cdot R = G$$
 
 where $G$ is a [gadget matrix](gadget_matrix.md).
+
+[](1724491879755)
 
 ## Preimage Sampling for Short Integer Solution (SIS)
 

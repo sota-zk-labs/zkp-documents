@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Zk Comparison
@@ -19,30 +20,35 @@ comments: true
 
 ## Brief Comparison
 
-### STARK
+### STARK []()
 
-STARK = PLONK + FRI
 
 STARKs, Fractal, Aurora, Virgo, Ligero++
 
 Pros: Shortest proofs amongst plausibly post-quantum SNARKs.  
 Cons: Proofs are large (100s of KBs depending on security).
 
-### MIPs and IPs + [fast-prover Polynomial commitments]
+[](1724550166721)
+
+### MIPs and IPs + fast-prover Polynomial commitments  []()
 
 Examples: Spartan, Brakedown, Orion, Orion+(HyperPlonk).
 
 Pros: Fastest $P$ in the literature, plausibly post-quantum + transparent if polynomial commitment is.  
 Cons: Bigger proofs than 1. and 2. above.
 
-### Linear-PCP Based
+[](1724550166734)
+
+### Linear-PCP Based []()
 
 Example: Groth16
 
 Pros: Shortest proofs (3 group elements), fastest $V$.  
 Cons: Circuit-specific trusted setup, slow and space-intensive $P$, not post-quantum.
 
-### Constant-round polynomial IOP + KZG polynomial commitment
+[](1724550166738)
+
+### Constant-round polynomial IOP + KZG polynomial commitment []()
 
 Examples: Marlin-KZG, PlonK-KZG
 
@@ -53,3 +59,5 @@ Counterpoint for $P$: Can use more flexible intermediate representations than ci
 ---
 
 See [chapter_19](../articles/proofs-arguments-and-zero-knowledge/chapter_19.md) for further details.
+
+[](1724550166741)

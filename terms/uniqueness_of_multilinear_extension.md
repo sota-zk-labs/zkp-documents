@@ -1,11 +1,14 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# **Uniqueness of Multilinear Extension**
+# **Uniqueness of Multilinear Extension** []()
 
 > [!NOTE]  
 > Any function $f: \{0, 1\}^v → F$ has a unique [multilinear](multilinear.md) [extension](extension) (MLE) over $F$.
+
+[](1724492254033)
 
 ## Proof
 

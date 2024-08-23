@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # ZkPorter: Revolutionizing Layer 2 Scaling []()
@@ -30,7 +31,7 @@ ZkPorter presents a scalable solution to tackle challenges stemming from existin
 
 ## The Solution: zkRollup and ZkPorter
 
-### Understanding zkRollup
+### Understanding zkRollup []()
 
 To grasp ZkPorter's solution, it's crucial to comprehend how zkRollup operates. Data is structured as leaves of a Merkle Tree, with the
 root hash stored on the Ethereum smart contract. When data changes, a new root, accompanied by a proof, must be submitted to the
@@ -40,7 +41,9 @@ thereby restricting the size of the calldata and making scaling to thousands of 
 
 ![zkRollup State 1](attachments/zkrollup_state_1.png)
 
-### ZkPorter's Innovative Approach
+[](1724550195321)
+
+### ZkPorter's Innovative Approach []()
 
 ZkPorter addresses scalability challenges by eliminating the need to push data as calldata to the blockchain, thereby
 bypassing block size limitations.
@@ -53,6 +56,8 @@ bypassing block size limitations.
   zkPorter's root saved as calldata on Ethereum.
 - In case of issues with ZkPorter, the zkRollup remains unaffected.
 - Contracts and accounts on both zkRollup and zkPorter sides seamlessly interact.
+
+[](1724550195328)
 
 ### Comparison between zkRollup and zkPorter
 

@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Elliptic Curve (EC)
@@ -27,7 +28,7 @@ Explore the fascinating world of Elliptic Curve cryptography through the followi
 
 <!-- TOC -->
 
-## What Is An Elliptic Curve?
+## What Is An Elliptic Curve? []()
 
 ![Elliptic Curve Image](attachments/elliptic_curve.png)
 
@@ -38,16 +39,20 @@ The equation defining an elliptic curve is $y^{2} = x^{3} + ax + b$.
 
 You should also read about [elliptic curve group](elliptic_curve_group.md).
 
+[](1724427998371)
+
 ## Terminology
 
-### Point of Infinity
+### Point of Infinity []()
 
 $O$: a point that goes to infinity if we intersect two points in the curve symmetrically with respect to the y-axis.
 You can imagine the third point as an infinite point lying at the infinite end of the y-axis.
 
 > $P + O = P$
 
-### Order Of A Curve
+[](1724427998386)
+
+### Order Of A Curve []()
 
 A curve has an "**order**"; there exists a number $n$ such that $P * n = O$ for any $P$.
 
@@ -55,7 +60,11 @@ A curve has an "**order**"; there exists a number $n$ such that $P * n = O$ for 
 >
 > $=> P∗(7∗n+5)=P∗5$
 
-### Generator Point
+[](1724427998389)
+
+[](1724427998391)
+
+### Generator Point []()
 
 There is also a commonly agreed-upon "generator point" $g$ (or $G$ interchangeably), which is understood to, in some
 sense, represent the number "1".
@@ -64,7 +73,9 @@ sense, represent the number "1".
 
 Theoretically, any point on a curve (except $O$) can be $g$; all that matters is that $g$ is standardized.
 
-## Calculations On An Elliptic Curve
+[](1724427998394)
+
+## Calculations On An Elliptic Curve 
 
 > Given 2 points $A$ and $B$ on the elliptic curve, there is no simple/quick way to calculate $k$ so that: $A*k =
 > B$ [How much energy needed to break EC](http://eprint.iacr.org/2013/635.pdf)

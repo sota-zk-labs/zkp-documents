@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Round-by-round Soundness
+# Round-by-round Soundness []()
 
 A protocol $I$ for a [language](language.md) $L$ satisfies round-by-round soundness if the following properties hold:
 
@@ -14,3 +15,5 @@ A protocol $I$ for a [language](language.md) $L$ satisfies round-by-round soundn
 Canetti et al.[CHH+19](https://dl.acm.org/doi/10.1145/3313276.3316380) showed that any interactive proof based on
 [sum-check protocol](sumcheck_protocol.md) satisfy round-by-round soundness, and hence applying the [Fiat-Shamir](fiat_shamir.md)
 transformation to it yields a [non-interactive proof](np.md) that is secure in the [ROM](random_oracle_model.md).
+
+[](1724491013886)

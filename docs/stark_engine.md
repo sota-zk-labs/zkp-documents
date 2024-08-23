@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 # STARK Engine
 
@@ -7,7 +8,7 @@ comments: true
 
 You should read about the STARK's mechanics [here](../stark_mechanics.md).
 
-## From STARK to STARK Engine
+## From STARK to STARK Engine []()
 
 Our machine now follows the von Neumann architecture, which can:
 
@@ -25,6 +26,8 @@ interacts with external data sources. So, how can we prove and verify the integr
 > The difference between a STARK and a STARK Engine is that the latter comes with a virtual machine and is capable of proving and
 > verifying arbitrary computations.
 >
+
+[](1724549980171)
 
 ### Table
 
@@ -68,7 +71,7 @@ The prover needs to commit to both tables. The verifier verifies two sets of AIR
 the memory table. A *permutation argument* is used to establish that the sets of rows in the two tables are identical, meaning these
 tables pertain to the same execution trace.
 
-### Permutation Argument
+### Permutation Argument []()
 
 We can assume that the prover has access to random scalars $a,b,c,\alpha, \dots$ supplied by the verifier. The prover uses these
 scalars to compress multiple columns into one. Let the elements in these columns be: $(c_i)$ and $(k_i)$.
@@ -80,7 +83,9 @@ column is:  $e_{i−1} \cdot (\alpha−c_i)=e_i$. (Note that $e$ is called *exte
 If the two tables pertain to the same execution trace, then the products should be the same
 $\prod_i(\alpha - c_i) =  \prod_i(\alpha - k_i)$.
 
-### Evaluation Argument
+[](1724549980184)
+
+### Evaluation Argument []()
 
 An evaluation argument establishes a relation such as when one table’s list of rows *appears in order* as a sublist of another
 table’s list of rows. This relation occurs, for instance, when the processor reads input from a designated input tape.
@@ -94,7 +99,9 @@ The transition constraints are given by:
 - $\forall i > 0: e_i = J_i \cdot (\alpha e_{i-1} + c_i) + (1 - J_i) \cdot e_{i-1}$  for the larger table.
 - $\forall j > 0: e_j= \alpha e_{j-1} + k_j$ for the smaller one.
 
-### Constraints
+[](1724549980188)
+
+### Constraints []()
 
 A table AIR constraints contains:
 
@@ -102,6 +109,8 @@ A table AIR constraints contains:
 - Transition constraints: apply to every consecutive pair of rows.
 - Terminal constraints: apply to the *last* row. (terminal is the last value of the running product or running sum).
 - Difference constraints: apply to specific, often special, rows.
+
+[](1724549980191)
 
 ## STARK Engine Workflow
 

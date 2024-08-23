@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Folding Scheme
+# Folding Scheme []()
 
 Intuitively, a folding scheme for a [relation](../relation.md) $R$ is a protocol
 that reduces the task of checking two instances in $R$ to the task of
@@ -17,3 +18,5 @@ It meets both completeness and knowledge soundness requirements:
 - If the new witness $w$ is correct for the folded instance $x$, then
   the original witnesses $w _ 1, w _ 2$ for the initial instances
   $x _ 1, x _ 2$ can be extracted.
+
+[](1724428285361)

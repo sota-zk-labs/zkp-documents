@@ -1,15 +1,18 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # R1CS
 
-## R1CS
+## R1CS []()
 
 The R1CS (Rank One Constraint System) structure consists of sparse matrices
 $A, B, C$. An R1CS instance
 consists of public inputs and outputs $x$ and is satisfied by a witness $W$ if:
 $(A \cdot Z) \circ (B \cdot Z) = C \cdot Z$ where $Z = (W, x, 1)$.
+
+[](1724467529625)
 
 For example:
 
@@ -21,7 +24,9 @@ is $1$.
 
 For further details, see this [slide](../presentations/zk_overall.pptx).
 
-## Relaxed R1CS
+
+
+## Relaxed R1CS []()
 
 The relaxed R1CS structure consists of sparse matrices $A, B, C$. In addition,
 its instance consists of an error vector $E$, a scalar $u$ and public inputs
@@ -31,7 +36,9 @@ $(A \cdot Z) \circ (B \cdot Z) = u \cdot (C \cdot Z) + E$, where $Z = (W, x, u)$
 Any R1CS instance can be expressed as a relaxed R1CS instance by
 augmenting it with $u=1$ and $E = 0$.
 
-## Committed Relaxed R1CS
+[](1724467557901)
+
+## Committed Relaxed R1CS []()
 
 Consider a finite field $\mathbb{F}$ and a commitment scheme $Com$ over $\mathbb{F}$.
 The committed Relaxed R1CS structure consists of sparse matrices
@@ -43,3 +50,5 @@ satisfied by a witness $(E, r_E, W, r_W)$ if:
 - $\bar E = Com(E, r_E)$
 - $\bar W = Com(W, r_W)$
 - $(A \cdot Z) \circ (B \cdot Z) = u \cdot (C \cdot Z) + E$ where $Z = (W, x, u)$.
+
+[](1724488256282)

@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Fast Fourier Transforms
@@ -37,7 +38,7 @@ Compute this function takes $O(N^2)$ time (iterate $j$ take $O(N)$ times, and we
 
 Is this slow? Yes, and the Fast Fourier Transforms below will significantly speed up both operations.
 
-## Fast Fourier Transforms
+## Fast Fourier Transforms []()
 
 To utilize this algorithm, you must operate within a finite field, and the domain must be
 a [multiplicative subgroup](./prime_or_finite_fields) of that field. Furthermore, the multiplicative subgroup must
@@ -46,6 +47,8 @@ have size $2^n$ in order to create a low-runtime recursive algorithm.
 **High level idea:**
 FFT works like [merge-sort](https://www.geeksforgeeks.org/merge-sort/) . It takes a problem of size $N$, break it up into two problems
 of size $\dfrac{N}{2}$, and do $O(N)$ work to combine two smaller solutions into the bigger one. So, the total run time is $O(NlogN)$.
+
+[](1724428223634)
 
 ### Multi-point Evaluation
 
@@ -107,7 +110,7 @@ We can try running it:
 [3, 4, 5, 9]
 ```
 
-### Polynomial Interpolation
+### Polynomial Interpolation []()
 
 To compute the inverse FFT, we run the FFT again , but reverse the result (except the first item stays in place) and divide every
 value by the length of the list. The reason is that when we use `fft()`, we transform a vector
@@ -115,6 +118,8 @@ of $N$ coefficients into a vector of $N$ evaluations. This process can be viewed
 a matrix of size $N \times 1$ into another matrix of the same size. To accomplish this,
 we perform matrix multiplication between the coefficient matrix and a square matrix of
 size $N \times N$. That matrix, in the case of FFT, is called the **Discrete Fourier Transform (DFT)** matrix:
+
+[](1724428255859)
 
 ![DFT_matrix](attachments/dft_matrix.png)
 
@@ -133,6 +138,8 @@ def inverse_fft(vals, modulus, domain):
 
 We can use FFT to multiply numbers in time $O(NlogN)$ which $N$ is the length of numbers, faster than $O(N^2)$ schoolbook
 multiplication.
+
+
 
 ## FFTs and Binary Fields
 

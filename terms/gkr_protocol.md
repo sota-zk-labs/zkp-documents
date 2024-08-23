@@ -1,15 +1,18 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # GKR Protocol
 
-## 1 The GKR Protocol and Its Costs
+## 1 The GKR Protocol and Its Costs []()
 
-First, $V$ and $P$ agree on a arithmetic circuit $C$, and the goal is to compute the value of the output gate($s$) of $C$.
+First, $V$ and $P$ agree on an arithmetic circuit $C$, and the goal is to compute the value of the output gate($s$) of $C$.
 
 Let $S$ is the size (number of gates) of $C$ and $n$ is number of variables. They key feature of **GKR protocol** is that the $P$ runs
 in time poly($S$), and the cost to the verifier is $O(dlogS)$, which $d$ is the deep of $C$, and only logarithmically with $S$.
+
+[](1724513115996)
 
 ## 2 Protocol Overview
 
@@ -67,15 +70,14 @@ $$
 \end{aligned}
 $$
 
-#### Description of the GKR protocol
+#### Description of the GKR Protocol []()
 
 1. At the start of the protocol, $P$ sends a function $D: \{0,1\}^{k_0} \rightarrow F$ claimed to equal $W_0$.
 2. $V$ picks a random $r_0 \in F^{k0}$ and lets $m_0 \leftarrow \tilde D(r_0)$. The remainder of the protocol is devoted to confirming
    that $m_0 = \tilde W_0(r_0)$.
 3. For $i = 0, 1, ..., d-1$:
     - Define the $(2k_{i+1})$-variate polynomial:
-      $f_{r_i}^{(i)}(b,c):=\tilde{add_i}(r_i, b, c)(\tilde W_{i +1}(b)+\tilde W_{i +1}(c))+\tilde{mult_i}(r_i,b,c)(\tilde W_{i +1}(b)
-      \cdot\tilde W_{i+1}(c))$
+      $f_{r_i}^{(i)}(b,c):=\tilde{add_i}(r_i, b, c)(\tilde W_{i +1}(b)+\tilde W_{i +1}(c))+\tilde{mult_i}(r_i,b,c)(\tilde W_{i +1}(b)\cdot\tilde W_{i+1}(c))$
     - P claims that $\sum_{b,c \in \{0,1\}^{k_{i+1}}} f_{r_i}^{(i)}(b,c) = m_i$.
     - So that $V$ may check this claim, $P$ and $V$ apply the [sum-check protocol](sumcheck_protocol.md) to
       $f_{r_i}^{(i)}$, up until $V’s$ final check in that protocol, when $V$ must evaluate $f_{r_i}^{(i)}$ at randomly chosen point
@@ -92,32 +94,44 @@ $$
 4. $V$ checks directly that $m_d = \tilde W_d(r_d)$ using [VSBW13](lagrange_interpolation.md#VSBW13). Note that $\tilde W_d$ is
    the **MLE** of input $x$, and $V$ can compute it in $O(n)$, which $n$ is the size of the input.
 
+[](1724545689246)
+
+
 **Example**: Compute $\tilde W$ in a circuit over $F_5$ consisting entirely of multiplication gates
 ![compute_w](attachments/compute_tilde_w.png)
 
+
 ## 4 Discussion of Costs and Soundness
 
-### V's runtime
+### V's Runtime []()
 
-- The total communication cost is $O(S_0 + dlogS)$, where $S_0$ is the number of outputs.
+- The total communication cost is $O(S_0 + dlogS)$, where $S_0$ is the number of outputs and $S$ is the number of gates of the circuit.
 - The time cost to $V$ is $O(n + dlogS + t + S_0)$, where:
   - $t$ is the amount of time required for $V$ to evaluate $\tilde{add_i}, \tilde{mult_i}$ for each layer $i$.
   - $n$ is the time required to evaluate $\tilde W_d(r_d)$.
   - $S_0$ is the time required to read the vector of claimed outputs and evaluate the corresponding **MLE**.
   - $dlogS$ is the time required for $V$ to send messages to $P$ and process and check the messages from $P$.
 
-### P's runtime
+[](1724546331793)
 
-- $O(S^3)$.
+### P's Runtime []()
+
+- $O(S^3)$ where $S$ is the number of gates of the circuit
 - Can be improved by using [Lagrange Interpolation](../../terms/lagrange_interpolation.md).
 
-### Round complexity and communication cost
+[](1724546331797)
 
-- $O(dlogS)$ rounds.
+### Round Complexity and Communication Cost []()
 
-### Soundness error
+- $O(dlogS)$ rounds where $d$ is the deep of the circuit and $S$ is the size of the circuit.
 
-- The soundness error is: $O(dlog(S)/|F|)$.
+[](1724546331800)
+
+### Soundness Error []()
+
+- The soundness error is: $O(dlog(S)/|F|)$ where $d$ is the deep of the circuit and $S$ is the size of the circuit.
+
+[](1724546331803)
 
 ## 5 Evaluating $\tilde {add}_i$ and $\tilde {mult}_i$ Efficiently
 
@@ -128,4 +142,10 @@ The papers [CMT12](https://arxiv.org/abs/1105.2003), [Tha13](https://arxiv.org/a
 in $O(k_i + k_{i+1}) = O(logS)$ time for a variety of common wiring patterns and specific circuits.
 For the circuits where $\tilde {add}_i$ and $\tilde {mult}_i$ cannot be evaluated in time sublinear in the circuit size $S$ leverages
 cryptography, there is a cryptographic primitive called a ==polynomial commitment scheme== to force the prover to accurately evaluate
-$\tilde {add}_i$ and $\tilde {mult}_i$ on its behalf.
+$\tilde {add}_i$ and $\tilde {mult}_
+[](1724545647265)
+i$ on its behalf.
+
+[](1724545689259)
+
+

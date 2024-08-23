@@ -1,12 +1,17 @@
+---
+cards-deck: terms
+---
 # Modular Arithmetic
 
 > [!WARNING]
 >
 > This doc is not verified
 
-## Definition
+## Definition []()
 
 **Modular arithmetic** is a branch of mathematics that deals with operations on numbers where the answer is confined to a fixed range.
+
+[](1724465755492)
 
 ## Basics
 

@@ -1,19 +1,17 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Barycentric equation
+# Barycentric Equation []()
 
-**References:**
-
-- [A quick barycentric evaluation tutorial](https://hackmd.io/@vbuterin/barycentric_evaluation)
-
-For a given set of pairs $(x_1;y_1), (x_2; y_2), ..., (x_N; y_N)$, let $P(x)$ be the polynomial such that $P(x_i) = y_i \ \forall
-i=1,...,N$. Usually, to evaluate $P(x)$ at an arbitrary point, we can interpolate $P(x)$
+For a given set of pairs $(x_1;y_1), (x_2; y_2), ..., (x_N; y_N)$, let $P(x)$ be the polynomial such that $P(x_i) = y_i  \forall i=1,...,N$. Usually, to evaluate $P(x)$ at an arbitrary point, we can interpolate $P(x)$
 using [Lagrange interpolation](lagrange_interpolation.md) in $O(N^2)$ time in general case, and in $O(Nlog_2N)$ in special cases.
 Alternatively, utilizing the barycentric formula allows for direct evaluation of $P(x)$ in $O(N)$ time, with pre-computed time
 complexity of $O(N^2)$ in the general case. For example, if $P(x)$ is a degree-100 polynomial, you can use the evaluations
 $P(0), P(1), ..., P(100)$ to compute $P(101)$, or $P(12042003)$, without ever reconstructing the polynomial.
+
+[](1724425326555)
 
 ## General Technique
 
@@ -72,3 +70,7 @@ Additionally, note that $M(x)=\prod_{i}{x - \omega^i}$ simply becomes $x^N-1$, s
 $$
 P(x) = \frac{x^N-1}{N} * \sum_{i}{\frac{y_i * \omega^i}{x-\omega^i}}
 $$
+
+**References:**
+
+- [A quick barycentric evaluation tutorial](https://hackmd.io/@vbuterin/barycentric_evaluation)

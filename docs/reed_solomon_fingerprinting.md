@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
-# Reed-Solomon Fingerprinting
+# Reed-Solomon Fingerprinting []()
 
 `rid-'solomon`
 
@@ -19,12 +20,15 @@ imply the following:
 > For any two distinct (unequal) polynomials $p_a$ and $p_b$ of degree at most $n$ with coefficients in $\mathbb{F}_p$,
 > $p_a(x) = p_b(x)$ for at most $n$ values of $x$ in $\mathbb{F}_p$.
 
+[](1724549916272)
+
+
 > [!NOTE]
 > Any input can be represented by a polynomial.
->
+> 
 > Comparing the evaluations of their respective polynomials at a random
 > point allows us to check whether two inputs are identical.
->
+> 
 > The probability of these two evaluations being the same, even when their inputs differ, is given by $(n-1)/p$, which
 > approaches 0 when $p >> n$.
 
@@ -42,3 +46,4 @@ imply the following:
 | $\mathbb{F}_p$   | finite field over $p$          |                     |
 | $r$              | random value in $\mathbb{F}_p$ |                     |
 | $v$              | $h_r(a)$                       |                     |
+

@@ -1,7 +1,8 @@
 ---
 comments: true
+cards-deck: terms
 ---
-# Schnorr Signature
+# Schnorr Signature []()
 
 The Schnorr Signature is a typical type of [threshold signature](https://scryptplatform.medium.com/threshold-signatures-a0eff03dc29c).
 The Schnorr signature involves two phases: generation and verification.
@@ -21,6 +22,8 @@ $G$ be $g^s$.
 - Parse $\sigma = (R, z)$ and derive $c = H(R, Y, m)$
 - Compute $R' = g^z \cdot Y^{-c}$
 - Verify that: $R' \stackrel{?}{=} R$
+
+[](1724491474259)
 
 ## References
 
