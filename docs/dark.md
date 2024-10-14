@@ -11,7 +11,7 @@ comments: true
 
 ![dark_overview](attachments/dark.png)
 
-## Integer Commitment Scheme
+## Integer Commitment Scheme []()
 
 DARK uses Damgard-Fujisaki integer [commitment scheme](../terms/commitment_scheme.md), you can read the full paper of it
 [here](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=fdfdb6df844a02ec1d783e43899a179920f13dac). This scheme can
@@ -25,7 +25,7 @@ For example, a prover has some values $x_1, x_2, x_3, x_{4}$ and wants to prove 
 
 ## DARK
 
-### Main Idea
+### Main Idea []()
 
 First, you should read the definitions
 of [diophantine equation](../terms/diophantine_equation.md), [diophantine set](../terms/diophantine_set.md).
@@ -35,8 +35,7 @@ $R_S(\mu, \omega) = 0$ and then uses the integer commitment scheme above to comm
 
 For example, to prove $\mu
 \geq 0$, the prover
-finds $\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}$ such that $R_S(\mu,\omega)=\mu - (\omega_1^2 + \omega_2^2 + \omega_3^2 +
-\omega_4^2)$ (see the
+finds $\omega_{1}, \omega_{2}, \omega_{3}, \omega_{4}$ such that $R_S(\mu,\omega)=\mu - (\omega_1^2 + \omega_2^2 + \omega_3^2 + \omega_4^2)$ (see the
 non-negative proof below for more details). Then the prover sends $com(\mu), com(\omega_1),com(\omega_2),com(\omega_3),com(\omega_4)$
 to the verifier. The verifier checks that $R_S(\mu,\omega)=0$ using these commitments.
 
@@ -56,10 +55,7 @@ Below are the basic proofs for constructing our bounded arithmetic.
 
 #### Non-negative Proof
 
-We will leverage [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem) to prove that $\mu
-\geq0$. This theorem implies that there exists $\omega_{1},\omega_{2}, \omega_{3}, \omega_{4}\ s.t. \ \mu=\omega_{1}^{2}+\omega_
-{2}^{2}+\omega_{3}^{2}+\omega_{4}^{2}$. So, the representing polynomial is simply $R_S(\mu; \omega_1, \omega_2, \omega_3, \omega_4) =
-\mu - \omega_1^2- \omega_2^2-\omega_3^2- \omega_4^2$.
+We will leverage [Lagrange's four-square theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem) to prove that $\mu \geq0$. This theorem implies that there exists $\omega_{1},\omega_{2}, \omega_{3}, \omega_{4}\ s.t. \ \mu=\omega_{1}^{2}+\omega_{2}^{2}+\omega_{3}^{2}+\omega_{4}^{2}$. So, the representing polynomial is simply $R_S(\mu; \omega_1, \omega_2, \omega_3, \omega_4) =\mu - \omega_1^2- \omega_2^2-\omega_3^2- \omega_4^2$.
 
 We can find $\omega_{1},\omega_{2}, \omega_{3}, \omega_{4}$ as follow. If $\mu$ is small, we can brute force over
 $\omega_1,\omega_2,\omega_3\in\lbrack 0, \sqrt{\mu}\rbrack$ and calculate $\omega_4$. If $\mu$ is large, we can use this algorithm:

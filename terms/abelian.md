@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Abelian

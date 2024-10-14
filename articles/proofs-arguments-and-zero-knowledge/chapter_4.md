@@ -3,6 +3,7 @@ Title: Interactive Proofs
 Status: Done
 Level: "5"
 comments: true
+cards-deck: articles::proofs-arguments-and-zero-knowledge
 ---
 
 # Chapter 4 - Interactive Proofs
@@ -14,7 +15,7 @@ parts are not as crucial, it is important to read them to fully understand the I
 
 You should read the definition of Sum-Check protocol [here](../../terms/sumcheck_protocol.md)
 
-## 4.2 SAT $\in$ IP
+## 4.2 SAT $\in$ IP []()
 
 First, we should see the definitions of [Boolean circuit](../../terms/boolean_circuit.md) and
 [Boolean formula](../../terms/boolean_formula.md)
@@ -24,6 +25,8 @@ $\phi$ is any Boolean formula on $n$ variables of size $S$ = poly($n$) ($S$ is b
 the function on $\{0, 1\}^n$ that the formula computes.
 
 **GOAL**:  compute the number of satisfying assignments of $\phi$:  $\sum_{x \in \{0, 1\}^n} \phi (x)$
+
+[](1724551009970)
 
 **Interactive proof for # SAT**
 Define $g$ as an extension of $\phi$,
@@ -36,6 +39,7 @@ $$
 
 Turn $\phi$ into an *arithmetic circuit* $\psi$ over $F$ that computes the extension $g$ of $\phi$. The process of replacing the
 Boolean formula $\phi$ to $\psi$ is called ==arithmetization==.
+
 
 Replace:
 

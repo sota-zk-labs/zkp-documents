@@ -15,7 +15,7 @@ comments: true
 
 Consider the polynomial $P(x) = x^3 + x + 5$, which evaluates to $35$.
 
-### Gates and Constraints
+### Gates and Constraints []()
 
 In the context of gates and wires, PLONK introduces two main types of constraints:
 
@@ -25,7 +25,9 @@ In the context of gates and wires, PLONK introduces two main types of constraint
 
 ![Gates and Constraints](attachments/gates.png)
 
-### Linear Systems
+[](1724549744698)
+
+### Linear Systems []()
 
 The linear systems are represented as equations of the form:
 
@@ -44,7 +46,9 @@ The gate constraints are categorized into three sets:
 2. **Multiplication Gate:** $Q_{L_i} = 0, Q_{R_i} = 0, Q_{M_i} = 1, Q_{O_i} = -1, Q_{C_i} = 0$
 3. **Constant Gate:** $Q_{L_i} = 1, Q_{R_i} = 0, Q_{M_i} = 0, Q_{O_i} = 0, Q_{C_i} = -x$
 
-### Polynomials
+[](1724549744702)
+
+### Polynomials []()
 
 Using [Lagrange Interpolation](../terms/lagrange_interpolation.md), constants in the linear systems are converted into
 corresponding polynomials:
@@ -55,6 +59,8 @@ Q_L (x)a (x) + Q_R (x)b (x) + Q_O (x)c (x) + Q_M (x)a (x)b (x) + Q_C (x) = 0
 \end{aligned}
 $$
 
+[](1724549744704)
+
 ### Roots of Unity []()
 
 The n-th roots of unity are employed, where $x^n = 1$.
@@ -63,11 +69,11 @@ You can read about two context that used roots of unity it [here](https://hackmd
 
 [](1713267785624)
 
-### Copy Constraints
+### Copy Constraints []()
 
 To verify copy constraints, equations such as $a(5) = c(7)$ and $c(10) = c(12)$, PLONK
-uses [coordinate accumulators](../terms/coordinate_pair_accumulator.md). Two accumulators are created, one with $X(x) =
-x$ and $Y(x) = a(x)$, and the other with $Y(x) = a(x)$, but $X'(x)$ is a polynomial that evaluates permutations,
+uses [coordinate accumulators](../terms/coordinate_pair_accumulator.md). Two accumulators are created, one with 
+$X(x) =x$ and $Y(x) = a(x)$, and the other with $Y(x) = a(x)$, but $X'(x)$ is a polynomial that evaluates permutations,
 flipping, or rearranging values in each copy constraint.
 
 To prove constraints between $a$, $b$, and $c$, we use the same procedure, but instead "accumulate" together points from
@@ -88,7 +94,9 @@ each side together so this allows us to do the same check as before except that 
 just between positions within one of three sets or wires a, b, or c but also between one set or wires and another (e.g.,
 as in $a(2) = b(4)$).
 
-### Putting it All Together
+[](1724549744707)
+
+### Putting it All Together []()
 
 The final equations include the following:
 
@@ -108,6 +116,8 @@ And the protocol ensures that:
 
 $P_a(1) = P_b(1) = P_c(1) = P_a'(1) = P_b'(1) = P_c'(1) = 1$
 $P_a(w^n)P_b(w^n)P_c(w^n) = P_a'(w^n)P_b'(w^n)P_c'(w^n)$.
+
+[](1724549744710)
 
 ### Polynomial Commitments
 

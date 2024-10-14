@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Monolith Hash
@@ -15,7 +16,7 @@ References:
 + [How to choose ZK-friendly hash](https://blog.taceo.io/how-to-choose-your-zk-friendly-hash-function/)
 + [Introduce Monolith](https://readmedium.com/introducing-monolith-for-faster-hashing-in-zk-settings-6980f406af0e)
 
-## Overview
+## Overview []()
 
 Monolith is a family of hash functions optimized for zero-knowledge protocols.
 
@@ -33,7 +34,9 @@ One round is divided into:
 The components $\text{Bricks}$ and $\text{Concrete}$ are responsible for the security against statistical attacks, while $\text{Bars}$
 provides high security against algebraic attacks. Anticipating improvements, we set the number of rounds uniformly to 6.
 
-## Specification
+[](1724549232214)
+
+## Specification []()
 
 Monolith uses prime fields $\mathbb{F}_p$ with two options for $p$, namely:
 
@@ -41,7 +44,9 @@ $p_{\text{Goldilocks}} = 2^{64} - 2^{32} + 1$ and $p_{\text{Mersenne}} = 2^{31} 
 
 The parameters used for Monolith are shown in the table below:
 
-| Name                 | $p$                   | Security | Round $N$ | $t$ (2-to-1) | Width $t$ (Sponge) | # Bar $u$ |
+| Name                 | $p$                   | Security | Round $N$ | $t$ (2-to-1) | Width $t$ (Sponge) | [](1724549232228)
+
+# Bar $u$ |
 |----------------------|-----------------------|----------|-----------|--------------|--------------------|-----------|
 | $\text{Monolith-64}$ | $2^{64} - 2^{32} + 1$ | 128      | 6         | 8            | 12                 | 4         |
 | $\text{Monolith-31}$ | $2^{31} - 1$          | 128      | 6         | 16           | 24                 | 8         |
@@ -52,7 +57,7 @@ Monolith supports [sponge modes](
 https://en.wikipedia.org/wiki/Sponge_function) for slightly larger state size and a [2-to-1 compression function](
 https://en.wikipedia.org/wiki/One-way_compression_function) for smaller state size (e.g., for Merkle tree with fixed depth).
 
-### Permuatation Structure
+### Permuatation Structure []()
 
 The Monolith permutation is defined as:
 
@@ -67,7 +72,9 @@ where $c^{(i)}$ are pseudo-random round constants, excluding $c^{(N)} = 0$.
 > [!NOTE]
 > A single $\text{Concrete}$ operation is applied before the first round.
 
-### Bars Layer
+[](1724549232231)
+
+### Bars Layer []()
 
 The $\text{Bars}$ layers is defined as:
 
@@ -91,7 +98,9 @@ where $C$, $S$, and $D$ are the operations defined in [kintsugi strategy](../ter
 In the following, we describe them individually for $\text{Monolith-64}$ and $\text{Monolith-31}$ with parameters taken
 from the table above corresponding to each type.
 
-#### $\text{Bars}$ For $\text{Monolith-64}$
+[](1724549232233)
+
+#### $\text{Bars}$ For $\text{Monolith-64}$ 
 
 For $D$ operation, we use a decomposition into 8-bit values such that:
 
@@ -125,7 +134,7 @@ and
 
 $$S_s(y')=(y' \ \oplus ((\bar{y'} \lll 1) \ \odot (y' \lll 2) )) \lll 1$$
 
-### Bricks
+### Bricks []()
 
 The component $\text{Bricks}$ is defined as:
 
@@ -137,7 +146,9 @@ https://eprint.iacr.org/2019/458), [Rescue](
 https://eprint.iacr.org/2019/426), and [Tip5](
 https://eprint.iacr.org/2023/107).
 
-### Concrete Layer
+[](1724549232237)
+
+### Concrete Layer []()
 
 The $\text{Concrete}$ layer is defined as:
 
@@ -170,6 +181,8 @@ circ(&\text{0x536C316},\text{0x1DD20A84}, \text{0x43E26541}, \text{0x52B22B8D}, 
 &\text{0x452F77E3}, \text{0x39F03DF}, \text{0x743DBFE0}, \text{0x4DA05A48}, \text{0x5F027940}, \text{0x8293632}, \\
 &\text{0x50F2C76A}, \text{0x7B773729}, \text{0x577DE8B0}, \text{0x73B1EAC6}, \text{0x58DA7D29},\text{0x67AA4375}, \\
 &\text{0xDBA9E33}, \text{0x2655E5A1}) \end{align}$$
+
+[](1724549232239)
 
 ## Application
 

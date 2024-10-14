@@ -1,24 +1,28 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Extension Fields
+# Extension Fields 
 
-## Definition
+## Definition []()
 
 Let $i = \sqrt{-1}$.
 
 Extension fields function by introducing a new element and defining its relationship with existing elements in the
 field (in this case, $i^2 + 1 = 0$) (also referred to as a [Quadratic field](quadratic_field.md)).
 
-## Extensions of Finite Fields
+[](1724428176406)
+
+## Extensions of Finite Fields []()
 
 Standard operations apply, with the exception of division:
 
 $a / b = (a \cdot b^{p^{2}-2}) \pmod {p}$
 
-$x^{p^2 - 1} \equiv 1 \pmod p$ => $p^2 - 1$ is the [**order of the multiplicative group in the field
-**](prime_or_finite_fields.md#order-of-the-multiplicative-group)
+$x^{p^2 - 1} \equiv 1 \pmod p$ => $p^2 - 1$ is the [**order of the multiplicative group in the field**](prime_or_finite_fields.md#order-of-the-multiplicative-group)
+
+[](1724428201433)
 
 ### Examples
 

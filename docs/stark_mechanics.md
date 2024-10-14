@@ -1,10 +1,11 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # STARK's Mechanics
 
-## Introduction
+## Introduction []()
 
 STARK stands for Scalable Transparent ARguments-of-Knowledge. There are some key features of STARK:
 
@@ -19,9 +20,11 @@ STARK stands for Scalable Transparent ARguments-of-Knowledge. There are some key
 - The low degree of these polynomials is verified using the [FRI](./fri.md) protocol.
 - Zero-Knowledge Proofs are optional.
 
+[](1724550048596)
+
 ## Mechanics
 
-### Overview
+### Overview []()
 
 There are 4 main stages and three transformations of STARK:
 
@@ -35,7 +38,9 @@ polynomials.
 
 The next sections will provide a detailed description of each transformation.
 
-### Arithmetization
+[](1724550048609)
+
+### Arithmetization []()
 
 First, we define a **state** in a virtual machine is a list of registers. A program consists of instructions, each of which changes the
 state in a cycle. We also consider the trace of a program as a list of all the states during the execution. Specially, we define the
@@ -59,12 +64,16 @@ this function).
 So, after this transformation, we have boundary constraints, transition constraints and a trace. Next, we need to interpolate them into
 Polynomial IOP.
 
-### Interpolation
+[](1724550061621)
+
+### Interpolation []()
 
 You should read the definition of interpolation [here](../terms/lagrange_interpolation.md).
 
 To transform the Arithmetic Constraint System into Polynomial IOP, we need to convert boundary constraints, transition constraints
 and the trace into univariate polynomials.
+
+[](1724550048612)
 
 First, we should interpolate the trace into **trace polynomials**, which are $w$ univariate polynomials. Each resulting polynomial
 $P_i(X)$ represents the state of register $i$-th.
@@ -82,10 +91,12 @@ transition polynomials into transition quotients, similar to the boundary quotie
 So, at the end of this step, we have $w$ boundary quotients and $w$ transition quotients. Our goal now is to demonstrate the existence
 and low-degree nature of all $2*w$ polynomials using the [FRI](./fri.md) commitment scheme.
 
-### Cryptographic Compilation
+
+### Cryptographic Compilation []()
 
 We use FRI to commit all the quotient polynomials above. However, committing all of them individually is too expensive. Therefore, we
 employ a **random nonlinear combination** method to merge all polynomials into a single entity.
+[](1724550080322)
 
 For details, suppose we want to establish that $f_0(X),..., f_{n-1}(X)$ represent polynomials of degrees bounded by $d_0,...,d_{n-1}$.
 We compute the nonlinear combination as follows:
@@ -103,6 +114,9 @@ To achieve this, the prover commits to:
 
 - $g(X)$ via FRI.
 - $w$ boundary quotients via [Merkle Tree](./fri.md#Merkle%20Tree) (each polynomial corresponds to a Merkle Tree).
+
+
+### Workflow
 
 For now, we will show the complete workflow of both prover and verifier:
 
@@ -131,6 +145,7 @@ Verifier:
   - Query the $g(x)$ value and compare that value with the one above.
 
 For the implementation, we recommend you to see [this](https://github.com/aszepieniec/stark-anatomy).
+
 
 ## Appendix
 

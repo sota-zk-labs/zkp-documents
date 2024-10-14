@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Elliptic curve group
@@ -15,7 +16,8 @@ most elliptic curve groups used in practice runs in time $O(\sqrt{G})$. For exam
 is defined over base field $F$ of size $2^{255} −19$, defines a cyclic group of order close to $2^{252}$, so the time complexity is
 about $O(2^{128})$.
 
-## Scalar field vs base field
+## Scalar field vs base field []()
 
-The [base field](base_field.md) is used to represent points on a curve while the [scalar
-field](scalar_field.md) allows performing scalar multiplication on those points.
+The [base field](base_field.md) is used to represent points on a curve while the [scalar field](scalar_field.md) allows performing scalar multiplication on those points.
+
+[](1724428050270)

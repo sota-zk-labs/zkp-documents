@@ -3,17 +3,19 @@ Title: Definitions and Technical Preliminaries
 Status: Done
 Level: "3"
 comments: true
+cards-deck: articles::proofs-arguments-and-zero-knowledge
 ---
 
 # Chapter3 - Definitions and Technical Preliminaries
 
 ## 3.1 Interactive Proofs
 
-In an interactive proof, the Prover (**P**) claims having a value $y = f(x)$. To validate this claim, the Verifier (**V
-**) exchanges a series of messages with **P**. At the conclusion of this protocol, **V** must output either 0 or 1,
+In an interactive proof, the Prover (**P**) claims having a value $y = f(x)$. To validate this claim, the Verifier (**V**) exchanges a series of messages with **P**. At the conclusion of this protocol, **V** must output either 0 or 1,
 where 1 indicates acceptance of the prover's claim ($y = f(x)$) and 0 indicates rejection. The entire sequence of k
 messages $t := (m_1, m_2, ..., m_k)$ exchanged by **P** and **V**, along with the claimed answer y, is termed a
 ==transcript==.
+
+[](1724550849921)
 
 The output of verifier $V$ on input $x$ during interaction with a deterministic prover strategy **P**, with V's internal
 randomness equal to $r$, is denoted as $Out(V,x,r,P) \in \{0,1\}$.
@@ -25,6 +27,7 @@ An interactive proof system (V,P) is considered to have completeness error $δ_c
   $P'$ is a prover strategy with value $y \ne f(x)$ (*statistical soundness*).
 
 An interactive proof system is deemed valid if $δ_c$ and $δ_s$ are both ≤ 1/3.
+
 
 ## 3.2 Argument Systems
 
@@ -80,3 +83,5 @@ $$
 
 The set $\{χ_w: w \in \{0, 1\}^v\}$ is referred to as the set of
 ==*multilinear [Lagrange basis polynomials](../../terms/lagrange_interpolation.md)*==.
+
+

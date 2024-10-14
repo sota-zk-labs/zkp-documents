@@ -3,13 +3,14 @@ Title: Bird’s Eye View of Practical Arguments
 Status: In Progress
 Level: "6"
 comments: true
+cards-deck: articles::proofs-arguments-and-zero-knowledge
 ---
 
 # Chapter 19: Bird’s Eye View of Practical Arguments
 
 ![taxonomy](attachments/taxonomy.png)
 
-## 19.1 A Taxonomy of SNARKs
+## 19.1 A Taxonomy of SNARKs []()
 
 Outside of the **linear-PCP-based SNARKs**, most known **SNARKs** are obtained by combining some **[IP](../../terms/ip.md)**,  **MIP**,
 or **constant-round polynomial IOP** with a **polynomial commitment** scheme.
@@ -31,6 +32,8 @@ For example:
 Beside that, the most popular variant of the SNARK derived from GGPR’s linear PCP is
 Groth16.
 
+[](1724551330933)
+
 **More SNARKs via composition**: On top of the taxonomy of SNARKs delineated above, one can take any two SNARKs designed via one of the
 above approaches, and compose them one or more times. Such compositions are growing increasingly popular and already yield
 state-of-the-art performance.
@@ -39,6 +42,8 @@ For example, PlonKy2 self-composes the SNARK obtained by combining the [PlonK](.
 polynomial commitment scheme, Polygon Hermez is composing such a FRI-based SNARK with Groth16, Orion composes Brakedown with Virgo to
 reduce proof size, etc.
 
+
+
 ## 19.2 Pros and Cons of the Approaches
 
 Sections 10.6 discussed the pros and cons of the **IP, MIP,** and **constant-round polynomial IOP**, while sections 16.3 discussed
@@ -46,7 +51,7 @@ those of
 polynomial commitment scheme. In this section, our aim is to do the same for the various combinations and for SNARKs derived from
 linear **PCPs**.
 
-### Approaches Minimizing Proof Size
+### Approaches Minimizing Proof Size []()
 
 There are 2 approaches that achieve proofs consisting of a constant
 number(i.e., the smallest proof size) of group elements:
@@ -61,6 +66,10 @@ The downsides of these are:
 2. Computationally expensive for the prover.
 
 **Transparency**: (depend on the polynomial commitment scheme)
+
+[](1724551434363)
+
+### Security []()
 
 All of the remaining approaches are transparent unless they choose to use KZG-based polynomial commitments. They use uniform reference
 string ([URS](../../terms/uniform_reference_string.md)) rather than a [SRS](../../terms/structured_reference_string.md), and hence no
@@ -80,6 +89,10 @@ MIPs and constant-round polynomial IOPs.
 > dominates
 > verification costs.
 
+[](1724551434367)
+
+### Cost []()
+
 Here is a brief summary of how concrete costs compare. Prover costs:
 
 1. FRI and Bulletproofs are the most expensive polynomial commitment schemes.
@@ -94,19 +107,23 @@ Commitment size and evaluation proof length:
 3. Dory and Bulletproofs: logarithmic size proofs.
 4. KZG-commitments for univariate polynomials (constant size).
 
-### Constant-round IOPs vs. MIPs and IPs
+[](1724551434370)
+
+### Constant-round IOPs vs. MIPs and IPs []()
 
 **Constant-round IOPs**:  much slower and more space intensive for the prover because they require to commit to many polynomials
 ($\ge 10$), while in **MIPs and IPs**, prover needs to commit only single polynomial.
 
-### On pre-processing and work-saving for the verifier
+[](1724551434372)
+
+### On Pre-processing and Work-saving for the Verifier
 
 The approaches requiring an [SRS](../../terms/structured_reference_string.md) inherently require a pre-processing phase to generate
 the SRS and this take time proportional to the size of the circuit.
 But the other approaches (combining any IP, MIP, or IOP with IOP-based or discrete-log-based polynomial commitments) can achieve a
 work-saving verifier without pre-processing.
 
-### Prover time in holographic vs. non-holographic SNARKs
+### Prover time in Holographic vs. Non-holographic SNARKs
 
 See the definition of holographic system [here](../../terms/holography.md).
 
@@ -122,12 +139,12 @@ The designer’s choice of field to work over can be limited:
    properties required by many SNARKs.
 2. For certain fields, addition and multiplication are particularly efficient on modern computers.
 
-#### Guaranteeing soundness
+#### Guaranteeing Soundness
 
 All of the **IPs, IOPs, MIPs**, and **linear PCPs** that we have covered have soundness error that is at least $1/|F|$ (and often
 larger by significant factors). So, $|F|$ must be chosen sufficiently large to ensure the desired level of soundness.
 
-#### Limitations coming from discrete-logarithm-based or KZG-based polynomial commitments
+#### Limitations Coming from Discrete-logarithm-based or KZG-based Polynomial Commitments
 
 SNARKs making use of discrete-logarithm-based or **KZG**-based polynomial commitments or **linear PCPs** must use a field of size
 equal to the order of the cryptographic group that the polynomial commitment is defined over.
@@ -138,12 +155,12 @@ SNARKs derived from **IOPs** and **linear PCPs** require the prover to perform F
 that support FFT algorithm. In particular, standard FFT algorithms running in time $\tilde O(n)$ on vectors of length $n$
 work only for prime fields $F_p$ if $p-1$ has many small prime factors.
 
-#### Limitations coming from program-to-circuit transformations
+#### Limitations Coming from Program-to-circuit Transformations
 
 IOP-derived SNARKs that aim to emulate arbitrary computer programs (Random Access Machines (RAMs)), save computational work for the
 verifier and avoid pre-processing that only work over fields of [characteristic](../../terms/characteristic) 2.
 
-#### Other considerations in field choice
+#### Other Considerations in Field Choice
 
 Arithmetic-heavy computations may be more efficiently simulated when working over prime fields while computations heavy on bitwise
 operations may be better suited to fields of characteristic 2.

@@ -1,11 +1,14 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Coordinate Pair Accumulator
+# Coordinate Pair Accumulator []()
 
 > [!NOTE]
 > If two points share the same Y value, swapping them does not change the result of $p(x)$.
+
+[](1724427533073)
 
 ## Scheme
 
@@ -44,3 +47,6 @@ Let $\upsilon_1 = 3$ and $\upsilon_2 = 2$, we have:
 | *After*                                        |      | ....    |     |         |
 | $X(x) = \frac{2}{3}x^3 - 4x^2 + \frac{19}{3}x$ | $0$  | $3$     | $2$ | $1$     |
 | $Y(x)$                                         | $-2$ | $1$     | $0$ | $1$     |
+
+
+[](1724427533076)

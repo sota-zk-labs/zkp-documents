@@ -1,3 +1,6 @@
+---
+cards-deck: terms
+---
 # Learning With Errors
 
 Learning With Errors (LWE) is a foundational problem in lattice-based cryptography and forms the basis for many cryptographic schemes
@@ -8,15 +11,14 @@ due to its hardness. The problem can be described as follows:
 + [Learning with errors: Encrypting with unsolvable equations (highly recommended)](https://www.youtube.com/watch?v=K026C5YaB3A)
 + [The Learning with Errors Problem](https://people.csail.mit.edu/vinodv/CS294/lecture1.pdf)
 
-## The LWE Problem
+## The LWE Problem []()
 
 LWE involves solving a system of noisy linear equations. More formally, the LWE problem can be defined as follows:
 
 1. **Secret Vector**: There is a secret vector $\mathbf{s} \in \mathbb{Z}_q^n$, where $\mathbb{Z}_q$ denotes the integers modulo
    $q$.
 
-2. **Public Information**: There is a matrix $\mathbf{A} \in \mathbb{Z}_q^{m \times n}$ and a noise vector $\mathbf{e} \in
-   \mathbb{Z}_q^m$. The entries of $\mathbf{A}$ are chosen uniformly at random from $\mathbb{Z}_q$, and the entries of
+2. **Public Information**: There is a matrix $\mathbf{A} \in \mathbb{Z}_q^{m \times n}$ and a noise vector $\mathbf{e} \in\mathbb{Z}_q^m$. The entries of $\mathbf{A}$ are chosen uniformly at random from $\mathbb{Z}_q$, and the entries of
    $\mathbf{e}$ are typically chosen from some error distribution (often a discrete Gaussian distribution or a uniform distribution
    over a small range).
 
@@ -25,6 +27,8 @@ LWE involves solving a system of noisy linear equations. More formally, the LWE 
 > The LWE problem provides a set of pairs $(\mathbf{A}, \mathbf{b})$, where
 > $\mathbf{b} = \mathbf{A} \cdot \mathbf{s} + \mathbf{e} \pmod q$. The goal is to recover the secret vector $\mathbf{s}$ given
 > $\mathbf{A}$ and $\mathbf{b}$.
+
+[](1724465459039)
 
 ## Computational vs. Decisional LWE
 

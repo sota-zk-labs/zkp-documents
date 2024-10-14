@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Kintsugi Strategy
@@ -12,7 +13,7 @@ References:
 
 + [Monolith Paper](https://eprint.iacr.org/2023/1025.pdf)
 
-## Overview
+## Overview []()
 
 A generic strategy for prime numbers, unrepresentable as smaller domain products, involves breaking and
 recombining the state after applying a function to each chunk.
@@ -30,9 +31,11 @@ Key principles include:
 
 We call this strategy Kintsugi. An illustration is shown above.
 
+[](1724547898420)
+
 ## Chunks and Buckets
 
-### Chunks
+### Chunks []()
 
 For a prime $p \geq 5$, we define $p'$ as:
 
@@ -58,7 +61,7 @@ where:
 + $\mu_i, \ldots, \mu_\xi$: length of 0-chunk (both from left to right)
 + $\omega_i = \sum_{j \geq i} (\nu_{i+1} + \mu_i)$
 
-### Buckets
+### Buckets []()
 
 For efficiency, we may split each chunk into sub-chunks, called buckets, on which each S-box will then work independently.
 
@@ -90,7 +93,7 @@ This decomposition is illustrated (with small buckets) in the figure below with 
 >
 >The bucket decomposition is efficient if $\tau_i \geq 3$ for each $i \geq 1$.
 
-## The Kintsugi Bar
+## The Kintsugi Bar []()
 
 The nonlinear component $\text{Bar}$, based on $\text{Kintsugi}$ strategy, is defined as follows.
 
@@ -100,7 +103,7 @@ where the $C$, $S$, and $D$ operations are described in the following.
 
 Let $\tau_1, \tau_2, \ldots, \tau_s$ be an efficient and aligned bucket decomposition for $p$ as in Eq. 1 above.
 
-### Decomposition $D$
+### Decomposition $D$ []()
 
 The decomposition $D$, i.e.,
 
@@ -114,7 +117,7 @@ over integers, where $\rho_1 = 0$ and $\rho_i = \sum_{j \gt i} \tau_j$.
 
 As the bucket decomposition is aligned, we get that each bucket is either a 1- or 0-bucket.
 
-### S-box $S$
+### S-box $S$ []()
 
 The operations $S$ applies $s$ invertible S-boxes in parallel, i.e.,
 
@@ -127,7 +130,7 @@ where $S_ i : \mathbb{Z}_ {2^{\tau_ i}} \to \mathbb{Z}_ {2^{\tau_ i}}$ and we re
 
 Hence, a $z$ - chunk of $p'$ must be mapped via $S_i$ into a $z$ - chunk, where $z \in \lbrace 0, 1 \rbrace$.
 
-### Composition $C$
+### Composition $C$ []()
 
 The operation $C$ is the inverse of the decomposition.
 

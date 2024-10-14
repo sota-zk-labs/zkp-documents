@@ -1,6 +1,7 @@
 {
   "accentColor": "",
   "cssTheme": "",
-  "baseFontSize": 28,
-  "theme": "moonstone"
+  "baseFontSize": 17,
+  "theme": "moonstone",
+  "baseFontSizeAction": true
 }

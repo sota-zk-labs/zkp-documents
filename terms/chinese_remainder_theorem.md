@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Chinese Remainder Theorem
+# Chinese Remainder Theorem []()
 
 Let us denote:
 
@@ -28,7 +29,7 @@ To find $x$, we need more notations:
 - $inv_i$ such that $inv_i \cdot N_i \equiv 1 \pmod{n_i}$
 
 then $x \equiv \sum{N_i \cdot inv_i \cdot a_i} \pmod{N}$
-
+[](1724513071616)
 For example, with $k = 3$ and:
 
 - $n = \lbrace5, 7, 11\rbrace$
@@ -45,3 +46,5 @@ Finally, $x=77 * 3 * 2 + 55 * 6 * 3 + 35 * 6 * 4 \mod 385 = 367$. As expected, w
 - $367 \equiv 2 \pmod{5}$
 - $367 \equiv 3 \pmod{7}$
 - $367 \equiv 4 \pmod{11}$
+
+

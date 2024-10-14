@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Correlation-Intractability (CI)
+# Correlation-Intractability (CI) []()
 
 A hash function family $H$ is called correlation-intractable if given a random function from $H$, for all sparse relations, it is hard
 to find an input-output pair that satisfies the relation.
@@ -13,6 +14,7 @@ Let denote a relation $R(a, b)$. A hash family $H$ satisfies **CI** for $R$ if i
 $h \leftarrow H$) to
 find a pair $(y, h(y))$ such that $R(y, h(y))$ is true.
 
+[](1724427554813)
 ## Example
 
 Suppose $I$ is an [IP](ip.md) for a [language](language.md) $L$ such that $I$ satisfies

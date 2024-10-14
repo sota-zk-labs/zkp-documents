@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# IVC
+# IVC []()
 
 IVC – Incrementally Verifiable Computation: allows us to do proofs for long computations
 with relatively little memory. A function $F$ is iterated for many times,
@@ -11,6 +12,8 @@ generate a proof for each time that proves the computation
 
 IVC helps to break a long computation into a series of small identical
 steps that significantly reduces the prover memory requirements.
+
+[](1724457102516)
 
 ## Core Idea of IVC
 

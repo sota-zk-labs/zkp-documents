@@ -1,10 +1,13 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Discrete Logarithm
+# Discrete Logarithm []()
 
 In real numbers, discrete logarithm $log_ab = k$ such that $a^k = b$
+
+
 
 It get more interesting when we consider discrete logarithm in a finite field.
 
@@ -13,6 +16,8 @@ For example:
 $a^k \equiv b$ (mod p)
 
 In this case, we can only apply the equation from $a^k$ side and we can't do $log_ab$.
+
+[](1724427752978)
 
 In elliptic curve, a point $G$ "dot" with itself k times would be written as $G * k$ so we would have the same property here. That way
 we can't find $k$ from known $G$ and $D$ point which $G * k = D$.
@@ -24,3 +29,4 @@ we can't find $k$ from known $G$ and $D$ point which $G * k = D$.
 The discrete logarithm problem is believed to be computationally intractable in certain [groups](group.md) $G$. An important caveat is
 that quantum computers can solve the discrete logarithm problem in polynomial time via Shor’s algorithm. Hence, cryptosystems whose
 security is based on the assumed hardness of the discrete logarithm problem are not post-quantum secure.
+

@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Cyclotomic Polynomials and Primitive Roots of Unity
@@ -14,7 +15,7 @@ properties, and their applications.
 
 ## Cyclotomic Polynomials
 
-### Definition
+### Definition []()
 
 The $n$-th cyclotomic polynomial, denoted $\Phi_n(x)$, is defined as the polynomial whose roots are the primitive $n$-th roots of
 unity. Specifically,
@@ -23,7 +24,9 @@ $$\Phi_n(x) = \prod_{\substack{1 \leq k \leq n \\ \gcd(k, n) = 1}} \left( x - e^
 
 where $e^{2\pi i k/n}$ are the $n$-th roots of unity, and $\gcd(k, n) = 1$ ensures that we only take the primitive roots.
 
-### Properties
+[](1724548631117)
+
+### Properties []()
 
 1. **Degree**: The degree of $\Phi_n(x)$ is $\varphi(n)$, where $\varphi$
    is [Euler's totient function](https://www.geeksforgeeks.org/eulers-totient-function/).
@@ -35,6 +38,8 @@ $$x^n - 1 = \prod_{d|n} \Phi_d(x)$$
 
 This implies that cyclotomic polynomials can be derived from the polynomial $x^n - 1$ by factoring out polynomials corresponding to
 divisors of $n$.
+
+[](1724548638341)
 
 ### Examples
 
@@ -59,19 +64,23 @@ Therefore, the cyclotomic polynomials are:
 - $\Phi_3(x) = x^2 + x + 1$
 - $\Phi_6(x) = x^2 - x + 1$
 
-## Primitive Roots of Unity
+## Primitive Roots of Unity 
 
-### Definition
+### Definition []()
 
 A primitive $n$-th root of unity is a complex number $\zeta$ such that $\zeta^n = 1$ and $\zeta^k \neq 1$ for $1 \leq k < n$. In other
 words, $\zeta$ is a root of the polynomial $x^n - 1$ but not of any $x^k - 1$ for $k < n$.
 
-### Properties
+[](1724548760117)
+
+### Properties []()
 
 1. **Existence**: For every positive integer $n$, there are exactly $\varphi(n)$ primitive $n$-th roots of unity.
 2. **Multiplicative Group**: The set of all $n$-th roots of unity forms a cyclic group under multiplication.
 3. **Cyclotomic Field**: The field extension $\mathbb{Q}(\zeta_n)$, where $\zeta_n$ is a primitive $n$-th root of unity, is called the
    $n$-th cyclotomic field. It has degree $\varphi(n)$ over $\mathbb{Q}$.
+
+[](1724548739943)
 
 ### Example
 

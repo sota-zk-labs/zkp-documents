@@ -1,12 +1,15 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Gadget Matrix
+# Gadget Matrix []()
 
 A gadget matrix is a specially structured matrix used in lattice-based cryptography to simplify certain operations, particularly those
 involving homomorphic encryption and digital signatures. These matrices enable efficient computation and transformation of
 lattice-based problems.
+
+[](1724428557745)
 
 ## Characteristics of Gadget Matrices
 

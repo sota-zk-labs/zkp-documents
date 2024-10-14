@@ -5,16 +5,17 @@ comments: true
 
 # Homogeneous Polynomial or Projective Model
 
-## Definition
+## Definition []()
 
-A homogeneous polynomial is a polynomial in which **every term has the same total degree**. For example, $x^2 + 2xy +
-y^2$ is a homogeneous polynomial of degree 2.
+A homogeneous polynomial is a polynomial in which **every term has the same total degree**. For example, $x^2 + 2xy + y^2$ is a homogeneous polynomial of degree 2.
 
 To homogenize a polynomial:
 
 $$
 F^*(X,Y,Z) = Z^d F\left(\frac{X}{Z}, \frac{Y}{Z}\right) \quad \text{where } d = \text{deg}(F)
 $$
+
+[](1724456765132)
 
 ## Example
 

@@ -1,10 +1,13 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Restriction
+# Restriction []()
 
 If polynomial $q$ is a restriction of a polynomial $f$ to a line $l$, then for every random point $r$, we have $q(r) = f(l(r))$.
+
+[](1724488973336)
 
 **Example**:
 
@@ -19,3 +22,5 @@ $\iff q(r)=(-6) * 5^2-4 * 5+32 = -138$
 
 $f(l(r))= f(l(5)) = f(7,-6)$
 $\iff f(l(r)) =3 * 7 * (-6)+2 * (-6)=-138$
+
+

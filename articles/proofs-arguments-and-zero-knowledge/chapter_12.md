@@ -1,8 +1,9 @@
 ---
-Title: "Σ-Protocols and Commitments from Hardness of Discrete Logarithm"
+Title: Σ-Protocols and Commitments from Hardness of Discrete Logarithm
 Status: Done
 Level: "3"
 comments: true
+cards-deck: articles::proofs-arguments-and-zero-knowledge
 ---
 
 # Chapter 12: $\Sigma$-Protocols and Commitments from Hardness of Discrete Logarithm
@@ -23,7 +24,7 @@ You should read the definition of Discrete Logarithm [here](../../terms/discrete
 
 You should take a look at Elliptic curve group [here](../../terms/elliptic_curve_group.md).
 
-## 12.2 Schnorr’s $\Sigma$-Protocol For Knowledge of Discrete Logarithms
+## 12.2 Schnorr’s $\Sigma$-Protocol For Knowledge of Discrete Logarithms []()
 
 $\Sigma$-Protocol is a simple proof system that solves some specific problems:
 
@@ -32,7 +33,9 @@ $\Sigma$-Protocol is a simple proof system that solves some specific problems:
   later ([Section 12.3](#12.3)).
 - Establishing product relationships between committed values ([Section 12.3.2](#12.3.2))
 
-### 12.2.1 $\Sigma$-Protocols
+[](1724551241302)
+
+### 12.2.1 $\Sigma$-Protocols []()
 
 Read the definition of relation [here](../../terms/relation.md).
 
@@ -53,6 +56,8 @@ additional properties:
 
 **Remark 12.1.** Special soundness implies that, the honest-verifier zero-knowledge property of $\Sigma$-protocols only holds if the
 verifier is never allowed to run the prover more than once with the same first prover message $a$.
+
+[](1724551255876)
 
 ### 12.2.2 Schnorr’s $\Sigma$-Protocol For the Discrete Logarithm Relation
 
@@ -132,7 +137,7 @@ committer sends the opening information $e = m$ and $z$ to the verifier, who use
 to
 confirm that $(a, e,z)$ is an accepting transcript for public input $h$.
 
-### Pedersen Commitment Scheme
+### Pedersen Commitment Scheme []()
 
 By instantiating Damgård’s construction with Schnorr’s $\Sigma$-protocol for the discrete logarithm relation, one recovers a well-known
 commitment scheme due to Pedersen. In the traditional presentation, to commit to a message $m$, the committer picks a random exponent
@@ -145,13 +150,11 @@ of $m$. Below is the traditional presentation of Pedersen commitments:
 intractable.
 
 1. Let $\mathbb{G}$ be a (multiplicative) cyclic group of prime order. The key generation procedure publishes randomly chosen
-   generators $g,h
-   \in \mathbb{G}$, which serve as both the commitment key and verification key.
-2. To commit to a number $m \in \lbrace 0,...,|\mathbb{G}| −1 \rbrace$, committer picks a random $z \in \lbrace 0,...,|\mathbb{G}| −1
-   \rbrace$ and
-   sends $c \leftarrow{} g^m
-   \cdot h^z$ .
+   generators $g,h\in \mathbb{G}$, which serve as both the commitment key and verification key.
+2. To commit to a number $m \in \lbrace 0,...,|\mathbb{G}| −1 \rbrace$, committer picks a random $z \in \lbrace 0,...,|\mathbb{G}| −1\rbrace$ and
+   sends $c \leftarrow{} g^m\cdot h^z$ .
 3. To open a commitment $c$, committer sends $(m,z)$. Verifier checks that $c = g^m \cdot h^z$ .
+[](1724551301581)
 
 **Protocol 6** Commitment scheme obtained from Schnorr’s protocol via Damgård’s transformation.
 
@@ -163,6 +166,8 @@ intractable.
    sends $c \leftarrow{}
    h^{−m} \cdot g^z$
 4. To open a commitment $c$, committer sends $(m,z).$ Verifier checks that $c \cdot h^m = g^z$
+
+
 
 ### 12.3.1 Important Properties of Pedersen Commitments
 

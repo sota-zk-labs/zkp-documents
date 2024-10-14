@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # The GSW FHE Scheme
@@ -11,14 +12,16 @@ comments: true
 
 ## GSW Encryption Scheme
 
-### Keys
+### Keys []()
 
 ![GSW Encryption Scheme](attachments/gsw_encryption_scheme.png)
 
 - $A$: is the public key; an [LWE matrix](../terms/learning_with_errors.md) (columns are LWE samples): $s^T A = e^T \approx 0^T$
 - $s$: is the secret key.
 
-### Encryption
+[](1724549164191)
+
+### Encryption []()
 
 - **$R$**: A random short matrix.
 - **Ciphertext for $x \in \{0,1\}$**:
@@ -40,11 +43,15 @@ $$
 
 $$GG^{-1}(A) = A$$
 
-### Decryption
+[](1724549164205)
+
+### Decryption []()
 
 $$
 s^T C = s^T AR + x \cdot s^T G \approx x \cdot s^T G
 $$
+
+[](1724549164209)
 
 ## Homomorphic Operations in GSW
 
@@ -59,7 +66,7 @@ C_2 = AR_2 + x_2 G
 \end{array}
 $$
 
-### Addition
+### Addition []()
 
 $$
 C_+ = C_1 + C_2 = A(R_1 + R_2) + (x_1 + x_2)G
@@ -71,7 +78,9 @@ $$
 C_+ = C_1 + C_2 = AR_+ + (x_1 + x_2)G
 $$
 
-### Multiplication
+[](1724549164213)
+
+### Multiplication []()
 
 $$
 \begin{array}{rcl}
@@ -84,11 +93,13 @@ C_\times &=& C_1 G^{-1}(C_2) \\
 \end{array}
 $$
 
+[](1724549164216)
+
 ### Correctness
 
 - $R_1$, $R_2$, $x_1$ short ⇒ $R_+$, $R_\times$ also short
 
-### Evaluation
+### Evaluation []()
 
 Given:
 
@@ -107,12 +118,16 @@ $$
 C_f = AR_{f,x} + f(x) G
 $$
 
-#### Input-Independent Evaluation
+[](1724549164218)
+
+#### Input-Independent Evaluation []()
 
 - **Input**: $C_1, \ldots, C_n, f$
 - **Formula**: $C_1, \ldots, C_n \rightarrow C_f$
 
-#### Input-Dependent Evaluation
+[](1724549164221)
+
+#### Input-Dependent Evaluation []()
 
 - **Input**: $C_1, \ldots, C_n, f, x$
 - **Formula**: $[C_1 - x_1 G | \cdots | C_n - x_n G] H_{f,x} = C_f - f(x)G$
@@ -131,11 +146,13 @@ Example: [Lattices, Learning with Errors (page 73)](https://people.csail.mit.edu
 
 Where $A$ is actually $C$ and $\mu$ is actually $x$.
 
+[](1724549164224)
+
 #### Applications
 
 ![GSW Applications](attachments/gsw_applications.png)
 
-## GSW as a Homomorphic Commitment
+## GSW as a Homomorphic Commitment []()
 
 $$
 C = AR + xG
@@ -146,7 +163,9 @@ $$
 - **Statistically Binding**: Follows from the correctness of GSW (in fact, extractable)
 - **Computationally Hiding**: Follows from the security of GSW (under LWE)
 
-### Commitment Procedure
+[](1724549164226)
+
+### Commitment Procedure []()
 
 ![GSW Commitment](attachments/gsw_commitment.png)
 
@@ -186,6 +205,8 @@ $$
 
 - **Check**:
   - The verifier can then verify $C_f = AR_{f,x} + f(x)G$ as described in the picture above.
+
+[](1724549164228)
 
 ### From Commitments to Non-Interactive Zero-Knowledge
 

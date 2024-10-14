@@ -1,25 +1,32 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
 # Random Oracle Model (ROM)
 
-## Random Oracle Model
+## Random Oracle Model []()
 
 The ==random oracle model== (**ROM**) is an idealized setting designed to capture the fact that cryptographers have developed hash
 functions (e.g., [SHA-3](https://en.wikipedia.org/wiki/SHA-3) or [BLAKE3](https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3))
 that efficient algorithms seem totally unable to distinguish from random functions. It means
 that in the ROM, one cannot differentiate between hash functions and random functions.
 
+[](1724489009765)
+
 By a random function
 $R$:  $\mathbb{D} \rightarrow \lbrace 0, 1\rbrace^k$, on any input $x \in \mathbb{D}$, $R$ chooses its output $R(x)$ uniformly at
 random from $\lbrace 0, 1 \rbrace^k$.
+
+[](1724489009778)
 
 ## Random Oracle
 
 Accordingly, the **ROM** simply assumes that the prover and verifier have query access to a random function $R$. This means that there
 is an oracle (called a ==random oracle==) where the prover and verifier can submit any query $x$, and the oracle will return $R(x)$.
 This random oracle also keeps a record of its responses to make sure that it repeats the same response if $x$ is queried again.
+
+[](1724489009780)
 
 In the real world, random oracle is not valid because listing the value $R(x)$ for every input $x \in \mathbb{D}$ is not feasible,
 especially

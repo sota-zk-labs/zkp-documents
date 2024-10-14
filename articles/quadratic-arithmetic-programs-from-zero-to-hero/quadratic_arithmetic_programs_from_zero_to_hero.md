@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: articles::quadratic-arithmetic-programs-from-zero-to-hero
 ---
 
-# Quadratic Arithmetic Programs (QAP)
+# Quadratic Arithmetic Programs (QAP) []()
 
 [Quadratic Arithmetic Programs](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649)
 
@@ -16,6 +17,8 @@ conversion into the appropriate "form" known as a "quadratic arithmetic program"
 
 Taking the example equation $x^3 + x + 5 = 35$ in zk-SNARKs, the prover aims to demonstrate knowledge of the answer,
 $x = 3$.
+
+[](1724550663722)
 
 ## Flattening
 

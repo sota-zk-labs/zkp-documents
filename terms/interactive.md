@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Interactive Proofs
+# Interactive Proofs 
 
 **Pros:**
 

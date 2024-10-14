@@ -1,3 +1,6 @@
+---
+cards-deck: docs
+---
 # ZK-Rollups after EIP-4844
 
 **References:**
@@ -6,7 +9,7 @@
 - [How to use KZG commitments in proofs](https://notes.ethereum.org/@dankrad/kzg_commitments_in_proofs)
 - [Data Availability Post 4844](https://scroll.io/blog/data-availability-4844)
 
-## Introduction
+## Introduction []()
 
 **EIP-4844** (or Proto-Danksharding) is the backbone of the Ethereum Dencun upgrade. This upgrade focuses on Layer 2 scalability by
 introducing blob transactions and blob data, resulting in significantly reduced storage costs and gas fees.
@@ -23,7 +26,9 @@ Here are a few important points of EIP-4844 from ZK-Rollups' perspective:
 - The reason we couldn't simply generate a commitment by hashing the data blob is because we can't prove any properties of
   the data blob without revealing the whole thing.
 
-## KZG Commitments of Blob Data
+[](1724550257021)
+
+## KZG Commitments of Blob Data []()
 
 The function $f$ is defined as the Lagrange polynomial:
 
@@ -36,7 +41,9 @@ $$
 where $\omega^{4096} = 1$ is a [root of unity](plonk.md#Roots%20of%20Unity) of order $4096$, and $d_i$ define the data points in blob.
 This function is then committed using KZG.
 
-## Point Evaluation Precompile
+[](1724550257036)
+
+## Point Evaluation Precompile []()
 
 The EIP4844 introduces a new precompile at `Bytes20(0x0A)` that is designed to allow users to open the commitment to a blob. Below is
 the pseudocode copied from [EIP-4844 specs](https://eips.ethereum.org/EIPS/eip-4844).
@@ -47,7 +54,9 @@ def point_evaluation_precompile(input: Bytes) -> Bytes:
     Verify p(z) = y given commitment that corresponds to the polynomial p(x) and a KZG proof.
     Also verify that the provided commitment matches the provided versioned_hash.
     """
-    # The data is encoded as follows: versioned_hash | z | y | commitment | proof | with z and y being padded 32 byte big endian values
+    [](1724550257039)
+
+# The data is encoded as follows: versioned_hash | z | y | commitment | proof | with z and y being padded 32 byte big endian values
     assert len(input) == 192
     versioned_hash = input[:32]
     z = input[32:64]
@@ -71,10 +80,9 @@ def kzg_to_versioned_hash(commitment: KZGCommitment) -> VersionedHash:
 
 The `point_evaluation_precompile(versioned_hash, z, y, kzg_commitment, proof)` receives a versioned hash, the KZG commitment to the
 blob, and a KZG opening proof for point $z$ and value $y$ as input. It verifies that `kzg_commitment` corresponds to
-the `versioned_hash` provided and that the opening `proof` is valid (i.e. $f(z)
-=y$).
+the `versioned_hash` provided and that the opening `proof` is valid (i.e. $f(z)=y$).
 
-## Blob Consistency Check
+## Blob Consistency Check []()
 
 Since rollup contract only can access to versioned hash instead of the raw transaction data (which was previously included
 as `calldata`), the main challenge we face is proving that $f$ indeed ==represents exactly the raw transaction data using circuits==.
@@ -83,7 +91,11 @@ equivalence).
 There is an easy approach in
 the case where the ZK rollup is BLS12-381 based, and a moderately harder approach for arbitrary ZK-SNARKs.
 
-### With BLS12-381 Modulus
+[](1724550257042)
+
+[](1724550257044)
+
+### With BLS12-381 Modulus []()
 
 Given two polynomial commitments $C_1$ and $C_2$ over the same field (but not the same scheme, e.g. they could be KZG and FRI, or both
 KZG but with different trusted setup), here is the protocol:
@@ -97,10 +109,11 @@ The prover sends $C_1,C_2,y,\pi_1, \pi_2$. The verifier accepts if $y = f(hash(C
 This technique was summarized by
 Vitalik [here](https://ethresear.ch/t/easy-proof-of-equivalence-between-multiple-polynomial-commitment-schemes-to-the-same-data/8188).
 
+[](1724550257046)
+
 ### With Any ZK-SNARKs
 
-We also choose $x$ as in previous section, and evaluate [barycentric equation](../terms/barycentric_equation.md) $f(x) = \dfrac{x^N}{N}
-\cdot \sum_{i}{\dfrac{d_i \cdot \omega^i}{x - \omega^i}}$ at our random $x$. This evaluation has to be done over BLS12-381 in our
+We also choose $x$ as in previous section, and evaluate [barycentric equation](../terms/barycentric_equation.md) $f(x) = \dfrac{x^N}{N}\cdot \sum_{i}{\dfrac{d_i \cdot \omega^i}{x - \omega^i}}$ at our random $x$. This evaluation has to be done over BLS12-381 in our
 circuit using [non-native field arithmetic](non_native_field_arithmetic.md).
 
 #### Proof of Concept
@@ -108,7 +121,7 @@ circuit using [non-native field arithmetic](non_native_field_arithmetic.md).
 [Here](https://github.com/mmjahanara/blob-consistency-check) is a PoC that implemented by Scroll. This implementation uses the `BN254`
 modulus as native field, barycentric equation, along with non-native field arithmetic from Halo2's crates to create the circuit.
 
-## How To Send Blob Transactions
+## How To Send Blob Transactions []()
 
 To embed your data into a blob, you must convert it into `byte` format and use `kzg4844.Blob` to store it (`kzg4844.Blob` is
 essentially `[131072]byte`). Then, calculate the KZG commitment and KZG proof to create a sidecar from these values.
@@ -153,7 +166,9 @@ err = ethclient.Client.SendTransaction(context, signedTx)
 The pseudocode above is for illustration purposes only. [Here](https://www.rareskills.io/post/ethclient-golang) is a more complete
 implementation.
 
-### How To Verify The Commitment
+[](1724550257047)
+
+### How To Verify The Commitment []()
 
 Assume that in the `verify` function, we want to check whether the parameter `blobKZGProof` is consistent with the underlying blob. We
 can first use the `blobhash` opcode to get the versioned hash of the blob, then use `point_evaluation_precompile()` to verify the
@@ -185,3 +200,5 @@ function verify(
 ```
 
 After this, you can start verifying the blob consistency check.
+
+[](1724550257048)

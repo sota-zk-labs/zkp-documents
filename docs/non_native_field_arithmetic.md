@@ -1,5 +1,6 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Non-Native Field Arithmetic
@@ -11,7 +12,7 @@ comments: true
 - [Field selection for recursive SNARKs](https://medium.com/delendum/field-selection-for-recursive-snarks-726ad56c3a3c)
 - [Foreign field arithmetic](https://www.youtube.com/watch?v=IBeo5epQoYo)
 
-## Motivation
+## Motivation []()
 
 Sometimes, we want to represent modulo arithmetic with prime modulus $p$ over our prime finite field $\mathbb{F}_n$ . It's called
 non-native field arithmetic (or some other names like *foreign field, mismatched field, non-aligned field, wrong field*). Below are a
@@ -27,7 +28,9 @@ few use cases:
 In this article, we will take advantage of [Chinese Remainder Theorem](../terms/chinese_remainder_theorem.md) (CRT) to solve the
 problem.
 
-## Problem
+[](1724549277168)
+
+## Problem []()
 
 We are interested in building a circuit for $a \cdot b \pmod p$ over our field $\mathbb{F}_n$ (the same for $a+b$ with our trick).
 Typically, a witness $(a,b,r,q,p)$ is produced and the integer constraint $a \cdot b - p \cdot q - r = 0$ is included as part of
@@ -38,9 +41,11 @@ number.
 
 For simplicity, we can assume that $n < p$.
 
+[](1724549277182)
+
 ## Non-native Field Arithmetic with CRT
 
-### Constraint Decomposition with Limbs
+### Constraint Decomposition with Limbs []()
 
 In the following, we will work in modulus $2^T$, where $p < 2^T$. We denote $p' = -p \mod 2^T$, or more concrete $p' = 2^T - p$. It is
 easy to see that $a \cdot b - p \cdot q \equiv a \cdot b + p' \cdot q \pmod{2^T}$.
@@ -48,8 +53,7 @@ easy to see that $a \cdot b - p \cdot q \equiv a \cdot b + p' \cdot q \pmod{2^T}
 Assume that $T \mid 4$ , we will write our integers in binary notation as a concatenation of multiple bit subsections, sometimes called
 limbs.
 
-Consider limbs of size $B = T / 4$, then an integer $a \in \lbrack 0, 2^T)$ could be written as $4$ limbs: $a = \lbrack a_3, a_2, a_1,
-a_0\rbrack$ with
+Consider limbs of size $B = T / 4$, then an integer $a \in \lbrack 0, 2^T)$ could be written as $4$ limbs: $a = \lbrack a_3, a_2, a_1,a_0\rbrack$ with
 $a_i \in \lbrack 0, 2^B)$ and $a = \sum\limits_{0 \leq i < 4}{a_i \cdot 2^{iB}}$ . Given $a,b,q,p' \in \lbrack 0, 2^T)$, we can rewrite
 the equation
 $a \cdot b + p' \cdot q$ as follow:
@@ -81,6 +85,9 @@ $$
 Let $t = t_{0}\cdot2^{0B}+t_{1}\cdot2^{1B}+t_{2}\cdot2^{2B}+t_{3}\cdot2^{3B}$. Note that $t$ itself does not need to be less than
 $2^T$. Thus, if $a \cdot b + p' \cdot q = r \mod 2^T$, it is not guaranteed that $t = r$. However, the last $T$ bits of $t$ are
 certainly going to equal $r$ (the reason why we choose $2^T$ as our modulus).
+
+[](1724549277185)
+
 
 ![non_native_field_arithmetic](attachments/non_native_field_arithmetic.png)
 
@@ -125,7 +132,8 @@ $$
 
 it is guaranteed that $a \cdot b - q \cdot p - r = 0 \mod 2^T$ (but not $a \cdot b - q \cdot p - r = 0$ on their own).
 
-### Constraints in Our Native Field
+
+### Constraints in Our Native Field []()
 
 Next, we will consider a method to ensure $a \cdot b - q \cdot p - r = 0 \mod n$. We denote some new variables $\lbrace a_n, b_n, q_n,
 p_n,
@@ -148,18 +156,24 @@ Because $a,b,q,p,r$ are not fit in our native field, we need to decompose them i
 For a given $(a,b,q,p,r,v_a, v_b, v_q, v_p, v_r, v_{overall})$ that follow the 6 constraints above, it is guaranteed that $a \cdot b -
 q \cdot p - r = 0 \mod n$, but not $a \cdot b - q \cdot p - r = 0$.
 
-### Applying the Chinese Remainder Theorem
+[](1724549327738)
+
+### Applying the Chinese Remainder Theorem []()
 
 Now we have $a \cdot b - q \cdot p - r = 0 \mod n$ and $a \cdot b - q \cdot p - r = 0 \mod 2^T$, which implies that $a \cdot b - q
 \cdot p - r = 0 \mod (n \cdot 2^T)$ by our CRT. If we choose $T$ such that $a \cdot b - q \cdot p - r < p^2 < n \cdot 2^T$, then it
 means that $a \cdot b - q \cdot p - r = 0$. Note that we should choose $T$ such that $t_3 < n$ to be able to represent all our numbers
 in our native field $\mathbb{F}_n$.
 
-### Range check using lookup argument
+[](1724549327741)
+
+### Range Check Using Lookup Argument []()
 
 When decomposing an element into its limbs, we need to perform a ==range check== $a_i \in [0, 2^B) \forall i$, which can be done
 quickly using lookup argument (e.g., [Plookup](./plookup.md)). For example, with $B = 64$, we can create a lookup table $t = \lbrace 0,
 1, ..., 2^8-1\rbrace$, and add the following constraints to ensure an element $x$ is in $[0, 2^B)$:
+
+[](1724549277188)
 
 $$
 \begin{aligned}

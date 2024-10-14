@@ -1,10 +1,11 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Prime Or Finite Fields
+# Prime Or Finite Fields 
 
-## Definition
+## Definition []()
 
 A prime field $\mathbb{F}_p$ consists of the set of numbers $0, 1, 2, \ldots, p-1$, where $p$ is prime, and the various
 operations are
@@ -16,6 +17,8 @@ defined as follows:
 - $a / b:  (a * b^{p-2}) \pmod p$
 
 In essence, all mathematical operations are performed modulo $p$.
+
+[](1724467256876)
 
 ### Multiplicative Group
 

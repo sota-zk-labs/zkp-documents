@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Commitment Scheme
+# Commitment Scheme []()
 
 **Parties**: Committer and Verifier
 
@@ -11,7 +12,11 @@ comments: true
 1. **Binding**: Committer can't change the message after committing.
 2. **Hiding**: Verifier can't learn anything about the message from the commitment.
 
+[](1724427186040)
+
 **Recommended Resource**: [Video on Binding and Hiding](https://www.youtube.com/watch?v=4w_b8Msxy14).
+
+
 
 ## Formal Definition
 

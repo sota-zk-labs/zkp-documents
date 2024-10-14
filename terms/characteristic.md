@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Characteristic
+# Characteristic []()
 
 The characteristic of a finite field $F$ is the smallest positive number $n$ such that the sum of the multiplicative identity $1$
 repeated $n$ times result in the additive identity $0$. This is expressed as:
@@ -20,3 +21,5 @@ $$
 1 + 1 = 0
 \end{aligned}
 $$
+
+[](1724426675820)

@@ -1,12 +1,13 @@
 ---
 comments: true
+cards-deck: docs
 ---
 
 # Nova
 
 ## Recursive SNARKs
 
-Read the definition of recursive SNARK [here](../terms/recursive_snark.md).
+Read the definition of recursive SNARK [here](../terms/recursive_proof.md).
 
 ## IVC
 
@@ -20,7 +21,7 @@ Read the definition of the folding scheme [here](../terms/folding_scheme.md).
 
 Read the definitions of R1CS, Relaxed R1CS and Committed Relaxed R1CS [here](../terms/r1cs.md).
 
-## Folding Scheme for Committed Relaxed R1CS
+## Folding Scheme for Committed Relaxed R1CS []()
 
 For Committed Relaxed R1CS, we use succinct and hiding additively
 [homomorphic commitments](../terms/homomorphic_encryption.md) for
@@ -68,6 +69,8 @@ proceed as follows:
 Then, the Prover (P) can claim his correct folding by proving that $\bar{W}$ and $\bar{E}$
 are the commitments of $W$ and $E$.
 
+[](1724549342968)
+
 You should see the depiction below:
 ![Folding Scheme for R1CS](attachments/folding_scheme_for_r1cs.png)
 
@@ -76,3 +79,5 @@ denote a [random oracle](../terms/random_oracle_model.md), then
 the Prover (P) can get random challenge $r$ via:
 
 $r \leftarrow \rho(vk, u_1, u_2, \bar T)$.
+
+

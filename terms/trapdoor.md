@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Trapdoor
+# Trapdoor []()
 
 > [!NOTE]
 > A trapdoor is a secret piece of information that enables efficient decryption or other cryptographic operations which
@@ -10,6 +11,8 @@ comments: true
 
 Trapdoors are fundamental to the construction of many cryptographic systems, including public-key
 encryption schemes, digital signatures, and certain lattice-based cryptographic protocols.
+
+[](1724491864883)
 
 ## Characteristics of a Trapdoor
 

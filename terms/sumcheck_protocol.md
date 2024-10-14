@@ -1,8 +1,9 @@
 ---
 comments: true
+cards-deck: terms
 ---
 
-# Sum-Check Protocol
+# Sum-Check Protocol []()
 
 Given a $v$-variate polynomial $g$ defined over a finite field $F$, the purpose of the sum-check protocol is for the prover to provide
 this sum for the verifier:
@@ -17,7 +18,9 @@ Instead of computing $H$ via the equation above (runtime $2^v$), $V$ can use the
 $O(v + \text{the cost to evaluate } g \text{ at a single input in } F^v)$. $P$ can compute all of its prescribed messages by evaluating
 $g$ at $O(2^v)$ inputs in $F^v$.
 
-## Description of Sum-Check Protocol
+[](1724548241069)
+
+## Description of Sum-Check Protocol []()
 
 - At the start of the protocol, the prover sends a value $C_1$ claimed to equal the value $H$ defined in the equation above.
 - In the first round, $P$ sends the univariate polynomial $g_1(X_1)$ claimed to equal:
@@ -31,8 +34,8 @@ $$
 $V$ checks that:
 
 - $g_1(0) + g_1(1) = C_1$
-- $g_1$ is a univariate polynomial of degree at most $\text{deg}_1(g)$, where $\text{deg}_j(g)$ is the degree of $g(X_1, X_2, \dots,
-  X_v)$ in variable $X_j$.
+- $g_1$ is a univariate polynomial of degree at most $\text{deg}_1(g)$, where $\text{deg}_j(g)$ is the degree of 
+  $g(X_1, X_2, \dots,X_v)$ in variable $X_j$.
 
 - $V$ chooses a random element $r_1 \in F$ and sends $r_1$ to $P$.
 - In the $j$-th round, for $1 < j < v$, $P$ sends to $V$ a univariate polynomial $g_j(X_j)$ claimed to equal:
@@ -52,15 +55,21 @@ $V$ checks that:
   $g(r_1, r_2, \dots, r_v)$, and checks that $g_v(r_v) = g(r_1, \dots, r_v)$. If not, $V$ rejects.
 - If $V$ has not yet rejected, $V$ accepts.
 
-## Completeness and Soundness
+[](1724548520893)
+
+## Completeness and Soundness []()
 
 Let $g$ be a $v$-variate polynomial of degree at most $d$ in each variable, defined over a finite field $F$. The completeness error
 $\delta_c = 0$ and the soundness error $\delta_s \leq vd/|F|$.
 
-## Discussion of Costs
+[](1724548520907)
+
+## Discussion of Costs []()
 
 | Communication                     | Round | $V$ Time                                  | $P$ Time                                                |
 |-----------------------------------|-------|-------------------------------------------|---------------------------------------------------------|
 | $O(\sum_{i=1}^v \text{deg}_i(g))$ | $v$   | $O(v + \sum_{i=1}^v \text{deg}_i(g)) + T$ | $O(\sum_{i=1}^v \text{deg}_i(g) \cdot 2^{v-i} \cdot T)$ |
 
 where $T$ is the cost of an oracle query to $g$.
+
+[](1724548520910)
