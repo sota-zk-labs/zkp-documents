@@ -1,0 +1,376 @@
+{
+  "nodes": [
+    {
+      "id": "b8ec550b7a8625fa",
+      "type": "text",
+      "text": "Trace",
+      "styleAttributes": {},
+      "x": -940,
+      "y": -660,
+      "width": 100,
+      "height": 60,
+      "color": "3"
+    },
+    {
+      "id": "ef7c96679a9ed916",
+      "type": "text",
+      "text": "input, output, program,\nconstraints",
+      "styleAttributes": {},
+      "x": -420,
+      "y": -660,
+      "width": 260,
+      "height": 60,
+      "color": "3"
+    },
+    {
+      "id": "a19f02c50bc3917c",
+      "type": "text",
+      "text": "Populate tables\nConstraints polynomials->max degree.\nFRI domain size.",
+      "styleAttributes": {},
+      "x": -907,
+      "y": -360,
+      "width": 407,
+      "height": 120
+    },
+    {
+      "id": "a66474b909cf1f6b",
+      "type": "text",
+      "text": "Virtual Machine",
+      "styleAttributes": {},
+      "x": -687,
+      "y": -660,
+      "width": 140,
+      "height": 60,
+      "color": "4"
+    },
+    {
+      "id": "6c74efb74d213bd4",
+      "type": "text",
+      "text": "Random *challenges*: $a, b, c,..., \\alpha, \\beta, ...$\n",
+      "styleAttributes": {},
+      "x": -42,
+      "y": -102,
+      "width": 357,
+      "height": 84
+    },
+    {
+      "id": "6cfeadd52cde400d",
+      "type": "text",
+      "text": "Sample a randomizer poly-> *randomizer codewords.*\nBase columns -> base polynomials -> *base codewords*\nZip (randomizer + base codewords) -> commit via Merkle Tree (*base tree*)\n\n",
+      "styleAttributes": {},
+      "x": -907,
+      "y": -160,
+      "width": 407,
+      "height": 200
+    },
+    {
+      "id": "7ec6f7d2bcd86810",
+      "type": "text",
+      "text": "Compute extension columns",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 140,
+      "width": 407,
+      "height": 58
+    },
+    {
+      "id": "81aaccad53cd8ce7",
+      "type": "text",
+      "text": "Interpolate extension columns -> extension polynomials -> evaluate on FRI domain: *extension codewords.*\nCommit via Merkle Tree -> *extension tree*\n\n",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 320,
+      "width": 407,
+      "height": 180
+    },
+    {
+      "id": "434113b89da97172",
+      "type": "text",
+      "text": "Random scalars for nonlinear combination",
+      "styleAttributes": {},
+      "x": -42,
+      "y": 380,
+      "width": 357,
+      "height": 64
+    },
+    {
+      "id": "d752240dc43214ff",
+      "type": "text",
+      "text": "Compute all quotients polynomials from constraints -> evaluate on FRI domain: *quotient codewords*.\nCompute *nonlinear combination codewords* by compressing all *quotient codewords*.",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 580,
+      "width": 407,
+      "height": 200
+    },
+    {
+      "id": "8a2577a1a37ae5e5",
+      "type": "text",
+      "text": "Commit *nonlinear combination codewords* via Merkle Tree ",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 854,
+      "width": 407,
+      "height": 106
+    },
+    {
+      "id": "758a1ed3c1781b49",
+      "type": "text",
+      "text": "Random $t$ indices query for checking combination",
+      "styleAttributes": {},
+      "x": -42,
+      "y": 867,
+      "width": 357,
+      "height": 80
+    },
+    {
+      "id": "f42cd034cb8be9c7",
+      "type": "text",
+      "text": "Open the *indicated positions* in the nonlinear combination Merkle tree and in both earlier Merkle trees.",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 1080,
+      "width": 407,
+      "height": 120
+    },
+    {
+      "id": "73f5d7da32306297",
+      "type": "text",
+      "text": "Generate FRI proof for the nonlinear combination.",
+      "styleAttributes": {},
+      "x": -907,
+      "y": 1280,
+      "width": 407,
+      "height": 80
+    },
+    {
+      "id": "c2880f640c5431d4",
+      "type": "text",
+      "text": "Verify the openings\nVerify the nonlinear combination by compute:\n- Indicated *quotient codewords* by evaluating *constraints* at the opening points.\n- Indicated nonlinear combination codewords.\n=> compare these with the *opening codewords* from the prover.\nVerify FRI proof.\n\n",
+      "styleAttributes": {},
+      "x": -42,
+      "y": 1080,
+      "width": 357,
+      "height": 380
+    },
+    {
+      "id": "83a2706de0c1bd31",
+      "type": "text",
+      "text": "Prover",
+      "styleAttributes": {},
+      "x": -756,
+      "y": -500,
+      "width": 106,
+      "height": 50,
+      "color": "1"
+    },
+    {
+      "id": "f34e1382ece1d985",
+      "type": "text",
+      "text": "Verifier",
+      "styleAttributes": {},
+      "x": 80,
+      "y": -500,
+      "width": 112,
+      "height": 50,
+      "color": "#385bc2"
+    }
+  ],
+  "edges": [
+    {
+      "id": "876f06cb754d361f",
+      "styleAttributes": {},
+      "fromNode": "ef7c96679a9ed916",
+      "fromSide": "left",
+      "toNode": "a66474b909cf1f6b",
+      "toSide": "right"
+    },
+    {
+      "id": "ba1a3f0f33bb7d1b",
+      "styleAttributes": {},
+      "fromNode": "a66474b909cf1f6b",
+      "fromSide": "left",
+      "toNode": "b8ec550b7a8625fa",
+      "toSide": "right"
+    },
+    {
+      "id": "2462a416fb74d34c",
+      "styleAttributes": {},
+      "fromNode": "b8ec550b7a8625fa",
+      "fromSide": "bottom",
+      "toNode": "83a2706de0c1bd31",
+      "toSide": "top"
+    },
+    {
+      "id": "f2d4db0a17581e27",
+      "styleAttributes": {
+        "pathfindingMethod": "direct"
+      },
+      "fromNode": "ef7c96679a9ed916",
+      "fromSide": "bottom",
+      "toNode": "83a2706de0c1bd31",
+      "toSide": "right"
+    },
+    {
+      "id": "a36a8d639a9679ff",
+      "styleAttributes": {
+        "pathfindingMethod": "direct"
+      },
+      "fromNode": "ef7c96679a9ed916",
+      "fromSide": "bottom",
+      "toNode": "f34e1382ece1d985",
+      "toSide": "left"
+    },
+    {
+      "id": "6ad658def3f29d20",
+      "styleAttributes": {},
+      "fromNode": "6cfeadd52cde400d",
+      "fromSide": "right",
+      "toNode": "6c74efb74d213bd4",
+      "toSide": "left",
+      "label": "Root"
+    },
+    {
+      "id": "8461ae2675c31ef3",
+      "styleAttributes": {},
+      "fromNode": "6c74efb74d213bd4",
+      "fromSide": "left",
+      "toNode": "7ec6f7d2bcd86810",
+      "toSide": "right",
+      "label": "challenges"
+    },
+    {
+      "id": "713028315607275d",
+      "styleAttributes": {},
+      "fromNode": "a19f02c50bc3917c",
+      "fromSide": "bottom",
+      "toNode": "6cfeadd52cde400d",
+      "toSide": "top"
+    },
+    {
+      "id": "e83631294529325a",
+      "styleAttributes": {},
+      "fromNode": "6cfeadd52cde400d",
+      "fromSide": "bottom",
+      "toNode": "7ec6f7d2bcd86810",
+      "toSide": "top"
+    },
+    {
+      "id": "29c7aaab2af19b5d",
+      "styleAttributes": {},
+      "fromNode": "7ec6f7d2bcd86810",
+      "fromSide": "bottom",
+      "toNode": "81aaccad53cd8ce7",
+      "toSide": "top"
+    },
+    {
+      "id": "da270741aa59d65c",
+      "styleAttributes": {},
+      "fromNode": "81aaccad53cd8ce7",
+      "fromSide": "right",
+      "toNode": "434113b89da97172",
+      "toSide": "left",
+      "label": "Root"
+    },
+    {
+      "id": "4ec757368abedb20",
+      "styleAttributes": {},
+      "fromNode": "434113b89da97172",
+      "fromSide": "left",
+      "toNode": "d752240dc43214ff",
+      "toSide": "right",
+      "label": "random\nscalar"
+    },
+    {
+      "id": "260686c610287aea",
+      "styleAttributes": {},
+      "fromNode": "83a2706de0c1bd31",
+      "fromSide": "bottom",
+      "toNode": "a19f02c50bc3917c",
+      "toSide": "top"
+    },
+    {
+      "id": "3572b9caca3ea241",
+      "styleAttributes": {},
+      "fromNode": "f34e1382ece1d985",
+      "fromSide": "bottom",
+      "toNode": "6c74efb74d213bd4",
+      "toSide": "top"
+    },
+    {
+      "id": "59b635dcc1b38084",
+      "styleAttributes": {},
+      "fromNode": "6c74efb74d213bd4",
+      "fromSide": "bottom",
+      "toNode": "434113b89da97172",
+      "toSide": "top"
+    },
+    {
+      "id": "8a1b02b1e0627b15",
+      "styleAttributes": {},
+      "fromNode": "d752240dc43214ff",
+      "fromSide": "bottom",
+      "toNode": "8a2577a1a37ae5e5",
+      "toSide": "top"
+    },
+    {
+      "id": "053417f55864f8b9",
+      "styleAttributes": {},
+      "fromNode": "8a2577a1a37ae5e5",
+      "fromSide": "right",
+      "toNode": "758a1ed3c1781b49",
+      "toSide": "left",
+      "label": "Root"
+    },
+    {
+      "id": "1f55a0b001838207",
+      "styleAttributes": {},
+      "fromNode": "434113b89da97172",
+      "fromSide": "bottom",
+      "toNode": "758a1ed3c1781b49",
+      "toSide": "top"
+    },
+    {
+      "id": "f0294fd109e356e1",
+      "styleAttributes": {},
+      "fromNode": "758a1ed3c1781b49",
+      "fromSide": "left",
+      "toNode": "f42cd034cb8be9c7",
+      "toSide": "right",
+      "label": " t indices"
+    },
+    {
+      "id": "b3d218982966c2a5",
+      "styleAttributes": {},
+      "fromNode": "f42cd034cb8be9c7",
+      "fromSide": "bottom",
+      "toNode": "73f5d7da32306297",
+      "toSide": "top"
+    },
+    {
+      "id": "be841501e11807fb",
+      "styleAttributes": {},
+      "fromNode": "73f5d7da32306297",
+      "fromSide": "right",
+      "toNode": "c2880f640c5431d4",
+      "toSide": "left"
+    },
+    {
+      "id": "9e437cfb71e44701",
+      "styleAttributes": {},
+      "fromNode": "f42cd034cb8be9c7",
+      "fromSide": "right",
+      "toNode": "c2880f640c5431d4",
+      "toSide": "left"
+    },
+    {
+      "id": "d8ef4a54c90bd0f7",
+      "styleAttributes": {},
+      "fromNode": "758a1ed3c1781b49",
+      "fromSide": "bottom",
+      "toNode": "c2880f640c5431d4",
+      "toSide": "top"
+    }
+  ],
+  "metadata": {}
+}
