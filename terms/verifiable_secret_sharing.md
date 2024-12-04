@@ -21,7 +21,7 @@ A $(k, n)$ VSS includes two phases: *Sharing* and *Reconstruction* as follows:
 
 **Reconstruct**:
 
-- Each party $P_i$ publishes its share $s_i$ from the sharing phase for reconstruction $s$.
+- Each party $P_i$ publishes its share $s_i$ from the sharing phase for reconstructing $s$.
 
 If $D$ is dishonest, then at the end of **sharing** phase, there exists a value $s^*$ such that all parties agree on it at the end of
 **reconstruct** phase.
@@ -32,7 +32,7 @@ If $D$ is dishonest, then at the end of **sharing** phase, there exists a value 
 
 We describe a VSS protocol from **Pedersen**.
 
-### The Commitment Scheme  
+### The Commitment Scheme
 
 Let $p, q$ be large primes such that $q$ divides $p-1$ and let $G_q$ be the unique subgroup of $\mathbb{Z}^*_p$ of order $q$. Let $g$
 and $h$ be elements of $G_q$ where $g$ is the generator of $G_q$ and no one knows the value $d$ such that $h = g^d$. These elements

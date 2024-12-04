@@ -4,8 +4,8 @@ cards-deck: terms
 ---
 # Schnorr Signature []()
 
-The Schnorr Signature is a typical type of [threshold signature](https://scryptplatform.medium.com/threshold-signatures-a0eff03dc29c).
-The Schnorr signature involves two phases: generation and verification.
+The **Schnorr signature** is a digital signature scheme that provides a way to verify the authenticity of a message or 
+document. The Schnorr signature involves two phases: generation and verification.
 
 Let $G$ be a group of prime order $q$ with $g$ as a generator of $G$. Let $H$ be a hash function, and let the number $s$ in the group
 $G$ be $g^s$.
