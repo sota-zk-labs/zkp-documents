@@ -57,7 +57,7 @@ Monolith supports [sponge modes](
 https://en.wikipedia.org/wiki/Sponge_function) for slightly larger state size and a [2-to-1 compression function](
 https://en.wikipedia.org/wiki/One-way_compression_function) for smaller state size (e.g., for Merkle tree with fixed depth).
 
-### Permuatation Structure []()
+### Permutation Structure []()
 
 The Monolith permutation is defined as:
 
@@ -161,7 +161,7 @@ For $\text{Monolith-64}$:
 + For $t=8$ then $M = circ(23, 8, 13, 10, 7, 6, 21, 8)$
 + For $t=12$ then $M = circ(7, 23, 8, 26, 13, 10, 9, 7, 6, 22, 21, 8)$.
 
-These matrices have the unique advantage of having small elements in the time and frequecy domain, allowing for
+These matrices have the unique advantage of having small elements in the time and frequency domain, allowing for
 especially fast native performance.
 
 For $\text{Monolith-31}$:
