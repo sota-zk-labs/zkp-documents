@@ -167,7 +167,7 @@ size against the fact topology's page size.
 The cairoAuxInput includes:
 
 - `log_n steps , rc_min, rc_max, layout_info`: Extracted from the `public input`
-- `segment_info`: Includes the `startAddr` and `stopPtr` for each buiiltin, found in `public_input.memory_segments`
+- `segment_info`: Includes the `startAddr` and `stopPtr` for each builtin, found in `public_input.memory_segments`
 - `memory_pages_public_input`: Contains memory page details used in memory page proofs:
 	- Initial memory **address** and **value** of the padding cell (`public_memory[0]`)
 	- `pages_len`: Total number of pages in public memory
@@ -203,4 +203,4 @@ The main proof includes:
 ## Reference
 
 - [Stark EVM Adapter - zkSecurity](https://github.com/zksecurity/stark-evm-adapter).
-- [Starkex Constracts - Starkware](https://github.com/starkware-libs/starkex-contracts/tree/master).
+- [Starkex Contracts - Starkware](https://github.com/starkware-libs/starkex-contracts/tree/master).
