@@ -175,7 +175,7 @@ For example:
   and build one or more Merkle trees over vectors of length $Θ(K)$ ($O(K)$ runtime) where $K$ is the number of nonzero matrix entries
   of the R1CS system.
 - An MIP which combined with many of the discrete-logarithm-based or KZG-based polynomial commitment schemes needs to perform one
-  multi-exponentation of size proportional to $K$ ($O(Klog(|G|)/logK)$ group multiplications).
+  multi-exponentiation of size proportional to $K$ ($O(Klog(|G|)/logK)$ group multiplications).
 
 ### 19.3.3 Intermediate Representations (IRs) Other than Arithmetic Circuits and R1CS
 
