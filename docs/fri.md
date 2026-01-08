@@ -44,7 +44,7 @@ Queries ensure the folding was done properly.
 
 ## Merkle Tree []()
 
-FRI ultilizes Merkle trees to commit to a vector. Each leaf of the trees represents an entry in the
+FRI utilizes Merkle trees to commit to a vector. Each leaf of the trees represents an entry in the
 vector, with the root serving as the commitment.
 
 ![merkle_tree.png](attachments/merkle_tree.png)
@@ -57,7 +57,7 @@ The prover affirms that the leaves represent evaluations of $q$.
 
 ## Mechanics of FRI
 
-### Prequirisites Knowledge []()
+### Prerequisites Knowledge []()
 
 Prover Merkle-commits to evaluations $q(x)$ for those $x$ in a subset $\ohm$ of $\mathbb{F}_p$.
 
