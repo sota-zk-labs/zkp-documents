@@ -12,7 +12,7 @@ properties:
 - Associativity: for all $a,b, c ∈ G, a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
 - Identity: there an element denoted $1_G ∈ G$ such that $1_G \cdot g = g \cdot 1_G = g$ for all $g ∈ G$
 - Invertibility: For each $g ∈ G$, there is an element $h$ in $G$ such that $g \cdot h = 1_G$. This element $h$ is denoted $g^{−1}$ .
-  An example is the the set of **invertible** matrices, which forms a group under the matrix multiplication operation.
+  An example is the set of **invertible** matrices, which forms a group under the matrix multiplication operation.
 
 [](1724456494932)
 
